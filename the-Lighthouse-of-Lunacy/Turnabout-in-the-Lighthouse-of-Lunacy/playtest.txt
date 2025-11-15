@@ -1,0 +1,19 @@
+delev presspass
+delev lilian$
+delev gunA
+delev cake
+delev cova$
+delev gardt$
+delev holden2$
+delev susan$
+addev aurelia$
+addev cova$
+addev gardt$
+addev holden2$
+addev susan$
+addev pendant
+
+setflag offtrain
+setflag coastdone
+
+script scene8menu
