@@ -20,58 +20,22 @@ set tv_name TV
 set tv_pic tv
 set tv_desc "This TV looks older than me."
 
-set salt_name Salt Shaker
-set salt_pic salt
-set salt_desc A salt shaker left out on the sink countertop in the staff kitchen.
+set door_name Door
+set door_pic door
+set door_desc "A locked room mystery. That can't be good."
 
-set drinks_name Drinks Layout
-set drinks_pic drinks
-set drinks_desc According to Solito, Bloskie drank apple juice, while Desert drank orange juice. 
+set blood_name Blood Trail
+set blood_pic blood
+set blood_desc "A faint blood trail between the study and the main hall."
 
-set slip_name Permission Slip
-set slip_pic letter
-set slip_desc A letter granting us access to the crime scene from Pauline. 
+set knife_name Knife
+set knife_pic knife
+set knife_desc "It was lying near the victim. As was its sheath."
 
-set sponsors_name Sponsor Image
-set sponsors_pic sponsors
-set sponsors_desc Image of the two boxers promoting juices. They were both supposedly passionate about them. To each their own.
-
-set glove_name Boxing Gloves
-set glove_pic glove
-set glove_desc A stray boxing glove dropped at the scene. There's blood where the fingers would be.
-
-set briefcase_name Briefcase
-set briefcase_pic briefcase
-set briefcase_desc A strange briefcase in Desert's dressing room. Locked, and can only be opened with a four digit code. 
-set briefcase_check check_briefcase.txt
-
-set networths_name Net Worth Sheet
-set networths_pic networths
-set networths_desc A paper propped up in Desert's dressing room with accurate net worth's of the rivals.
-
-set plans_name Floor Plans
-set plans_pic photo
-set plans_desc The floor plans for the Double O Stadium. Bloskie and Desert's dressing rooms are temporary. 
-
-set autopsy_name Desert's Autopsy Report
+set autopsy_name Autopsy Report
 set autopsy_pic dossier
-set autopsy_desc The official autopsy report of Justin Desert, finally. 
-
-set antidote_name Strange Substance
-set antidote_pic antidote
-set antidote_desc A weird container of a substance of some kind. 
-
-set antidote2_name Catasorex
-set antidote2_pic antidote
-set antidote2_desc A container of Catasorex, an antidote for the Anarsweetin poison. It seems to have side-effects of causing blood to rush to the head in high doses.
-
-set gun_name Gun
-set gun_pic gun
-set gun_desc A gun inside the briefcase. Thankfully, it seems to be a 3D printed, and empty. What could it be doing in there?
-
-set casefile_name Cliff Hangar's Case Files
-set casefile_pic casefile
-set casefile_desc Case files for the suspicious death of Cliff Hangar. Check for details. 
+set autopsy_desc "The autopsy report received from an unknown woman. Click for details."
+set autopsy_check check_autopsy1.txt
 
 //PROFILES
 
@@ -93,7 +57,7 @@ set holden1$_desc Age: 42{n}Gender: Female{n}The real estate manager in charge o
 
 set holden2$_name Melanie Holden
 set holden2$_pic holden
-set holden2$_desc Age: 42{n}Gender: Female{n}The victim in this case. The real estate manager in charge of this building.
+set holden2$_desc Age: Deceased{n}Gender: Female{n}The victim in this case. The real estate manager in charge of this building.
 
 set susan$_name Susan Holden
 set susan$_pic susan
@@ -101,7 +65,7 @@ set susan$_desc Age: 21{n}Gender: Female{n}The daughter of the victim.
 
 set victoria$_name Victoria Priston
 set victoria$_pic victoria
-set victoria$_desc Age: 23{n}Gender: Female{n}The "laywer" representing Ms. Holden in this trial.Former member of the Queens of Crime. Kicked out for good reason.
+set victoria$_desc Age: 23{n}Gender: Female{n}The "lawyer" representing Ms. Holden in this trial. Former member of the Queens of Crime. Kicked out for good reason.
 
 set dowe$_name Jones Dowe
 set dowe$_pic dowe
