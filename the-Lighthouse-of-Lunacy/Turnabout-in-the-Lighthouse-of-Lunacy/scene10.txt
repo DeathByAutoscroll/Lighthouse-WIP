@@ -1,0 +1,27 @@
+set _textbox_bg general/textbox2
+set _cr_button true
+textskipcheck
+bg sideroomnote
+"{f10}{next}"
+pause 120
+invert value=1 name=sideroomnote
+fg gearfg z=1 nowait
+sfx dun
+pause 120
+sfx limbo
+fg gimmicktop z=2 nowait 
+fg gimmickbottom stack z=2 nowait
+pause 120
+sfx chain
+"{f10}{next}"
+fg chaintop z=4 nowait
+pause 30
+"{f10}{next}"
+fg chainbottom z=4 nowait
+pause 200
+char lilian e=normal name=lilian x=256 z=3 stack
+scroll name=lilian x=-210 z=3 speed=10 stack
+pause 120
+
+char lilian e=
+"

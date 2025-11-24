@@ -454,6 +454,10 @@ fade out name=bl nowait
 
 bg crimescene1 stack name=cr1
 fade in name=cr1
+scroll name=cr1 x=-85 speed=10
+pause 120
+scroll name=cr1 x=85 speed=10
+pause 120
 nt
 "{center}{sound typewriter.ogg}{c g}{spd 0.3}April 4,{p15} 6:34 PM{n}The Lighthouse of Lunacy{n}Dr. Leid's Former Study"
 pause 30

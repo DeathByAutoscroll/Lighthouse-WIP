@@ -22,9 +22,6 @@ char lilian hide
 "{c b}{sfx anger}{s10}(No way!{p30} Gotta help out Aurelia as much as I can.)"
 goto scene8menu
 
-labelnewscene
-script scene9
-
 #EXAMINE MENU
 label examine
 bg crimescene2
@@ -99,8 +96,8 @@ addevanim
 addev tv
 pause 30
 setflag tvget
-flag helltalk1 AND tvget AND bloodget?
-goto newscene
+flag helltalk1 AND tvget AND doorget?
+script scene9 noclear
 goto examine
 
 label door
@@ -142,8 +139,8 @@ addevanim
 addev blood
 pause 30
 setflag doorget
-flag helltalk1 AND tvget AND bloodget?
-goto newscene
+flag helltalk1 AND tvget AND doorget?
+script scene9 noclear
 goto examine
 
 label examine_fail
@@ -243,6 +240,8 @@ char hellinger e=serious
 char lilian hide
 "{c b}({sfx whoops}She might be trouble.{p30} I can't get a good read on her.)"
 setflag helltalk1
+flag helltalk1 AND tvget AND doorget?
+script scene9 noclear
 goto talk
 
 #PRESENT MENU
