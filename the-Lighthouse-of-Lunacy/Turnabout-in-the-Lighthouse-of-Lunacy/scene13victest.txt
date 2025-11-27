@@ -1,0 +1,68 @@
+textskipcheck
+fg black z=10
+fade in name=black speed=3
+set _cr_button false
+bg prosecutorbg
+fg pbench 
+char victoria e=normal noauto
+fg black z=10
+fade out name=black speed=3
+pause 10
+delete name=fi
+#Just copy this for the defense/prosecution animation on the bottom screen
+bg main name=main y=192 stack
+fg aureliacutin.png name=defvs x=-255 y=165 stack
+fg victoriacutin.png name=prosvs x=256 y=225 stack
+scroll name=defvs x=255 speed=8 nowait
+scroll name=prosvs x=-256 speed=8 nowait
+fg Cross-ExaminationAnim stack fade
+pause 30
+delete name=defvs
+delete name=prosvs
+delete name=main
+set _textbox_bg general/textbox2
+nt
+"{n}{center}{c940}{sound}-- Facts and Logic --"
+set _textbox_bg general/textbox2
+set _cr_button true
+set _testimony_blinker false
+set _music_fade 100
+mus 18. Tchaikovsky (Remix)
+set _music_loop 18. Tchaikovsky (Remix) - Loop
+
+label start
+#Adds the penalty bar
+penalty
+cross victest1
+
+#Declare what statement is what
+statement vic1A
+bg prosecutorbg
+fg pbench 
+char victoria e=smug
+"After a single gunshot was heard,{p15} people immediately rushed to the source."
+
+statement vic1B
+bg prosecutorbg
+fg pbench 
+char victoria e=smug
+"The source was a locked room.{p30} The only key was inside,{p15} so the door had to be broken down."
+
+statement vic1C
+bg prosecutorbg
+fg pbench 
+char victoria e=csmile
+"Inside,{p15} we found a gunshot victim and the defendant,{p15} gun in hand."
+
+statement vic1D
+bg prosecutorbg
+fg pbench 
+char victoria e=csmile
+"The door is the only viable entrance and exit to the room."
+
+statement vic1E
+bg prosecutorbg
+fg pbench 
+char victoria e=csmile
+"Therefore,{p15} nobody else could have committed this crime."
+

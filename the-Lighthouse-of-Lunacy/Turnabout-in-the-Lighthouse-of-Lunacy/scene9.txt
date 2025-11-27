@@ -1,7 +1,12 @@
 set _textbox_bg general/textbox2
 set _cr_button true
+
+set _bigbutton_img general/empty_buttonpress
+set _bigbutton_cross general/cross_exam_buttons
+set _bigbutton_bg bg/mainlol
+
 textskipcheck
-bg crimescene2
+bg crimescene2 stack
 char hellinger e=normal
 "Dear genius,{p15} are you just going to keep making noise?"
 char hellinger e=point
