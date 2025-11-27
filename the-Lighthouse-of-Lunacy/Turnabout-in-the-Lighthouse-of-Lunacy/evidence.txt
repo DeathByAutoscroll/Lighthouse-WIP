@@ -12,6 +12,10 @@ set gunA_name Pistol
 set gunA_pic gun
 set gunA_desc My personal handgun. Holds up to six bullets. I always carry it with me, just in case.
 
+set gunB_name Pistol
+set gunB_pic gun
+set gunB_desc My personal handgun. One bullet is missing. Presumed to be what killed Mrs. Holden.
+
 set cake_name Strawberry Cake
 set cake_pic cake
 set cake_desc A cake I bought from Ander Cova.{n}It's called the "Cova Strawberry Crisis".{n}Very tasty. 
@@ -36,6 +40,10 @@ set autopsy_name Autopsy Report
 set autopsy_pic dossier
 set autopsy_desc "The autopsy report received from an unknown woman. Click for details."
 set autopsy_check check_autopsy1.txt
+
+set empty_name Nothing Else
+set empty_pic empty
+set empty_desc "I'm sure I've seen everything relevant in this room."
 
 //PROFILES
 
