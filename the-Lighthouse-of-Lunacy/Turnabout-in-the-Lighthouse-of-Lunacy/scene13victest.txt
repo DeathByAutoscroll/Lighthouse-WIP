@@ -10,7 +10,7 @@ fade out name=black speed=3
 pause 10
 delete name=fi
 #Just copy this for the defense/prosecution animation on the bottom screen
-bg main name=main y=192 stack
+bg mainlol name=main y=192 stack
 fg aureliacutin.png name=defvs x=-255 y=165 stack
 fg victoriacutin.png name=prosvs x=256 y=225 stack
 scroll name=defvs x=255 speed=8 nowait
@@ -65,4 +65,95 @@ bg prosecutorbg
 fg pbench 
 char victoria e=csmile
 "Therefore,{p15} nobody else could have committed this crime."
+endcross
 
+#Comments after you get through the testimony
+label comments
+delete name=penalty
+bg timestop/timestop39A name=timestop39A
+"{f10}{next}"
+pause 120
+invert value=1 name=timestop39A
+fg gearfg z=1 nowait
+sfx dun
+pause 120
+sfx limbo
+fg gimmicktop z=2 nowait 
+fg gimmickbottom stack z=2 nowait
+pause 120
+sfx chain
+"{f10}{next}"
+fg chaintop z=4 nowait
+pause 30
+"{f10}{next}"
+fg chainbottom z=4 nowait
+pause 200
+char aurelia e=stern name=aurelia x=-256 z=3 stack
+scroll name=aurelia x=210 z=3 speed=10 stack
+char lilian e=normal name=lilian x=256 z=3 stack
+scroll name=lilian x=-210 z=3 speed=10 stack
+pause 120
+
+setvar _speaking lilian
+emo normal
+"Hm,{p15} this is more oppressive than I thought."
+
+setvar _speaking aurelia
+emo side
+"She'll shoot down anything I try to argue."
+
+setvar _speaking lilian
+emo normal
+"Victoria is trying to wrap this up in one shot."
+"She wants to get full credit by having her reasoning prevail on its own."
+"It's the approach a great detective might take."
+emo nuhuh
+"{sfx idea}Fortunately,{p15} that doesn't work in court."
+
+setvar _speaking aurelia
+emo sideclosed
+"It seems to be working so far."
+emo side
+"{sfx whoops}Or I just can't figure out how to argue yet."
+
+setvar _speaking lilian
+emo normal
+"{sfx huh}There's is an objection in court called "assumes facts not in evidence"."
+"If you can show something she claims is not reflected in the court record..."
+emo wink
+"{sfx idea}You'll force her to present proof.{p30} Which might stall things,{p15} at least."
+
+setvar _speaking aurelia
+emo stern
+"...A good start when I have to immediately stall on technicalities."
+
+setvar _speaking lilian
+emo normal
+"Well,{p15} more info is what you wanted,{p15} right?"
+
+setvar _speaking aurelia
+emo glare
+"I'll start looking for facts that aren't backed by the court record,{p15} then."
+
+fade in name=black
+delete name=chaintop nowait
+delete name=chainbottom nowait
+delete name=gimmicktop nowait
+delete name=gimmickbottom nowait
+delete name=gearfg nowait
+delete name=aurelia nowait
+delete name=lilian nowait
+pause 180
+delete name=black
+
+bg black stack
+fg black stack fade
+pause 30
+bg prosecutorbg
+fg pbench 
+char victoria e=smug
+fg black z=10
+fade out name=black speed=3
+pause 10
+delete name=fadein
+goto start
