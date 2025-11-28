@@ -52,10 +52,9 @@ fg dbench
 char aurelia e=d-normal
 "You can't be serious."
 
-#court scrolly
+pause 15
+courtzoomdtp d-normal normal
 
-bg prosecutorbg
-fg pbench
 char victoria e=normal
 "Feel free to provide your own testimony,{p15} Ms. Chase."
 "Just what were you doing in a locked room with a dead body?"
