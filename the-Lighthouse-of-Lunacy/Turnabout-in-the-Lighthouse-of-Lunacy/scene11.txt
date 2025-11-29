@@ -27,37 +27,32 @@ char judge e=normal
 "Court is now in session for the trial of Holden v Chase."
 "Before we begin,{p15} allow me to explain a few things."
 "I'm a judge that happened to be present in the audience today."
-char judge e=surprised
-"{sfx waaah}I certainly did not come here expecting work."
+"{sfx waaah}{e surprised}I certainly did not come here expecting work."
 "By denying us exit,{p15} Ms. Holden left me little choice but to go along with her request."
-char judge e=warning
-"I do not condone her actions and she will likely face consequences after this is all over."
-char judge e=normal
-"...Would she like to explain why she thinks this is necessary?"
+"{e warning}I do not condone her actions and she will likely face consequences after this is all over."
+"{e normal}...Would she like to explain why she thinks this is necessary?"
 "Surely it would be more reasonable to await a proper police investigation?"
 
 bg witnessbg
 fg witstand
-"{f10}{sfx huh}{next}"
 char susan e=normal
+fg white
+sfx huh
+pause 5
+delete name=white
+pause 75
 "Hmm...{p15} Now how should I put this best?"
 "The last tenant of this place died five years ago."
 "{sfx key2}What happened to him?{p30} Who knows,{p15} the incident got covered up."
 "A merchant was found four years ago,{p15} in his locked home."
 "{sfx key3}And the police covered it up."
-char susan e=mad
-"Another man from around here burned to death three years ago."
+"{e mad}Another man from around here burned to death three years ago."
 "{sfx anger}And the police covered it up!"
-char susan e=normal
-"Three strikes and you're out.{p30} Only a sucker would keep betting on those odds."
-char susan e=mad
-"{sfx shouting}The government is corrupt!{p30} Cops are the scum of the Earth!"
-char susan e=normal
-"Just how many wrongfully arrested people did you have to acquit recently?"
-char susan e=mad
-"{sfx anger}It's not due to better lawyers,{p15} I'll tell you that!"
-char susan e=normal
-"{sfx penalty}Like hell I'll hand this case over to them!{p30} They'll just mess it up and then cover their tracks!"
+"{e normal}Three strikes and you're out.{p30} Only a sucker would keep betting on those odds."
+"{sfx shouting}{e mad}The government is corrupt!{p30} Cops are the scum of the Earth!"
+"{e normal}Just how many wrongfully arrested people did you have to acquit recently?"
+"{sfx anger}{e mad}It's not due to better lawyers,{p15} I'll tell you that!"
+"{sfx penalty}{e normal}Like hell I'll hand this case over to them!{p30} They'll just mess it up and then cover their tracks!"
 
 bg judgebg
 fg judgeseat stack
@@ -130,8 +125,7 @@ bg defensebg
 fg dbench
 char aurelia e=d-normal
 "{c b}({sfx waaah}I wasn't ready for facing an actual lawyer!)"
-char aurelia e=d-think
-"{c b}(This is bordering on an uncanny level of preparedness.)"
+"{c b}{e d-think}(This is bordering on an uncanny level of preparedness.)"
 
 bg judgebg
 fg judgeseat stack
@@ -169,7 +163,7 @@ fg judgeseat stack
 char judge e=surprised
 "{sfx huh}You two are familiar?"
 
-music_fade_in
+music_fade_in nowait
 mus 17. The Arrival of the Queen of Sheba [George Frideric Handel]
 
 bg prosecutorbg
@@ -450,11 +444,12 @@ char aurelia e=d-normal
 "{c b}(No use thinking about it.{p30} My choice is clear.)"
 
 label takecase
-list takecasee
-set _list_back_button_false
+list takecasee bg=mainlol
+set _list_back_button false
 li I'll Do It
 li I'm Leaving
 showlist
+goto takecase
 
 label I'll Do It
 char aurelia e=d-normal
@@ -464,7 +459,7 @@ char aurelia e=d-normal
 goto I'm Leaving
 
 label I'm Leaving
-bg defensebg fade
+bg defensebg fade stack
 pause 60
 char aurelia e=d-normal
 "Normally,{p15} I'd love to have a lawyer."

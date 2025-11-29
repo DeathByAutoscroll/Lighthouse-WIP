@@ -1,4 +1,6 @@
 textskipcheck
+set _textbox_bg general/textbox2
+"{next}"
 fg black z=10
 fade in name=black speed=3
 set _cr_button false
@@ -10,16 +12,28 @@ fade out name=black speed=3
 pause 10
 delete name=fi
 #Just copy this for the defense/prosecution animation on the bottom screen
-bg mainlol name=main y=192 stack
-fg aureliacutin.png name=defvs x=-255 y=165 stack
-fg victoriacutin.png name=prosvs x=256 y=225 stack
-scroll name=defvs x=255 speed=8 nowait
-scroll name=prosvs x=-256 speed=8 nowait
-fg Cross-ExaminationAnim stack fade
-pause 30
-delete name=defvs
-delete name=prosvs
+bg mainlol name=main y=192 stack nowait
+obj general/examinefg y=192 name=tests stack nowait
+fade in name=main speed=10 nowait
+fade in name=tests speed=10
+pause 5
+fg Cross-ExaminationAnim stack nowait
+fg aureliacutin.png name=cutin1 x=-256 y=151 nowait
+fg victoriacutin.png name=cutin2 x=256 y=233 nowait
+scroll name=cutin1 x=256 speed=8 nowait
+scroll name=cutin2 x=-256 speed=8 nowait
+pause 17
+fg white stack y=192
+fade out name=white speed=10 nowait
+pause 133
+fade out name=cutin1 speed=9 nowait
+fade out name=cutin2 speed=9 nowait
+delete name=cutin1
+delete name=cutin2
+fade out name=main speed=7
 delete name=main
+delete name=white
+delete name=tests
 set _textbox_bg general/textbox2
 nt
 "{n}{center}{c940}{sound}-- Facts and Logic --"
@@ -29,11 +43,12 @@ set _testimony_blinker false
 set _music_fade 100
 mus 18. Tchaikovsky (Remix)
 set _music_loop 18. Tchaikovsky (Remix) - Loop
+set testimonytimestop a
 
 label start
 set dots 5
 #Adds the penalty bar
-penalty
+scrollpenaltyin
 cross victest1
 
 #Declare what statement is what
@@ -81,6 +96,9 @@ endcross
 #Comments after you get through the testimony
 label comments
 delete name=penalty
+is testimonytimestop b?
+bg timestop/timestop39B name=timestop39A
+is testimonytimestop a?
 bg timestop/timestop39A name=timestop39A
 removeskip
 set _cr_button false
@@ -103,7 +121,7 @@ set _cr_button true
 fg chainbottom z=4 nowait
 pause 200
 char aurelia e=stern name=aurelia x=-256 z=3 stack
-scroll name=aurelia x=210 z=3 speed=10 stack
+scroll name=aurelia x=210 z=3 speed=10 stack nowait
 char lilian e=normal name=lilian x=256 z=3 stack
 scroll name=lilian x=-210 z=3 speed=10 stack
 pause 120
@@ -112,6 +130,7 @@ textskipcheck
 setvar _speaking lilian
 emo normal
 "Hm,{p15} this is more oppressive than I thought."
+set testimonytimestop a
 
 setvar _speaking aurelia
 emo side
@@ -149,9 +168,8 @@ emo normal
 setvar _speaking aurelia
 emo glare
 "I'll start looking for facts that aren't backed by the court record,{p15} then."
-"lmaooo"
 
-fg black stack
+fg black stack z=5
 fade in name=black
 delete name=chaintop nowait
 delete name=chainbottom nowait
@@ -172,4 +190,267 @@ fg black z=10
 fade out name=black speed=3
 pause 10
 delete name=fadein
-goto start
+scrollpenaltyin
+cross_restart
+
+label press vic1A
+"{next}"
+scrollpenaltyout
+pause 10
+courtzoomptd d-normal smug
+"So you heard a gunshot."
+"{e d-think}{sfx Key}Or did you?{p25} It could have just{n}sounded like one."
+
+macro vobj
+sfx victoria/objection
+fg ObjectionAnim
+pause 15
+endmacro 
+
+vobj
+
+bg prosecutorbg
+fg pbench
+char victoria e=think
+"Oh, {p12}my bad. {p25}For assuming you{n}were capable of this deduction."
+"{e normal}Everyone in this room heard {n}only that single shot."
+"The walls on this floor aren't {n}particularly soundproof."
+char victoria e=objecting
+pause 120
+"{e point}Meaning any shot on this floor{n}would have been impossible to{n}conceal."
+"{e normal}Everyone here also saw that the {n}victim was unharmed before."
+"{e point}Obviously. {p25}Not like she held the {n}auction with a pierced heart."
+"{e think}So the one shot we heard must {n}have been the shot that killed her. {p25}{n}Q{p10}E{p10}D."
+
+bg defensebg
+fg dbench
+char aurelia e=d-normal
+"{c b}(Makes an uncanny amount of {n}sense.)"
+
+bg prosecutorbg
+fg pbench
+char victoria e=normal
+"As for the source..."
+scrollpenaltyin
+resume
+
+label press vic1B
+"{next}"
+scrollpenaltyout
+pause 10
+courtzoomptd d-normal smug
+"Was the door actually locked, {p12}though?"
+"{e d-think}I mean, {p12}I entered just fine."
+
+vobj
+
+bg prosecutorbg
+fg pbench
+char victoria e=normal
+"Will you stop interrupting me with these low IQ questions?"
+"{e point}Someone naturally locked it after you entered -{p20} the victim."
+"{e smug}Mrs. Holden's death was instant,{p12} so if she locked it..."
+"{e normal}...that leaves you as the only one who could have shot her."
+"{e think}A single look at the door will also tell you that it had,{p12} in fact,{p12} been locked."
+
+bg defensebg
+fg dbench
+char aurelia e=d-think
+"{c b}(So annoyingly binding,{p12} this locked room logic.)"
+"{c b}{sfx Key}{e d-normal}(Aren't we forgetting something here,{p12} though?)"
+scrollpenaltyin
+resume
+
+label press vic1C
+"{next}"
+scrollpenaltyout
+pause 10
+courtzoomptd d-normal think
+"S-So I held a gun.{p25}{n}What does that prove?"
+"I could just have been umm,{p12} reacting to the gunshot."
+"{e d-sweat}You don't really know what went down before you saw that scene."
+
+vobj
+
+bg prosecutorbg
+fg pbench
+char victoria e=smug
+"Amusing how you still don't want to admit anything."
+"{e normal}{sfx Ding}Regarding your first idea,{p12} that's impossible."
+"The guard can confirm it if needed.{p25} Nobody else brought in a gun."
+sfx anger
+emo objecting
+pause 120
+"{e point}So the gunshot must have come from yours!"
+"{sfx Ding}{e normal}Oh,{p12} but what if it was self-defense?"
+"{e smug}Someone of low intelligence might ask that."
+"{e normal}{sfx Key}Can a burglar claim self-defense?"
+sfx key2
+emo objecting
+pause 120
+"{e point}Do people have to prove it was self-defense if they shoot an intruder?"
+
+bg judgebg
+fg judgeseat
+char judge e=headshake
+pause 90
+"{e normal}Naturally not."
+"On their own property,{p12} the owner is presumed to have had fear for their life."
+"{sfx Ding}It's called the castle doctrine."
+"{e warning}The burden of proof would be on the defendant..."
+"...to show it wasn't self-defense on the victim's part."
+
+bg defensebg
+fg dbench
+char aurelia e=d-think
+"{c b}{sfx Shock}(There's a reason I'm not saying anything.)"
+
+bg prosecutorbg
+fg pbench
+char victoria e=normal
+"The gun also just happened to be missing one bullet."
+"{e think}It's actually insulting how trivial this is."
+scrollpenaltyin
+resume
+
+label press vic1D
+"{next}"
+scrollpenaltyout
+pause 10
+courtzoomptd d-normal think
+"Oh really now? {p25}{n}What about the windows?"
+
+vobj
+
+bg prosecutorbg
+fg pbench
+char victoria e=normal
+"{sfx Smack}They don't even open,{p12} you philistine."
+
+bg defensebg
+fg dbench
+char aurelia e=d-normal
+"What about...{p30} aren't there any vents?"
+
+vobj
+
+bg prosecutorbg
+fg pbench
+char victoria e=normal
+"Nobody would fit through that vent!"
+"The gaps in it would also be too small for a bullet,{p12} before you suggest something stupid."
+
+bg defensebg
+fg dbench
+char aurelia e=d-normal
+"Well..."
+"{e d-index}{sfx Shock}S-{p3}Secret passage?"
+
+vobj
+
+bg prosecutorbg
+fg pbench
+char victoria e=normal
+"Throwing Knox out the window?{p15}{n}The nerve..."
+"I won't even dignify that with a response."
+"{e smug}If you can prove there was a secret passage, {p12}by all means."
+
+bg defensebg
+fg dbench
+char aurelia e=d-normal
+"{c b}(Yeah,{p12} I doubt I have the info to do anything like that.)"
+scrollpenaltyin
+resume
+
+label press vic1E
+"{next}"
+scrollpenaltyout
+pause 10
+courtzoomptd d-normal think
+"There could have been someone else in the room."
+"{sfx Shock}Who says you didn't miss someone?"
+
+vobj
+
+bg prosecutorbg
+fg pbench
+char victoria e=normal
+"That is the kind of solution you'd seek."
+"{sfx Smack}The most braindead idea there is:{p12} someone was hiding behind the door."
+"{e smug}{sfx Ding}You've been to the room,{p12} you know there's barely any furniture."
+"{e normal}No beds or large empty cabinets to hide in."
+"The door is so close to the corner{n}that there's no room to hide behind{n}it."
+emo objecting
+pause 120
+"{e point}Are you saying we missed{n}someone staying in plain view?"
+
+bg defensebg
+fg dbench
+char aurelia e=d-think
+"{sfx Shock}The light in that room is pretty dim,{p12}{n}right?"
+
+bg prosecutorbg
+fg pbench
+char victoria e=normal
+"It's not dim enough to miss a{n}person,{p12} unless you are blind."
+"My god.{p15} Merely partaking in this{n}conversation endangers my neuron{n}count."
+set testimonytimestop b
+goto comments
+
+label key_vic1B
+script scene14
+
+label empty_vic1B
+scrollpenaltyout
+bg defensebg
+fg dbench
+char aurelia e=d-normal
+set _music_fade 100
+mus
+"..."
+
+label none
+20penalty
+bg defensebg
+fg dbench
+char aurelia e=d-normal
+"This doesn't quite add up, no?"
+
+bg judgebg
+fg judgeseat
+char judge e=normal
+"I'm afraid I don't really see your point here."
+
+bg defensebg
+fg dbench
+char aurelia e=d-think
+"Oh, {p12}well I'm still new to this."
+"{e d-normal}My bad."
+
+bg judgebg
+fg judgeseat
+char judge e=warning
+"Ms. Chase,{p12} it was you who{n}rejected a proper lawyer."
+"You'll have to bear the consequences!"
+sfx damage
+penalty -20
+pause 30
+is penalty 0 gameover
+
+bg defensebg
+fg dbench
+char aurelia e=d-normal
+"{c b}(Isn't this going wonderfully?)"
+fg black fade 1000
+pause 30
+bg prosecutorbg
+fg pbench 
+char victoria e=smug
+fg black z=10
+fade out name=black speed=3
+pause 10
+scrollpenaltyin
+cross_restart
+
+label gameover
+# hi savo
