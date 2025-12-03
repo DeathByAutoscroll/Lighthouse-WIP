@@ -15,4 +15,4 @@ framedelay 8 2
 framedelay 9 2
 framedelay 10 2
 framedelay 11 2
-framedelay 12 60
+framedelay 12 120

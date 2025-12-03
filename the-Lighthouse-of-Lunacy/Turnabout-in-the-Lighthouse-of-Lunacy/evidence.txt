@@ -45,6 +45,15 @@ set empty_name Nothing Else
 set empty_pic empty
 set empty_desc "I'm sure I've seen everything relevant in this room."
 
+set key_name Key
+set key_pic key
+set key_desc A key found in the victim's pocket. Only bears her fingerprints.
+
+set clipping_name Newspaper
+set clipping_pic clipping
+set clipping_desc A four-year-old newspaper. Features an article by me that exposes Than Leid as a hitman.
+set autopsy_check check_news.txt
+
 //PROFILES
 
 set aurelia$_name Aurelia Chase
