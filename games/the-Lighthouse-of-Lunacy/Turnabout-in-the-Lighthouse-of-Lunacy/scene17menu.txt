@@ -1,17 +1,14 @@
 set _music_fade 100
-<<<<<<< HEAD
 15. Consideration [Lost Judgement]
 label scene17menu
 set _textbox_bg general/textbox2
 textskipcheck
 bg sideroomnote
-=======
 
 label scene17menu
 set _textbox_bg general/textbox2
 textskipcheck
 bg sideroom
->>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 char lilian e=normal
 lmenu examine=true move=true talk=true present=true bg=mainlol
 
@@ -22,9 +19,7 @@ li Main Hall
 showlist
 goto scene17menu
 
-<<<<<<< HEAD
 label Main Hall
-=======
 label nosideroom
 set script._override_bg bg/mainlol
 showlist 
@@ -34,16 +29,12 @@ goto scene17menu
 
 label Get off the sideroom
 noflag offsideroom nosideroom
->>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 fg black fade nowait
 music_fade_out
 mus
 pause 30
-<<<<<<< HEAD
 script scene18
-=======
 script scene2
->>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 
 #EXAMINE MENU
 label examine
@@ -51,7 +42,6 @@ examine fail=examine_fail
 goto scene17menu
 
 label examine_fail
-<<<<<<< HEAD
 bg sideroomnote stack
 scroll y=-192 speed=12 name=2
 delete name=2
@@ -59,7 +49,6 @@ bg sideroomnote
 char aurelia hide
 "{c b}(Looks like this room used to be used for some sort of lectures.)"
 "{c b}(Well,[#125] I've been trapped in this place for a while and found nothing useful.)"
-=======
 bg sideroom stack
 scroll y=-192 speed=12 name=2
 delete name=2
@@ -87,7 +76,6 @@ char lilian e=nuhuh
 "I'll make you the real ultimate sideroom mystery.{p30} You better be ready."
 char aurelia hide
 "{c b}(Judging by what you usually come up with,{p15} I'm looking forward to a total derailment.)"
->>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 goto examine
 
 #TALK MENU
@@ -95,7 +83,6 @@ label talk
 set script._override_bg bg/mainlol
 list talk bg=talk_bg fail=talk_fail
 delete name=wa
-<<<<<<< HEAD
 li The JP Corporation?
 flag jpcorpo?
 li Involvement Possible?
@@ -105,7 +92,6 @@ showlist
 goto scene17menu
 
 label The JP Corporation
-=======
 char lilian e=normal 
 li Aurelia Chase
 li Lilian Maristella
@@ -115,13 +101,10 @@ showlist
 goto scene17menu
 
 label Aurelia Chase
->>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
-
 set script._override_bg bg/mainlol
 pause 10
 set _bigbutton_bg empty_buttonpress
 delete name=wa
-<<<<<<< HEAD
 char lilian e=normal
 "A whole organization built around murder?"
 "They definitely sound like the worst kind of people."
@@ -197,7 +180,6 @@ char lilian e=side
 
 setflag sideroomnote1
 flag sideroomnote1 AND sideroomnote2 AND sideroomnote3 AND sideroomnote4 sideroomnotepost
-=======
 char lilian e=nuhuh
 "You're always on the case when there's evil afoot!"
 "{sfx idea}Or should I say,{p15} on the Chase?"
@@ -278,7 +260,6 @@ char aurelia hide
 "{c b}(Though I will gladly use this chance to put the spotlight on something else.)"
 setflag sideroom1
 flag sideroom1 AND sideroom2 AND sideroom3 AND sideroom4 sideroompost
->>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 goto talk
 
 label Lilian Maristella
@@ -339,13 +320,10 @@ char lilian e=pout
 
 char aurelia hide
 "{c b}(I must be getting old.{p30} I kind of miss those peak Queens of Crime days.)"
-<<<<<<< HEAD
 setflag sideroomnote2
 flag sideroomnote1 AND sideroomnote2 AND sideroomnote3 AND sideroomnote4 sideroomnotepost
-=======
 setflag sideroom2
 flag sideroom1 AND sideroom2 AND sideroom3 AND sideroom4 sideroompost
->>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 goto talk
 
 label The Queens of Crime
@@ -448,19 +426,16 @@ char lilian e=normal
 char aurelia hide
 "{c b}(And that's enough dwelling in those memories for now.)"
 
-<<<<<<< HEAD
 bg sideroomnote fade 
 mus 5. Matter Of Factly [Judgement]
 set _music_loop 5. Matter Of Factly [Judgement] - Loop
 setflag sideroomnote3
 flag sideroomnote1 AND sideroomnote2 AND sideroomnote3 AND sideroomnote4 sideroomnotepost
-=======
 bg sideroom fade 
 mus 5. Matter Of Factly [Judgement]
 set _music_loop 5. Matter Of Factly [Judgement] - Loop
 setflag sideroom3
 flag sideroom1 AND sideroom2 AND sideroom3 AND sideroom4 sideroompost
->>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 goto talk
 
 label This trip
@@ -509,7 +484,6 @@ char lilian e=normal
 
 char aurelia hide
 "Sure,{p15} that's a given.{p30} Nothing I can say now to get rid of you."
-<<<<<<< HEAD
 setflag sideroomnote4
 flag sideroomnote1 AND sideroomnote2 AND sideroomnote3 AND sideroomnote4 sideroomnotepost
 goto talk
@@ -518,7 +492,6 @@ label sideroomnotepost
 "{c b}({sfx idea}Looks like the sideroomnote is about to arrive.)"
 "{c b}(Time to cut the chit-chat and get ready to move.)"
 setflag offsideroomnote
-=======
 setflag sideroom4
 flag sideroom1 AND sideroom2 AND sideroom3 AND sideroom4 sideroompost
 goto talk
@@ -527,7 +500,6 @@ label sideroompost
 "{c b}({sfx idea}Looks like the sideroom is about to arrive.)"
 "{c b}(Time to cut the chit-chat and get ready to move.)"
 setflag offsideroom
->>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 goto talk
 
 #PRESENT MENU
@@ -564,11 +536,9 @@ label gunA
 set _ev gunA
 showevl
 char aurelia hide
-<<<<<<< HEAD
 "{c b}({sfx anger}Sure,{p15} let's randomly pull out my gun in a sideroomnote!{p30} What could go wrong?)"
 =======
 "{c b}({sfx anger}Sure,{p15} let's randomly pull out my gun in a sideroom!{p30} What could go wrong?)"
->>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 hideevl
 goto present
 
@@ -589,9 +559,7 @@ char aurelia hide
 label lilian1
 <<<<<<< HEAD
 list sideroomnoteconvo noback 
-=======
 list sideroomconvo noback 
->>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 li My Best Friend
 li My Partner in Crime
 li My Worst Enemy
@@ -692,11 +660,8 @@ label crimeone
 char lilian e=wink
 "{sfx idea}Alright,{p15} what crime are we gonna do next?"
 char aurelia hide
-<<<<<<< HEAD
 "Conversations you definitely shouldn't have on a sideroomnote."
-=======
 "Conversations you definitely shouldn't have on a sideroom."
->>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 char lilian e=normal
 "It's okay.{p30} Nobody would want to see the culprit get exposed that easily."
 char aurelia hide

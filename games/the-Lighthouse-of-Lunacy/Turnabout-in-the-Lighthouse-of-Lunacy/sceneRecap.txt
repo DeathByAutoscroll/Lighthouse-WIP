@@ -1,4 +1,8 @@
 # do flag stuff later
+textskipcheck
+set recaplocation middle
+set recapbg 1
+set _cr_button false
 bg black name=b1
 fg dbench
 char aurelia e=d-downblink
@@ -12,5 +16,436 @@ delete name=black
 delete name=b1
 delete name=dbench
 delete name=aurelia
+fg clock nowait
+fg recap1 name=rec
+fg recap-cursor-mid nowait
+fg recapui y=192 stack
+fg black name=b1 
+fg black name=b2 y=192
+"{center}{sound}{n}View the court record with ENTER.{p120}{next}"
+fade out name=b1 speed=1 nowait 
+fade out name=b2 speed=1
+pause 30
+delete name=b1
+delete name=b2
+goto buttons
+
+label endofcheck
+set _cr_button false
 fg clock
-"a"
+is recapbg 1?
+fg recap1 name=rec
+is recapbg 2?
+fg recap2 name=rec
+is recapbg 3?
+fg recap3 name=rec
+is recapbg 4?
+fg recap4 name=rec
+is recapbg 5?
+fg recap5 name=rec
+is recapbg 6?
+fg recap6 name=rec
+is recaplocation right?
+fg recap-cursor-right
+is recaplocation middle?
+fg recap-cursor-mid
+is recaplocation left?
+fg recap-cursor-left
+fg recapui y=192 stack
+set _cr_button false
+
+label buttons
+gui Button {_crbut} name=p1 hotkey=enter_down x=170 y=469 test
+gui Button {endrecap} name=p2 graphic=general/back graphichigh=general/back_high x=0 y=351 end
+gui Button {left} name=p3 graphic=general/buttons/recapl graphichigh=general/buttons/recapl_high x=16 y=248 left
+gui Button {right} name=p4 graphic=general/buttons/recapr graphichigh=general/buttons/recapr_high x=133 y=248 right
+gui Button {check} name=p5 graphic=general/buttons/recapcheck graphichigh=general/buttons/recapcheck_high x=88 y=195 test
+gui Wait
+
+label wait
+{addbutton}
+gui Wait
+goto wait
+
+macro left
+is recaplocation right rtm
+is recaplocation middle mtr
+is recaplocation left leftscreen
+label rtm
+sfx recapflip
+delete name=recap-cursor-right
+fg recap-cursor-mid
+set recaplocation middle
+goto cont
+
+label mtr
+sfx recapflip
+delete name=recap-cursor-mid
+fg recap-cursor-left
+set recaplocation left
+goto cont
+
+label cont
+gui Wait
+
+label leftscreen
+isnot recapbg 6?
+sfx recapflip
+is recapbg 1 1t2
+is recapbg 2 2t3
+is recapbg 3 3t4
+is recapbg 4 4t5
+is recapbg 5 5t6
+is recapbg 6 errorLeft
+gui Wait
+
+label 1t2
+delbutton
+fg recap2 x=-256 name=recs
+delete name=recap-cursor-left
+scroll name=rec speed=3 x=256 nowait
+scroll name=recs speed=3 x=256
+pause 1
+delete name=recs
+fg recap2 name=rec
+set recapbg 2
+set recaplocation right
+fg recap-cursor-right
+{addbutton}
+gui Wait
+
+label 2t3
+delbutton
+fg recap3 x=-256 name=recs
+delete name=recap-cursor-left
+scroll name=rec speed=3 x=256 nowait
+scroll name=recs speed=3 x=256
+pause 1
+delete name=recs
+fg recap3 name=rec
+set recapbg 3
+set recaplocation right
+fg recap-cursor-right
+{addbutton}
+gui Wait
+
+label 3t4
+delbutton
+fg recap4 x=-256 name=recs
+delete name=recap-cursor-left
+scroll name=rec speed=3 x=256 nowait
+scroll name=recs speed=3 x=256
+pause 1
+delete name=recs
+fg recap4 name=rec
+set recapbg 4
+set recaplocation right
+fg recap-cursor-right
+{addbutton}
+gui Wait
+
+label 4t5
+delbutton
+fg recap5 x=-256 name=recs
+delete name=recap-cursor-left
+scroll name=rec speed=3 x=256 nowait
+scroll name=recs speed=3 x=256
+pause 1
+delete name=recs
+fg recap5 name=rec
+set recapbg 5
+set recaplocation right
+fg recap-cursor-right
+{addbutton}
+gui Wait
+
+label 5t6
+delbutton
+fg recap6 x=-256 name=recs
+delete name=recap-cursor-left
+scroll name=rec speed=3 x=256 nowait
+scroll name=recs speed=3 x=256
+pause 1
+delete name=recs
+fg recap6 name=rec
+set recapbg 6
+set recaplocation right
+fg recap-cursor-right
+{addbutton}
+gui Wait
+
+label errorLeft
+sfx recaperror
+gui Wait
+
+endmacro
+
+macro endrecap
+"end"
+endmacro
+
+macro right
+is recaplocation right rightscreen
+is recaplocation middle mtr
+is recaplocation left ltm
+
+label mtr
+is recapbg 1 rightError
+sfx recapflip
+delete name=recap-cursor-mid
+fg recap-cursor-right
+set recaplocation right
+goto cont
+
+label ltm
+sfx recapflip
+delete name=recap-cursor-left
+fg recap-cursor-mid
+set recaplocation middle
+goto cont
+
+label cont
+gui Wait
+
+label rightscreen
+isnot recapbg 1?
+sfx recapflip
+is recapbg 1 rightError
+is recapbg 2 2t1
+is recapbg 3 3t2
+is recapbg 4 4t3
+is recapbg 5 5t4
+is recapbg 6 6t5
+gui Wait
+
+label 2t1
+delete name=recap-cursor-right
+{delbutton}
+fg recap1 x=256 name=recs
+scroll name=rec speed=3 x=-256 nowait
+scroll name=recs speed=3 x=-256
+pause 1
+delete name=recs
+fg recap1 name=rec
+set recapbg 1
+set recaplocation left
+fg recap-cursor-left
+{addbutton}
+gui Wait
+
+label 3t2
+delete name=recap-cursor-right
+{delbutton}
+fg recap2 x=256 name=recs
+scroll name=rec speed=3 x=-256 nowait
+scroll name=recs speed=3 x=-256
+pause 1
+delete name=recs
+fg recap2 name=rec
+set recapbg 2
+set recaplocation left
+fg recap-cursor-left
+{addbutton}
+gui Wait
+
+label 4t3
+delete name=recap-cursor-right
+{delbutton}
+fg recap3 x=256 name=recs
+scroll name=rec speed=3 x=-256 nowait
+scroll name=recs speed=3 x=-256
+pause 1
+delete name=recs
+fg recap3 name=rec
+set recapbg 3
+set recaplocation left
+fg recap-cursor-left
+{addbutton}
+gui Wait
+
+label 5t4
+delete name=recap-cursor-right
+{delbutton}
+fg recap4 x=256 name=recs
+scroll name=rec speed=3 x=-256 nowait
+scroll name=recs speed=3 x=-256
+pause 1
+delete name=recs
+fg recap4 name=rec
+set recapbg 4
+set recaplocation left
+fg recap-cursor-left
+{addbutton}
+gui Wait
+
+label 6t5
+delete name=recap-cursor-right
+{delbutton}
+fg recap5 x=256 name=recs
+scroll name=rec speed=3 x=-256 nowait
+scroll name=recs speed=3 x=-256
+pause 1
+delete name=recs
+fg recap5 name=rec
+set recapbg 5
+set recaplocation left
+fg recap-cursor-left
+{addbutton}
+gui Wait
+
+label rightError
+sfx recaperror
+gui Wait
+
+endmacro
+
+macro check
+is recapbg 1 check1
+is recapbg 2 check2
+is recapbg 3 check3
+is recapbg 4 check4
+is recapbg 5 check5
+is recapbg 6 check6
+gui Wait
+
+label check1
+is recaplocation middle check1middle
+is recaplocation left check1left
+
+label check2
+is recaplocation right check2right
+is recaplocation middle check2middle
+is recaplocation left check2left
+
+label check3
+is recaplocation right check3right
+is recaplocation middle check3middle
+is recaplocation left check3left
+
+label check4
+is recaplocation right check4right
+is recaplocation middle check4middle
+is recaplocation left check4left
+
+label check5
+is recaplocation right check5right
+is recaplocation middle check5middle
+is recaplocation left check5left
+
+label check6
+is recaplocation right check6right
+is recaplocation middle check6middle
+is recaplocation left check6left
+
+label check1middle
+clear
+bg trial1
+fg white
+sfx flashback
+fade out name=white speed=3 nowait
+char aurelia hide
+set _cr_button true
+"The group had returned, {n}without Mr. Gardt."
+"Thus, Dr. Hellinger was the one to fetch me for the trial."
+"I think she performed the headcount as well, in Mr. Gardt's stead."
+"Victoria informed us of Mr. Gardt's death, but tried to block it from being a point of discussion."
+"And she succeeded, bringing in Mariko as a direct eyewitness instead."
+"This ended up being a mistake for her, as it established Mrs. Holden had the cleaning spray."
+"I managed to make a... {p15}decent case against Ms. Holden by arguing she could have poisoned the victim."
+"That eventually got shot down by calling Dr. Hellinger."
+"To top it all off, Victoria claimed she figured out where the key was."
+"And indeed, the key was detected inside my stomach."
+"To retrieve it, I had to go to the bathroom. {p20}Thankfully only Dr. Hellinger accompanied me for that."
+"I tried to argue against it, but Victoria had a counter for everything."
+"Not only that, she almost got me to confess to the crime."
+"I was able to pull back by suggesting a theory with Lilian as the mastermind."
+"We managed to get Ms. Holden to agree to the third-party complaint, so it barely worked."
+"Lilian was put on the stand, and claimed she was in Autonomy when the crime happened."
+"I pointed out how that's impossible due to the evidence and testimony."
+"There was enough doubt about the testimony to call the next two witnesses."
+"Mr. Cova and Dr. Hellinger. {p15|Neither seemed too pleased with what I was doing..."
+"I didn't really put much of a dent in their alibi, and they were eventually dismissed."
+"Thankfully, Lilian had another idea, and got Mariko on the stand again."
+"I found several issues in her testimony, but nothing that overturned the case."
+"But at the last second, I managed to expose that she couldn't have visited Luna Park."
+"Not unless she lied about her age, at least."
+"This led to quite a situation with Mr. Neland and Mr. Poly getting involved."
+"Dr. Hellinger was luckily able to resolve that with her drone."
+"Using the revelation about Mariko, I argued that the visitor numbers don't add up."
+"...And we discovered that one guest on the list is not present."
+"Naota Feykneme."
+"Which brings us to the present..."
+"Unless I can figure out who they are, there's no way I can use this to build a case."
+"There are three conditions this culprit must meet."
+"One, they were not present on the upper floor during the trial and investigation."
+"Two, they were on the lower floor after the first murder, and were spotted by Mr. Poly."
+"Three, they must have had a clear opportunity to plant the key."
+"The first two conditions can rule out a few people, but it's really the third one that's important."
+"Nobody will buy anything I say if they think I swallowed it myself."
+"So I ought to {c r}look for an opportunity to plant the key{c w}, first and foremost."
+"If it raises other questions, I can deal with those later."
+"But if I don't have any explanation for that as a baseline, there's no way the judge will hear me out."
+script sceneRecap label=endofcheck
+
+label check1left
+clear
+fg fourfoolsbw
+fg white
+sfx flashback
+fade out name=white speed=3 nowait
+char aurelia hide
+set _cr_button true
+"Entering the display room, Lilian discovered the temperature there was now freezing."
+"Regardless, she and Mr. Gardt spotted someone snooping around the room."
+"It was Mr. Cova, who was in the middle of trying to solve the cube I solved earlier."
+"Lilian confronted him and got him to confess his true identity."
+"He's actually an FBI agent, tasked with retrieving the stuff Dr. Leid stole."
+"It was him that spread the rumours of the curse."
+"This was to minimize the chances another party would discover anything."
+"Apparently, the owners of the tower hadn't been too cooperative."
+"Which forced him to employ methods like that."
+"After giving another warning, he left the display room."
+"Lilian then discovered that Mr. Poly had been hiding behind the curtain."
+"He was ice cold, so Mr. Gardt brought him a blanket."
+"Then they questioned him about his previous testimony."
+"Mr. Poly admitted he was looking for a certain treasure."
+"The statuette of Thanatos, which would apparently fetch an unexpectedly high price."
+"I reckon it might have actually been his daughter that set out to look for it..."
+"And when the gunshot was heard, he got worried and tried to find her."
+"Which led to him jumping out the window and seeing what he did."
+"As for what he saw, it's clear it was too dark for him to tell if it was Dr. Leid for sure."
+"Apparently, the cleaning platform was already aligned with the lower floor."
+"He merely brought it back up after the fact."
+"Mr. Gardt added that there is a maintenance hatch in the ceiling somewhere on this floor."
+"That's how the window cleaners usually make it onto the platform."
+"However, regular visitors probably have no way of accessing that."
+"Mr. Poly also had some information about Luna Park."
+"It is a subsidiary of Cool Company, a business focused on cooling systems."
+"The company owner, Luna von Doppelbohringen, was also one of the guests in the BU2-incident."
+"After her death, it was decided to name the park after her."
+"Mr. Poly speculated that she could have had a connection to Dr. Leid."
+"Apparently, her company also has some sketchy business records."
+"This led him to talk about the victim having some questionable business as well."
+"Mr. Poly was also the one to reveal where Ms. Holden got the cleaning spray from."
+"That's about all Lilian managed to get out of him."
+"Lilian returned to the crime scene once more."
+"Apparently, Victoria had been worried about the option that someone shot through the floor."
+"That's why Dr. Hellinger was sent there again to confirm the room's integrity."
+"Funnily enough, she did discover two holes in the floor, albeit they weren't usable for that purpose."
+"She also assisted by analyzing the fingerprints on the cleaning spray."
+"That's... {p20}apparently all they talked about?"
+"Lilian was awfully vague on this part."
+"Guess it can't be helped when I wasn't there myself."
+"Four people were sent to the lower floor to deny the presence of anyone there."
+"These were Lilian, Dr. Hellinger, Mr. Cova, and Mr. Gardt."
+"For the rest, I'll have to rely on testimony and evidence."
+"They split up. Lilian and Mr. Gardt searched the Justice room."
+"After being satisfied there was nobody, the two of them left."
+"Except, Mr. Gardt turned back, apparently having some instinct."
+"But then all the testimonies become a mess and contradict each other."
+"I can focus on what happened there later."
+"For now I have to actually establish there's a Mr. X in the mix."
+"And this Mr. X was the one that shot Mr. Gardt... {p20}probably?"
+script sceneRecap label=endofcheck
+
+endmacro

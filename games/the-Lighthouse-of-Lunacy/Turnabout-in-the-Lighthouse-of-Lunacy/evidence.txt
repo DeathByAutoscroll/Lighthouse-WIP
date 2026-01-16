@@ -118,8 +118,8 @@ set gardt$_desc Age: 30{n}Gender: Male {n}A security guard responsible for keepi
 
 set than$_name Dr. Than Leid
 set than$_pic than
-set than$_desc Age: Deceased{n}Gender: Male{n}The former tenant. His possessions are up for auction. A war veteran I exposed as being part of a criminal organization. Presumed to have died five years ago.
+set than$_desc Age: Deceased{n}Gender: Male{n}The former tenant. His possessions are up for auction. A war veteran I exposed as being part of a criminal organization. Presumed dead five years ago.
 
 set than2$_name Dr. Than Leid
 set than2$_pic than
-set than2$_desc Age: Deceased{n}Gender: Male{n}The former tenant. His possessions are up for auction. A war veteran I exposed as being part of a criminal organization. Presumed to have died five years ago in the BU-2 incident.
+set than2$_desc Age: Deceased{n}Gender: Male{n}The former tenant. His possessions are up for auction. A war veteran I exposed as being part of a criminal organization. Presumed dead five years ago in the BU-2 incident.
