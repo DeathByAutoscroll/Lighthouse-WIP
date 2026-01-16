@@ -28,4 +28,27 @@ scroll name=pbench x=1040 speed=30
 pause 30
 endmacro
 
-
+macro aurvicCE
+bg mainlol name=main y=192 stack nowait
+obj general/examinefg y=192 name=tests stack nowait
+fade in name=main speed=10 nowait
+fade in name=tests speed=10
+pause 5
+fg Cross-ExaminationAnim stack nowait
+fg aureliacutin.png name=cutin1 x=-256 y=151 nowait
+fg victoriacutin.png name=cutin2 x=256 y=233 nowait
+scroll name=cutin1 x=256 speed=8 nowait
+scroll name=cutin2 x=-256 speed=8 nowait
+pause 17
+fg white stack y=192
+fade out name=white speed=10 nowait
+pause 133
+fade out name=cutin1 speed=9 nowait
+fade out name=cutin2 speed=9 nowait
+delete name=cutin1
+delete name=cutin2
+fade out name=main speed=7
+delete name=main
+delete name=white
+delete name=tests
+endmacro

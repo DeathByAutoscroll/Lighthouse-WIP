@@ -92,7 +92,6 @@ addev gardt$
 addev holden2$
 addev susan$
 
-=======
 set _textbox_bg general/textbox2
 set _cr_button true
 textskipcheck
@@ -184,5 +183,4 @@ addev gardt$
 addev holden2$
 addev susan$
 
->>>>>>> 6e581ffd80ba980f65752f389e4c6f3b885b73a3:games/the-Lighthouse-of-Lunacy/Turnabout-in-the-Lighthouse-of-Lunacy/scene10.txt
 script scene11

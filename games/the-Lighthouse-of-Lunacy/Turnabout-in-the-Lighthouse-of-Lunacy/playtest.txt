@@ -13,9 +13,11 @@ addev door
 addev knife
 addev blood
 addev key
-addev than2%
+addev than2$
 
 setflag offtrain
 setflag coastdone
 
+script sceneRecap
+script scene13victest
 script scene17

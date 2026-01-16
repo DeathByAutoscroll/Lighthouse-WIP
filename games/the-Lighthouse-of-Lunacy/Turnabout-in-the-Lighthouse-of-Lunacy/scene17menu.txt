@@ -1,4 +1,9 @@
 set _music_fade 100
+15. Consideration [Lost Judgement]
+label scene17menu
+set _textbox_bg general/textbox2
+textskipcheck
+bg sideroomnote
 
 label scene17menu
 set _textbox_bg general/textbox2
@@ -14,6 +19,7 @@ li Main Hall
 showlist
 goto scene17menu
 
+label Main Hall
 label nosideroom
 set script._override_bg bg/mainlol
 showlist 
@@ -27,6 +33,7 @@ fg black fade nowait
 music_fade_out
 mus
 pause 30
+script scene18
 script scene2
 
 #EXAMINE MENU
@@ -35,6 +42,13 @@ examine fail=examine_fail
 goto scene17menu
 
 label examine_fail
+bg sideroomnote stack
+scroll y=-192 speed=12 name=2
+delete name=2
+bg sideroomnote
+char aurelia hide
+"{c b}(Looks like this room used to be used for some sort of lectures.)"
+"{c b}(Well,[#125] I've been trapped in this place for a while and found nothing useful.)"
 bg sideroom stack
 scroll y=-192 speed=12 name=2
 delete name=2
@@ -69,6 +83,15 @@ label talk
 set script._override_bg bg/mainlol
 list talk bg=talk_bg fail=talk_fail
 delete name=wa
+li The JP Corporation?
+flag jpcorpo?
+li Involvement Possible?
+flag invposs?
+li The Article
+showlist
+goto scene17menu
+
+label The JP Corporation
 char lilian e=normal 
 li Aurelia Chase
 li Lilian Maristella
@@ -78,11 +101,85 @@ showlist
 goto scene17menu
 
 label Aurelia Chase
-
 set script._override_bg bg/mainlol
 pause 10
 set _bigbutton_bg empty_buttonpress
 delete name=wa
+char lilian e=normal
+"A whole organization built around murder?"
+"They definitely sound like the worst kind of people."
+
+char aurelia hide
+"There's no question about that.[#250] But what they're doing is a bit special."
+music_fade_out nowait
+char aurelia hide
+"{sfx huh}They're not really offering the normal kind of hit job."
+
+char lilian e=normal
+"The normal,[#125] perfectly acceptable kind?"
+
+char aurelia hide
+"What I mean is...[#500] car bombs.[#250] Snipers.[#250] Drive-by shootings."
+"That's the stuff you'd think of when you hear about hitmen,[#125] no?"
+"{sfx idea}Well,[#125] the JP Corporation takes it to a much more sophisticated level."
+
+char lilian e=side
+"So they're like...[#500] premium assassins?[#250] The true pros that don't leave a trace?"
+
+char aurelia hide
+"Pretty much.[#250] They have a certain code they adhere to."
+
+fg black
+fade in name=black speed=3
+pause 180
+fg JP 
+fade in name=JP speed=3 
+music_fade_in
+mus 24. No Moon [Lost Judgement]
+pause 180
+
+char aurelia hide
+"{sfx key2}{c r}Judgement and Purity{c w}."
+"That's what the JP in their name stands for."
+"I don't exactly know how they interpret it,[#125] but 'Judgement' is pretty straightforward."
+
+char lilian hide
+"Always make sure judgement is carried out...[#500] {sfx huh}so basically a guaranteed kill?"
+
+char aurelia hide
+"The 'Purity' part is where it gets a little tricky."
+"But it seems to be some kind of commitment to keep their crimes 'pure'."
+"As for what that means,[#125] it's possible to guess based on some of their hits."
+"They always commit their murders so that they're {f10}{sfx idea}impossible."
+
+char lilian hide
+"They have some kind of perfect crime fetish?"
+
+char aurelia hide
+"{sfx waaah}That's one way to put it."
+"Whether you can't determine the murder method or there are just no viable suspects..."
+"In some form,[#125] they always go out of their way to make it seem like no human could have done it."
+
+char lilian e=side
+fade out name=JP speed=3
+fade out name=black speed=3
+pause 180
+char lilian e=side
+"I get it.[#250] So it's like you're ordering an act of god from them."
+"A code like that just makes it more likely they'd come after you,[#125] though."
+char lilian e=wink
+"{sfx idea}They seem to be more about ideology than pragmatism."
+
+char aurelia hide
+"Their activities ceased after the incident five years ago."
+
+set _ev cova$
+showevr
+char lilian e=side
+"The one Mr. Cova told us about,[#125] huh..."
+
+setflag sideroomnote1
+flag sideroomnote1 AND sideroomnote2 AND sideroomnote3 AND sideroomnote4 sideroomnotepost
 char lilian e=nuhuh
 "You're always on the case when there's evil afoot!"
 "{sfx idea}Or should I say,{p15} on the Chase?"
@@ -223,6 +320,8 @@ char lilian e=pout
 
 char aurelia hide
 "{c b}(I must be getting old.{p30} I kind of miss those peak Queens of Crime days.)"
+setflag sideroomnote2
+flag sideroomnote1 AND sideroomnote2 AND sideroomnote3 AND sideroomnote4 sideroomnotepost
 setflag sideroom2
 flag sideroom1 AND sideroom2 AND sideroom3 AND sideroom4 sideroompost
 goto talk
@@ -327,6 +426,11 @@ char lilian e=normal
 char aurelia hide
 "{c b}(And that's enough dwelling in those memories for now.)"
 
+bg sideroomnote fade 
+mus 5. Matter Of Factly [Judgement]
+set _music_loop 5. Matter Of Factly [Judgement] - Loop
+setflag sideroomnote3
+flag sideroomnote1 AND sideroomnote2 AND sideroomnote3 AND sideroomnote4 sideroomnotepost
 bg sideroom fade 
 mus 5. Matter Of Factly [Judgement]
 set _music_loop 5. Matter Of Factly [Judgement] - Loop
@@ -380,6 +484,14 @@ char lilian e=normal
 
 char aurelia hide
 "Sure,{p15} that's a given.{p30} Nothing I can say now to get rid of you."
+setflag sideroomnote4
+flag sideroomnote1 AND sideroomnote2 AND sideroomnote3 AND sideroomnote4 sideroomnotepost
+goto talk
+
+label sideroomnotepost
+"{c b}({sfx idea}Looks like the sideroomnote is about to arrive.)"
+"{c b}(Time to cut the chit-chat and get ready to move.)"
+setflag offsideroomnote
 setflag sideroom4
 flag sideroom1 AND sideroom2 AND sideroom3 AND sideroom4 sideroompost
 goto talk
@@ -424,6 +536,8 @@ label gunA
 set _ev gunA
 showevl
 char aurelia hide
+"{c b}({sfx anger}Sure,{p15} let's randomly pull out my gun in a sideroomnote!{p30} What could go wrong?)"
+=======
 "{c b}({sfx anger}Sure,{p15} let's randomly pull out my gun in a sideroom!{p30} What could go wrong?)"
 hideevl
 goto present
@@ -443,6 +557,8 @@ char aurelia hide
 "..."
 "This is..."
 label lilian1
+<<<<<<< HEAD
+list sideroomnoteconvo noback 
 list sideroomconvo noback 
 li My Best Friend
 li My Partner in Crime
@@ -544,6 +660,7 @@ label crimeone
 char lilian e=wink
 "{sfx idea}Alright,{p15} what crime are we gonna do next?"
 char aurelia hide
+"Conversations you definitely shouldn't have on a sideroomnote."
 "Conversations you definitely shouldn't have on a sideroom."
 char lilian e=normal
 "It's okay.{p30} Nobody would want to see the culprit get exposed that easily."

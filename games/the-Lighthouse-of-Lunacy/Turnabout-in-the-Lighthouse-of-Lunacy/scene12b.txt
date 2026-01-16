@@ -424,5 +424,4 @@ delete name=lilian nowait
 pause 180
 delete name=black
 bg black stack
->>>>>>> 6e581ffd80ba980f65752f389e4c6f3b885b73a3:games/the-Lighthouse-of-Lunacy/Turnabout-in-the-Lighthouse-of-Lunacy/scene12b.txt
 script scene13victest

@@ -13,37 +13,14 @@ fade out name=black speed=3
 pause 10
 delete name=fi
 #Just copy this for the defense/prosecution animation on the bottom screen
-bg mainlol name=main y=192 stack nowait
-obj general/examinefg y=192 name=tests stack nowait
-fade in name=main speed=10 nowait
-fade in name=tests speed=10
-pause 5
-fg Cross-ExaminationAnim stack nowait
-fg aureliacutin.png name=cutin1 x=-256 y=151 nowait
-fg victoriacutin.png name=cutin2 x=256 y=233 nowait
-scroll name=cutin1 x=256 speed=8 nowait
-scroll name=cutin2 x=-256 speed=8 nowait
-pause 17
-fg white stack y=192
-fade out name=white speed=10 nowait
-pause 133
-fade out name=cutin1 speed=9 nowait
-fade out name=cutin2 speed=9 nowait
-delete name=cutin1
-delete name=cutin2
-fade out name=main speed=7
-delete name=main
-delete name=white
-delete name=tests
+aurvicCE
 set _textbox_bg general/textbox2
 nt
 "{n}{center}{c940}{sound}-- Facts and Logic --"
 set _textbox_bg general/textbox2
 set _cr_button true
 set _testimony_blinker false
-set _music_fade 100
-mus 18. Tchaikovsky (Remix)
-set _music_loop 18. Tchaikovsky (Remix) - Loop
+tchaikovsky
 set testimonytimestop a
 
 label start
@@ -461,7 +438,7 @@ courtzoomdtp d-smile normal
 "You'd rely on such pedantry."
 
 music_fade_in
-mus 17. The Arrival of the Queen of Sheba [George Frideric Handel]
+thearrivalofthequeenofsheba
 
 bg prosecutorbg
 fg pbench
@@ -482,8 +459,7 @@ fg ObjectionAnim
 pause 15
 endmacro 
 
-music_fade_out nowait
-mus
+mute
 aobj
 
 bg prosecutorbg
@@ -512,19 +488,15 @@ char aurelia e=d-smile
 "{c b}(It's time to stop with the softballs and get serious.)"
 
 music_fade_in
-mus 19. Finish It! [Lost Judgement]
-set _music_loop 19. Finish It! [Lost Judgement] - Loop
+finishit
 
 bg defensebg
 fg dbench
 char aurelia e=d-point
 "{sfx idea}Ms. Priston,{p15} this is a court of law."
-char aurelia e=d-normal
-"I don't care for your logic.{p30} Where is the evidence?"
-char aurelia e=d-think
-"Locked room 101.{p30} Always check the keys."
-char aurelia e=d-point
-"Did you even verify this key actually corresponds to the door?"
+"{e d-normal}I don't care for your logic.{p30} Where is the evidence?"
+"{e d-think}Locked room 101.{p30} Always check the keys."
+"{e d-point}Did you even verify this key actually corresponds to the door?"
 
 bg prosecutorbg
 fg pbench
@@ -542,17 +514,14 @@ bg defensebg
 fg dbench
 char aurelia e=crossed
 "{sfx anger}Oh, enough of this!"
-char aurelia e=d-smile
-"The crime scene is right there.{p30} This would only take a minute."
-char aurelia e=d-point
-"{sfx shouting}But you just had to rush this lawsuit,{p15} so you didn't even do that!"
+"{e d-smile}The crime scene is right there.{p30} This would only take a minute."
+"{sfx shouting}{e d-point}But you just had to rush this lawsuit,{p15} so you didn't even do that!"
 
 bg judgebg
 fg judgeseat stack
 char judge e=normal
 "{sfx idea}Objection sustained."
-char judge e=warning
-"...As it stands,{p15} this key does not establish what you say,{p15} Ms. Priston."
+"{e warning}...As it stands,{p15} this key does not establish what you say,{p15} Ms. Priston."
 
 bg prosecutorbg
 fg pbench
@@ -636,7 +605,7 @@ char victoria e=normal
 "I could have won this trial without even showing up,{p15} it appears."
 
 music_fade_in nowait
-mus 17. The Arrival of the Queen of Sheba [George Frideric Handel]
+thearrivalofthequeenofsheba
 
 bg prosecutorbg
 fg pbench

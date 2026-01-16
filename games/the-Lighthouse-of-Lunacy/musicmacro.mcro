@@ -88,10 +88,15 @@ mus 16. Thinking [Judgement]
 set _music_loop 16. Thinking [Judgement] - Loop
 endmacro
 
+macro thearrivalofthequeenofsheba
+set _music_fade 100
+mus 17. The Arrival of the Queen of Sheba [George Frideric Handel]
+endmacro
+
 macro tchaikovsky
 set _music_fade 100
 mus 18. Tchaikovsky (Remix)
-mus 18. Tchaikovsky (Remix) - Loop
+set _music_loop 18. Tchaikovsky (Remix) - Loop
 endmacro
 
 macro finishit
@@ -373,4 +378,9 @@ endmacro
 macro rasen
 set _music_fade 100
 mus 69. Rasen [Lost Judgement]
+endmacro
+
+macro mute
+set _music_fade 100
+mus 
 endmacro

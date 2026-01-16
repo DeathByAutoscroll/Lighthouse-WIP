@@ -1,4 +1,3 @@
-<<<<<<< HEAD:the-Lighthouse-of-Lunacy/Turnabout-in-the-Lighthouse-of-Lunacy/evidence.txt
 //EVIDENCE
 
 set presspass_name Press Pass
@@ -119,110 +118,8 @@ set gardt$_desc Age: 30{n}Gender: Male {n}A security guard responsible for keepi
 
 set than$_name Dr. Than Leid
 set than$_pic than
-set than$_desc Age: Deceased{n}Gender: Male{n}The former tenant. His possessions are up for auction. A war veteran I exposed as being part of a criminal organization. Presumed to have died five years ago.
+set than$_desc Age: Deceased{n}Gender: Male{n}The former tenant. His possessions are up for auction. A war veteran I exposed as being part of a criminal organization. Presumed dead five years ago.
 
 set than2$_name Dr. Than Leid
 set than2$_pic than
-set than2$_desc Age: Deceased{n}Gender: Male{n}The former tenant. His possessions are up for auction. A war veteran I exposed as being part of a criminal organization. Presumed to have died five years ago in the BU-2 incident.
-=======
-//EVIDENCE
-
-set presspass_name Press Pass
-set presspass_pic presspass
-set presspass_desc Proof that I am a journalist. Grants me the special privilege to access restricted crime scenes.
-
-set pendant_name Pendant
-set pendant_pic pendant
-set pendant_desc An old keepsake. It has the power to stop time when I'm investigating a mystery.
-
-set gunA_name Pistol
-set gunA_pic gun
-set gunA_desc My personal handgun. Holds up to six bullets. I always carry it with me, just in case.
-
-set gunB_name Pistol
-set gunB_pic gun
-set gunB_desc My personal handgun. One bullet is missing. Presumed to be what killed Mrs. Holden.
-
-set cake_name Strawberry Cake
-set cake_pic cake
-set cake_desc A cake I bought from Ander Cova.{n}It's called the "Cova Strawberry Crisis".{n}Very tasty. 
-
-set tv_name TV
-set tv_pic tv
-set tv_desc "This TV looks older than me."
-
-set door_name Door
-set door_pic door
-set door_desc "A locked room mystery. That can't be good."
-
-set blood_name Blood Trail
-set blood_pic blood
-set blood_desc "A faint blood trail between the study and the main hall."
-
-set knife_name Knife
-set knife_pic knife
-set knife_desc "It was lying near the victim. As was its sheath."
-
-set autopsy_name Autopsy Report
-set autopsy_pic dossier
-set autopsy_desc "The autopsy report received from an unknown woman. Click for details."
-set autopsy_check check_autopsy1.txt
-
-set empty_name Nothing Else
-set empty_pic empty
-set empty_desc "I'm sure I've seen everything relevant in this room."
-
-//PROFILES
-
-set aurelia$_name Aurelia Chase
-set aurelia$_pic aurelia
-set aurelia$_desc Age: 30{n}Gender: Female{n}My friend and fellow "Queen of Crime". She's up to no good right now... What is she hiding?
-
-set lilian$_name Lilian Maristella
-set lilian$_pic lilian
-set lilian$_desc Age: 24{n}Gender: Female{n}A good friend of mine. Just like me, she is a member of "The Queens of Crime".
-
-set hellinger$_name Celise Hellinger
-set hellinger$_pic hellinger
-set hellinger$_desc Age: 28{n}Gender: Female{n}A private detective sanctioned by the government to assist with and conduct investigations. Uses state-of-the-art technology to assist with forensics. 
-
-set holden1$_name Melanie Holden
-set holden1$_pic holden
-set holden1$_desc Age: 42{n}Gender: Female{n}The real estate manager in charge of the auction. 
-
-set holden2$_name Melanie Holden
-set holden2$_pic holden
-set holden2$_desc Age: Deceased{n}Gender: Female{n}The victim in this case. The real estate manager in charge of this building.
-
-set susan$_name Susan Holden
-set susan$_pic susan
-set susan$_desc Age: 21{n}Gender: Female{n}The daughter of the victim.
-
-set victoria$_name Victoria Priston
-set victoria$_pic victoria
-set victoria$_desc Age: 23{n}Gender: Female{n}The "lawyer" representing Ms. Holden in this trial. Former member of the Queens of Crime. Kicked out for good reason.
-
-set dowe$_name Jones Dowe
-set dowe$_pic dowe
-set dowe$_desc Age: 73{n}Gender: Male {n}One of the auction guests and eyewitness to the crime. 
-
-set neland$_name Waldis Neland
-set neland$_pic neland
-set neland$_desc Age: 49{n}Gender: Male {n}One of the auction guests. Owner of a nearby amusement park for children.  
-
-set mono$_name Mono Poly
-set mono$_pic mono
-set mono$_desc Age: 29{n}Gender: Male {n}One of the auction guests and eyewitness to the crime.
-
-set cova$_name Ander Cova
-set cova$_pic cova
-set cova$_desc Age: 42{n}Gender: Male {n}A sweets merchant we ran into before entering the tower.
-
-set gardt$_name Luis Gardt
-set gardt$_pic gardt
-set gardt$_desc Age: 30{n}Gender: Male {n}A security guard responsible for keeping watch at the entrance.
-
-set than$_name Dr. Than Leid
-set than$_pic than
-set than$_desc Age: Deceased{n}Gender: Male{n}The former tenant. His possessions are up for auction. A war veteran I exposed as being part of a criminal organization. Presumed to have died five years ago.
->>>>>>> 6e581ffd80ba980f65752f389e4c6f3b885b73a3:games/the-Lighthouse-of-Lunacy/Turnabout-in-the-Lighthouse-of-Lunacy/evidence.txt
+set than2$_desc Age: Deceased{n}Gender: Male{n}The former tenant. His possessions are up for auction. A war veteran I exposed as being part of a criminal organization. Presumed dead five years ago in the BU-2 incident.

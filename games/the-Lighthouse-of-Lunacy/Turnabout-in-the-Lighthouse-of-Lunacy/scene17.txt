@@ -4,6 +4,9 @@ addev susan2$
 delev than$
 addev than2$
 set _cr_button true
+bg sideroomnote stack
+bg sideroomnote stack
+fade in name=sideroomnote
 bg sideroom stack
 fade in name=sideroom
 char lilian fade
