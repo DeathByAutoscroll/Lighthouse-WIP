@@ -59,6 +59,7 @@ char lilian e=normal
 "It doesn't make much sense..."
 
 music_fade_out
+mus
 
 char lilian e=side
 "{sfx dun}Do you think there's some bigger conspiracy going on here?"
@@ -136,11 +137,11 @@ char aurelia hide
 fg black fade nowait
 pause 120
 
-set _ev clipping
+set _ev news
 set _description A four-year-old newspaper. Features an article by me that exposes Than Leid as a hitman.
 set _name Newspaper
 addevanim 
-addev clipping
+addev news
 pause 30
 
 addev than$
@@ -170,6 +171,8 @@ pause 300
 sfx refill
 penalty 100
 
-pause 30
+mus
+fg black fade
+pause 300
 
 script scene16

@@ -20,9 +20,17 @@ set cake_name Strawberry Cake
 set cake_pic cake
 set cake_desc A cake I bought from Ander Cova.{n}It's called the "Cova Strawberry Crisis".{n}Very tasty. 
 
+set cake2_name Strawberry Cake
+set cake2_pic cake
+set cake2_desc A cake I bought from Ander Cova.{n}It's called the "Cova Strawberry Crisis".{n}Looks sickeningly sweet.
+
 set tv_name TV
 set tv_pic tv
 set tv_desc "This TV looks older than me."
+
+set tv2_name TV
+set tv2_pic tv
+set tv2_desc A very old CRT TV that doesn't work properly anymore. Displays merely a blue screen when switched on.
 
 set door_name Door
 set door_pic door
@@ -44,6 +52,15 @@ set autopsy_check check_autopsy1.txt
 set empty_name Nothing Else
 set empty_pic empty
 set empty_desc "I'm sure I've seen everything relevant in this room."
+
+set key_name Key
+set key_pic key
+set key_desc A key found in the victim's pocket. Only bears her fingerprints.
+
+set news_name Newspaper
+set news_pic clipping
+set news_desc A four-year-old newspaper. Features an article by me that exposes Than Leid as a hitman.
+set news_check check_news.txt
 
 //PROFILES
 
@@ -70,6 +87,10 @@ set holden2$_desc Age: Deceased{n}Gender: Female{n}The victim in this case. The 
 set susan$_name Susan Holden
 set susan$_pic susan
 set susan$_desc Age: 21{n}Gender: Female{n}The daughter of the victim.
+
+set susan2$_name Susan Holden
+set susan2$_pic susan
+set susan2$_desc Age: 21{n}Gender: Female{n}The daughter of the victim. The plaintiff of the trial we are holding. She is the one keeping us trapped in this tower.
 
 set victoria$_name Victoria Priston
 set victoria$_pic victoria
@@ -98,3 +119,7 @@ set gardt$_desc Age: 30{n}Gender: Male {n}A security guard responsible for keepi
 set than$_name Dr. Than Leid
 set than$_pic than
 set than$_desc Age: Deceased{n}Gender: Male{n}The former tenant. His possessions are up for auction. A war veteran I exposed as being part of a criminal organization. Presumed to have died five years ago.
+
+set than2$_name Dr. Than Leid
+set than2$_pic than
+set than2$_desc Age: Deceased{n}Gender: Male{n}The former tenant. His possessions are up for auction. A war veteran I exposed as being part of a criminal organization. Presumed to have died five years ago in the BU-2 incident.

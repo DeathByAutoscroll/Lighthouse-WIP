@@ -1,0 +1,11 @@
+bg timeline-bg stack
+bg timeline-bg-overlay stack
+fg timeline-overlay-2 nowait
+pressonourway
+set _textbox_bg general/textbox2
+set _bigbutton_bg bg/locationselectbg
+bg locationselectbg y=192 stack
+fg timeline-ui-map-overlay y=192
+set _cr_button false
+gui Button {_crbut} name=p1 hotkey=enter_down x=170 y=469 test
+"test"

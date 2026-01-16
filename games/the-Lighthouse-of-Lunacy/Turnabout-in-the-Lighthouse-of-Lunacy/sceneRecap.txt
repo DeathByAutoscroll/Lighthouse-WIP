@@ -1,0 +1,16 @@
+# do flag stuff later
+bg black name=b1
+fg dbench
+char aurelia e=d-downblink
+anomaly
+pause 90
+set _textbox_bg general/textbox2
+fg black stack
+fade in name=black speed=1
+pause 120
+delete name=black
+delete name=b1
+delete name=dbench
+delete name=aurelia
+fg clock
+"a"

@@ -38,3 +38,4 @@ framedelay 32 3
 framedelay 33 3
 framedelay 34 3
 framedelay 35 3
+blinkmode loop
