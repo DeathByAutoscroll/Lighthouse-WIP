@@ -440,7 +440,7 @@ emo nuhuh
 emo peace
 "You'll have the finest pieces of evidence by the time this trial starts."
 
-fg black stack
+fg black stack z=5
 fade in name=black
 delete name=chaintop nowait
 delete name=chainbottom nowait
@@ -449,9 +449,11 @@ delete name=gimmickbottom nowait
 delete name=gearfg nowait
 delete name=aurelia nowait
 delete name=lilian nowait
-pause 180
+pause 50
+delete name=sideroomnote
 delete name=black
-bg black stack
+fg black stack fade
+pause 30
 
 char aurelia hide
 "{c b}(I had considered it bad luck that Lilian showed up today.)"

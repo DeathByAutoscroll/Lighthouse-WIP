@@ -1,7 +1,7 @@
 set _textbox_bg general/textbox2
 set _cr_button true
 bg crimescene2 fade
-emptytext
+textskipcheck
 "{f10}{next}"
 pause 120
 invert value=1 name=crimescene2
@@ -27,7 +27,7 @@ scroll name=aurelia x=210 z=3 speed=10 stack
 char lilian e=normal name=lilian x=256 z=3 stack
 scroll name=lilian x=-210 z=3 speed=10 stack
 pause 120
-textreturn
+
 "Did you calm down?"
 setvar _speaking aurelia
 emo smug
@@ -157,7 +157,7 @@ setvar _speaking lilian
 emo nuhuh
 "{sfx anger}Well,{p15} it's really the only shot we got!"
 
-fg black stack
+fg black stack z=5
 fade in name=black
 delete name=chaintop nowait
 delete name=chainbottom nowait
@@ -166,9 +166,10 @@ delete name=gimmickbottom nowait
 delete name=gearfg nowait
 delete name=aurelia nowait
 delete name=lilian nowait
-pause 180
+pause 50
+delete name=crimescene2
 delete name=black
-bg black stack
+fg black stack fade
 pause 60
 
 char aurelia hide

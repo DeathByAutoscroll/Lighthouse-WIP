@@ -1,9 +1,17 @@
 set _music_fade 100
+<<<<<<< HEAD
 15. Consideration [Lost Judgement]
 label scene17menu
 set _textbox_bg general/textbox2
 textskipcheck
 bg sideroomnote
+=======
+
+label scene17menu
+set _textbox_bg general/textbox2
+textskipcheck
+bg sideroom
+>>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 char lilian e=normal
 lmenu examine=true move=true talk=true present=true bg=mainlol
 
@@ -14,12 +22,28 @@ li Main Hall
 showlist
 goto scene17menu
 
+<<<<<<< HEAD
 label Main Hall
+=======
+label nosideroom
+set script._override_bg bg/mainlol
+showlist 
+char aurelia hide 
+"{c b}(The sideroom is still moving.{p30} Can't go anywhere right now.)"
+goto scene17menu
+
+label Get off the sideroom
+noflag offsideroom nosideroom
+>>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 fg black fade nowait
 music_fade_out
 mus
 pause 30
+<<<<<<< HEAD
 script scene18
+=======
+script scene2
+>>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 
 #EXAMINE MENU
 label examine
@@ -27,6 +51,7 @@ examine fail=examine_fail
 goto scene17menu
 
 label examine_fail
+<<<<<<< HEAD
 bg sideroomnote stack
 scroll y=-192 speed=12 name=2
 delete name=2
@@ -34,6 +59,35 @@ bg sideroomnote
 char aurelia hide
 "{c b}(Looks like this room used to be used for some sort of lectures.)"
 "{c b}(Well,[#125] I've been trapped in this place for a while and found nothing useful.)"
+=======
+bg sideroom stack
+scroll y=-192 speed=12 name=2
+delete name=2
+bg sideroom
+char aurelia hide
+"Barely anyone on this sideroom.{p30} No need to look around."
+char lilian e=normal
+"{sfx idea}We need more mysteries on siderooms."
+char aurelia hide
+"Oh,{p15} like Murder on the Orient Express?"
+char lilian e=pout
+"{sfx anger}{s10}Of course that's the only one you know."
+char aurelia hide
+"It's famous for a reason."
+char lilian e=normal
+"Hmph,{p15} it's not even that good.{p30} Who'd get fooled by that?"
+char aurelia hide
+"{c b}(I guess you wouldn't.)"
+char lilian e=side
+"If you're going to set your mystery on a sideroom,{p15} the sideroom should actually matter."
+"{e wink}Otherwise it's just amateur writing!"
+char aurelia hide
+"Look at you,{p15} slandering the most famous Queen of Crime.{p30} You think you can do better?"
+char lilian e=nuhuh
+"I'll make you the real ultimate sideroom mystery.{p30} You better be ready."
+char aurelia hide
+"{c b}(Judging by what you usually come up with,{p15} I'm looking forward to a total derailment.)"
+>>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 goto examine
 
 #TALK MENU
@@ -41,6 +95,7 @@ label talk
 set script._override_bg bg/mainlol
 list talk bg=talk_bg fail=talk_fail
 delete name=wa
+<<<<<<< HEAD
 li The JP Corporation?
 flag jpcorpo?
 li Involvement Possible?
@@ -50,11 +105,23 @@ showlist
 goto scene17menu
 
 label The JP Corporation
+=======
+char lilian e=normal 
+li Aurelia Chase
+li Lilian Maristella
+li The Queens of Crime
+li This trip
+showlist
+goto scene17menu
+
+label Aurelia Chase
+>>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 
 set script._override_bg bg/mainlol
 pause 10
 set _bigbutton_bg empty_buttonpress
 delete name=wa
+<<<<<<< HEAD
 char lilian e=normal
 "A whole organization built around murder?"
 "They definitely sound like the worst kind of people."
@@ -130,6 +197,88 @@ char lilian e=side
 
 setflag sideroomnote1
 flag sideroomnote1 AND sideroomnote2 AND sideroomnote3 AND sideroomnote4 sideroomnotepost
+=======
+char lilian e=nuhuh
+"You're always on the case when there's evil afoot!"
+"{sfx idea}Or should I say,{p15} on the Chase?"
+
+char aurelia hide
+"{sfx whoops}You did not just..."
+"Cringe aside,{p15} you really seem to like talking about me today."
+"What's the scheme here?"
+
+char lilian e=pout
+"Come on,{p15} we get a chance to meet like once a year ever since we graduated,{p15} if we're lucky."
+
+char aurelia hide
+"{c b}({sfx waaah}You pretty much still message me every day,{p15} though.)"
+"{c b}(Well,{p15} I guess it's true -{p15} we've each started doing our own things.{p30} Life happened.)"
+delete pw_main stack y=192 name=wa
+
+char lilian e=normal
+"I still can't believe your journalism career took off like that."
+"{sfx idea}{e nuhuh}You seemed so set on becoming a detective back then."
+
+char aurelia hide
+"There isn't really that much of a difference."
+"Investigative journalists do pretty much the same as private detectives."
+"We just don't wait for a client to hire us.{p30} The public is our client instead."
+
+char lilian e=normal
+"Exposing the truth for the public benefit,{p15} huh?{p30} That is one cool way to put it."
+
+char aurelia hide
+"{c b}(Because the public definitely wants the truth.{p30} Right.)"
+
+char lilian e=nuhuh
+"{sfx idea}Oh yeah,{p15} I ran into your sister the other day."
+
+char aurelia hide
+"{sfx waaah}Really?{p30} How's Sarah doing?"
+
+char lilian e=side
+"She seemed busy.{p30} Still working on that case,{p15} you know?"
+
+char aurelia hide
+"{sfx huh}That case?{p30} You mean the one with the serial killer?"
+
+char lilian e=normal
+"Is there a killer,{p15} or is there really a computer file driving people mad somehow?"
+"{e nuhuh}She didn't seem sure yet,{p15} perhaps you should help her out?{p30} You must have some helpful info."
+
+char aurelia hide
+"I really rather she stopped working for that detective."
+"He's just a scammer anyway.{p30} And the case sounds dangerous."
+
+char lilian e=normal
+"Are you her sister or her mother?{p30} You know why she's doing this,{p15} right?"
+
+char aurelia hide
+"Let me guess,{p15} it's my fault somehow."
+
+char lilian e=nuhuh
+"{sfx idea}Got it in one,{p15} as expected.{p30} You should have heard her talk about you."
+"{e normal}You're probably her role model."
+
+char aurelia hide
+"She just has no idea what she really wants to be.{p30} I need to talk with her husband about this."
+
+char lilian e=wink
+"Husband,{p15} hm?{p30} Guess she got you beat there."
+
+char aurelia hide
+"It's a horribly inconvenient thing,{p15} but to each their own."
+
+char lilian e=pout
+"You're pretty good at shifting the topic,{p15} by the way."
+"We were supposed to talk about you,{p15} not your sis."
+
+char aurelia hide
+"{c b}({sfx whoops}Lady,{p15} you're the one that brought her up.)"
+"{c b}(Though I will gladly use this chance to put the spotlight on something else.)"
+setflag sideroom1
+flag sideroom1 AND sideroom2 AND sideroom3 AND sideroom4 sideroompost
+>>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 goto talk
 
 label Lilian Maristella
@@ -190,8 +339,13 @@ char lilian e=pout
 
 char aurelia hide
 "{c b}(I must be getting old.{p30} I kind of miss those peak Queens of Crime days.)"
+<<<<<<< HEAD
 setflag sideroomnote2
 flag sideroomnote1 AND sideroomnote2 AND sideroomnote3 AND sideroomnote4 sideroomnotepost
+=======
+setflag sideroom2
+flag sideroom1 AND sideroom2 AND sideroom3 AND sideroom4 sideroompost
+>>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 goto talk
 
 label The Queens of Crime
@@ -294,11 +448,19 @@ char lilian e=normal
 char aurelia hide
 "{c b}(And that's enough dwelling in those memories for now.)"
 
+<<<<<<< HEAD
 bg sideroomnote fade 
 mus 5. Matter Of Factly [Judgement]
 set _music_loop 5. Matter Of Factly [Judgement] - Loop
 setflag sideroomnote3
 flag sideroomnote1 AND sideroomnote2 AND sideroomnote3 AND sideroomnote4 sideroomnotepost
+=======
+bg sideroom fade 
+mus 5. Matter Of Factly [Judgement]
+set _music_loop 5. Matter Of Factly [Judgement] - Loop
+setflag sideroom3
+flag sideroom1 AND sideroom2 AND sideroom3 AND sideroom4 sideroompost
+>>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 goto talk
 
 label This trip
@@ -347,6 +509,7 @@ char lilian e=normal
 
 char aurelia hide
 "Sure,{p15} that's a given.{p30} Nothing I can say now to get rid of you."
+<<<<<<< HEAD
 setflag sideroomnote4
 flag sideroomnote1 AND sideroomnote2 AND sideroomnote3 AND sideroomnote4 sideroomnotepost
 goto talk
@@ -355,6 +518,16 @@ label sideroomnotepost
 "{c b}({sfx idea}Looks like the sideroomnote is about to arrive.)"
 "{c b}(Time to cut the chit-chat and get ready to move.)"
 setflag offsideroomnote
+=======
+setflag sideroom4
+flag sideroom1 AND sideroom2 AND sideroom3 AND sideroom4 sideroompost
+goto talk
+
+label sideroompost
+"{c b}({sfx idea}Looks like the sideroom is about to arrive.)"
+"{c b}(Time to cut the chit-chat and get ready to move.)"
+setflag offsideroom
+>>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 goto talk
 
 #PRESENT MENU
@@ -391,7 +564,11 @@ label gunA
 set _ev gunA
 showevl
 char aurelia hide
+<<<<<<< HEAD
 "{c b}({sfx anger}Sure,{p15} let's randomly pull out my gun in a sideroomnote!{p30} What could go wrong?)"
+=======
+"{c b}({sfx anger}Sure,{p15} let's randomly pull out my gun in a sideroom!{p30} What could go wrong?)"
+>>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 hideevl
 goto present
 
@@ -410,7 +587,11 @@ char aurelia hide
 "..."
 "This is..."
 label lilian1
+<<<<<<< HEAD
 list sideroomnoteconvo noback 
+=======
+list sideroomconvo noback 
+>>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 li My Best Friend
 li My Partner in Crime
 li My Worst Enemy
@@ -511,7 +692,11 @@ label crimeone
 char lilian e=wink
 "{sfx idea}Alright,{p15} what crime are we gonna do next?"
 char aurelia hide
+<<<<<<< HEAD
 "Conversations you definitely shouldn't have on a sideroomnote."
+=======
+"Conversations you definitely shouldn't have on a sideroom."
+>>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
 char lilian e=normal
 "It's okay.{p30} Nobody would want to see the culprit get exposed that easily."
 char aurelia hide

@@ -15,7 +15,7 @@ char aurelia hide
 
 char lilian e=side
 "So,{p15} what do you think about what that guy told us."
-"{sfx huh}{e normal}You think there's a curse in this place?"
+"{sfx huh}{e normal}You think there's a curse in this place?" 
 
 char aurelia hide
 "There might be.{p30} It's a little hard to just dismiss two people dying."
@@ -30,7 +30,7 @@ char aurelia hide
 
 char lilian e=peace
 "It would be stylish,{p15} though."
-"{e wink}Maybe you should have just nodded and said "Mm,{p15} I see."."
+"{e wink}Maybe you should have just nodded and said "Mm,{p15} I see."." 
 
 char aurelia hide
 "{c b}(Like you wouldn't see through that.)"

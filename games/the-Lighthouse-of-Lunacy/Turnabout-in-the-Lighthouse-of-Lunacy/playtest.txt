@@ -5,17 +5,22 @@ addev lilian$
 addev cova$
 addev gardt$
 addev holden2$
-addev susan$
+addev susan2$
 addev victoria$
 addev autopsy
 addev tv
 addev door
 addev knife
 addev blood
-addev empty
+addev key
+addev than2%
 
 setflag offtrain
 setflag coastdone
 
+<<<<<<< HEAD
 script sceneRecap
 script scene13victest
+=======
+script scene17
+>>>>>>> b04574c9d23ea327595e395b6bc481cb20821a38
