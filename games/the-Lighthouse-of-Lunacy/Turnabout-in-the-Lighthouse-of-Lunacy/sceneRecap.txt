@@ -46,11 +46,11 @@ fg recap5 name=rec
 is recapbg 6?
 fg recap6 name=rec
 is recaplocation right?
-fg recap-cursor-right
+fg recap-cursor-right nowait
 is recaplocation middle?
-fg recap-cursor-mid
+fg recap-cursor-mid nowait
 is recaplocation left?
-fg recap-cursor-left
+fg recap-cursor-left nowait
 fg recapui y=192 stack
 set _cr_button false
 
@@ -363,7 +363,7 @@ set _cr_button true
 "Lilian was put on the stand, and claimed she was in Autonomy when the crime happened."
 "I pointed out how that's impossible due to the evidence and testimony."
 "There was enough doubt about the testimony to call the next two witnesses."
-"Mr. Cova and Dr. Hellinger. {p15|Neither seemed too pleased with what I was doing..."
+"Mr. Cova and Dr. Hellinger. {p15}Neither seemed too pleased with what I was doing..."
 "I didn't really put much of a dent in their alibi, and they were eventually dismissed."
 "Thankfully, Lilian had another idea, and got Mariko on the stand again."
 "I found several issues in her testimony, but nothing that overturned the case."
@@ -390,6 +390,26 @@ script sceneRecap label=endofcheck
 label check1left
 clear
 fg fourfoolsbw
+fg white
+sfx flashback
+fade out name=white speed=3 nowait
+char aurelia hide
+set _cr_button true
+"Four people were sent to the lower floor to deny the presence of anyone there."
+"These were Lilian, Dr. Hellinger, Mr. Cova, and Mr. Gardt."
+"For the rest, I'll have to rely on testimony and evidence."
+"They split up. Lilian and Mr. Gardt searched the Justice room."
+"After being satisfied there was nobody, the two of them left."
+"Except, Mr. Gardt turned back, apparently having some instinct."
+"But then all the testimonies become a mess and contradict each other."
+"I can focus on what happened there later."
+"For now I have to actually establish there's a Mr. X in the mix."
+"And this Mr. X was the one that shot Mr. Gardt... {p20}probably?"
+script sceneRecap label=endofcheck
+
+label check2right
+clear
+bg displayroombw
 fg white
 sfx flashback
 fade out name=white speed=3 nowait
@@ -428,7 +448,18 @@ set _cr_button true
 "This led him to talk about the victim having some questionable business as well."
 "Mr. Poly was also the one to reveal where Ms. Holden got the cleaning spray from."
 "That's about all Lilian managed to get out of him."
-"Lilian returned to the crime scene once more."
+
+script sceneRecap label=endofcheck
+
+label check2middle
+clear
+bg crimescene-fb
+fg white
+sfx flashback
+fade out name=white speed=3 nowait
+char aurelia hide
+set _cr_button true
+"Lilian returned to the crime sceneonce more."
 "Apparently, Victoria had been worried about the option that someone shot through the floor."
 "That's why Dr. Hellinger was sent there again to confirm the room's integrity."
 "Funnily enough, she did discover two holes in the floor, albeit they weren't usable for that purpose."
@@ -436,16 +467,841 @@ set _cr_button true
 "That's... {p20}apparently all they talked about?"
 "Lilian was awfully vague on this part."
 "Guess it can't be helped when I wasn't there myself."
-"Four people were sent to the lower floor to deny the presence of anyone there."
-"These were Lilian, Dr. Hellinger, Mr. Cova, and Mr. Gardt."
-"For the rest, I'll have to rely on testimony and evidence."
-"They split up. Lilian and Mr. Gardt searched the Justice room."
-"After being satisfied there was nobody, the two of them left."
-"Except, Mr. Gardt turned back, apparently having some instinct."
-"But then all the testimonies become a mess and contradict each other."
-"I can focus on what happened there later."
-"For now I have to actually establish there's a Mr. X in the mix."
-"And this Mr. X was the one that shot Mr. Gardt... {p20}probably?"
+script sceneRecap label=endofcheck
+
+label check2left
+clear
+fg mainhall-inv2
+fg white
+sfx flashback
+fade out name=white speed=3 nowait
+char aurelia hide
+set _cr_button true
+I wasn't allowed to leave the side
+room again. I'll have to go by what
+Lilian told me.
+Aurelia
+She was fortunately still allowed to
+look around, albeit under Mr.
+Gardt's watch.
+Aurelia
+They went over why nobody could
+have been hidden on the lower
+floor.
+Aurelia
+Well, I now know an extra person
+could at least exist here, so those
+points are moot.
+Aurelia
+How they got to the lower floor,
+however, remains unsolved.
+Aurelia
+Supposedly that floor was kept
+locked, with the elevator unable to
+stop on it.
+Aurelia
+Only the manager and her daughter
+would have had the means to let
+someone in there.
+Aurelia
+Anyway, Ms. Holden announced her
+plan to send a limited number of
+people to the lower floor.
+Aurelia
+Lilian managed to convince her to
+let her come along as well.
+Aurelia
+She also managed to confirm that
+Susan gambled a bit too much for
+her own good.
+Aurelia
+As the special cleaning spray
+confirmed, she had gotten herself
+into some debt.
+Aurelia
+No doubt the reason she is trying
+to get money out of this trial...
+Aurelia
+That's about all Lilian told me she
+learned here.
+
+script sceneRecap label=endofcheck
+
+label check3right
+clear
+bg trial2
+fg white
+sfx flashback
+fade out name=white speed=3 nowait
+char aurelia hide
+set _cr_button true
+Trial resumed. Victoria was
+prepared to call witnesses.
+Aurelia
+Three of them at once, in fact. Mr.
+Neland, Mr. Dowe, and Mr. Poly.
+Aurelia
+I drew attention to a blood trail,
+but it was a trap set by Victoria.
+Aurelia
+However, I turned things around by
+exposing that Mr. Poly didn't
+witness the crime.
+Aurelia
+Instead, he had slipped off into the
+display room and gone out the
+window onto a suspended platform.
+Aurelia
+There, he heard a second gunshot,
+and claimed to have seen Dr. Leid
+on the lower floor.
+Aurelia
+This sent the trial into complete
+chaos, forcing another recess.
+
+script sceneRecap label=endofcheck
+
+label check3middle
+clear
+bg displayroombw
+fg white
+sfx flashback
+fade out name=white speed=3 nowait
+char aurelia hide
+set _cr_button true
+We took a detour into the display
+room, accompanied by Mr. Gardt.
+Aurelia
+The room has a No Entry sign, but
+evidently wasn't locked, either.
+Aurelia
+I felt a chill at the time, no doubt
+the hole in the window was already
+there.
+Aurelia
+However, Mr. Gardt stopped us
+from touching the curtain at the
+time.
+Aurelia
+At least we were allowed to collect
+some other evidence.
+Aurelia
+I solved a puzzle cube, revealing a
+message pointing us towards the
+knife.
+Aurelia
+We then discovered another
+message tucked away within the
+sheath.
+Aurelia
+Only I know what that message
+means. I don't think it's relevant
+here...
+Aurelia
+That was about all we found in this
+room.
+
+script sceneRecap label=endofcheck
+
+label check3left
+clear
+bg crimescene-fb
+fg white
+sfx flashback
+fade out name=white speed=3 nowait
+char aurelia hide
+set _cr_button true
+At the scene, we ran into Dr.
+Hellinger, still at work.
+Aurelia
+She didn't want me to be there, but
+we managed to convince her with
+Mr. Gardt's help.
+Aurelia
+I looked around the room and got
+my evidence up to date.
+Aurelia
+Unfortunately, that included an
+updated autopsy confirming my gun
+fired the shot.
+Aurelia
+Dr. Hellinger explained her special
+position.
+Aurelia
+She's a private detective working
+for an organization called Alathea.
+Aurelia
+Apparently, they have been
+granted privileges to assist with
+investigations.
+Aurelia
+There are a lot of detectives
+working for them, and they are
+being ranked on their results.
+Aurelia
+The really good ones even receive
+titles based on how they go about
+their investigations.
+Aurelia
+For example, there is one called the
+"Assistant Detective".
+Aurelia
+Sounds like somebody I could use
+right now.
+Aurelia
+She joined them after finishing her
+degree.
+Aurelia
+Given her title, it must have been a
+doctoral degree, huh?
+Aurelia
+She told us about her HUNT
+devices, her main method of
+investigation.
+Aurelia
+"Hardly Understandable New
+Technology".
+Aurelia
+She said it stands for that.
+I'm not sure I buy it....
+Aurelia
+The creator of these devices is a
+certain Ayako Kuroyama, who
+works for ShimaraTech.
+Aurelia
+Dr. Hellinger painted her as some
+kind of genius, but that's all I know
+about her.
+Aurelia
+Some of the devices seem to be
+having issues due to the jamming
+signals.
+Aurelia
+That's more or less all she told us.
+The rest is in the evidence.
+
+script sceneRecap label=endofcheck
+
+label check4right
+clear
+fg mainhall-inv1
+fg white
+sfx flashback
+fade out name=white speed=3 nowait
+char aurelia hide
+set _cr_button true
+In the main hall, we ran into Ms.
+Holden and Mr. Cova.
+Aurelia
+The latter was urging the former to
+call this off.
+Aurelia
+No doubt he was worried about not
+being able to cover up the
+evidence.
+Aurelia
+Trapping everyone increased the
+chances someone would find
+another dangerous weapon.
+Aurelia
+Ms. Holden wouldn't have it. In
+retrospect, I wonder if she knew
+his true reasons all along.
+Aurelia
+We heard a gunshot. We learned
+that was Dr. Hellinger firing a shot
+with my gun to compare it.
+Aurelia
+I tried to talk to her, but she ran
+off.
+Aurelia
+Instead, Mr. Gardt showed up to
+keep tabs on our movements.
+Aurelia
+We used the chance to get some
+info out of him.
+Aurelia
+There were plans to call him to the
+stand, but they were saved for
+later.
+Aurelia
+Big mistake...
+Aurelia
+He had been kept quite busy by the
+plaintiff's team.
+Aurelia
+They had requested all his visitor
+logs, not just those from today.
+Aurelia
+They double checked there were
+no discrepancies in any of them, it
+seems.
+Aurelia
+Well, I've found the discrepancy
+already. Naota Feykneme.
+Aurelia
+After this, he was stationed at the
+scene with Dr. Hellinger.
+Aurelia
+He remained there until the trial
+began. Victoria ordered him to do a
+headcount.
+Aurelia
+He didn't know who the next
+witnesses were going to be.
+Well, I got hindsight for that.
+Aurelia
+The most interesting info was
+about the victim herself.
+Aurelia
+Mrs. Holden hadn't left the tower
+very often recently.
+Aurelia
+He speculated it was to dispel
+worries of the curse, but I doubt
+that.
+Aurelia
+If it was the goal, it clearly wasn't
+working out too well.
+Aurelia
+He underlined that with a story
+about how a man in a boat had
+tried to "fight" the tower.
+Aurelia
+Mrs. Holden's daughter helped her
+out in this tower. Probably kept it
+clean.
+Aurelia
+It's unclear if she basically lived
+here as well, though.
+Aurelia
+Apparently, her mother had been
+quite strict, pushing most of the
+menial work on her.
+Aurelia
+That's more or less all we learned
+from him, so we moved on.
+script sceneRecap label=endofcheck
+
+label check4middle
+clear
+bg sideroombw
+fg white
+sfx flashback
+fade out name=white speed=3 nowait
+char aurelia hide
+set _cr_button true
+In the main hall, we ran into Ms.
+Holden and Mr. Cova.
+Aurelia
+The latter was urging the former to
+call this off.
+Aurelia
+No doubt he was worried about not
+being able to cover up the
+evidence.
+Aurelia
+Trapping everyone increased the
+chances someone would find
+another dangerous weapon.
+Aurelia
+Ms. Holden wouldn't have it. In
+retrospect, I wonder if she knew
+his true reasons all along.
+Aurelia
+We heard a gunshot. We learned
+that was Dr. Hellinger firing a shot
+with my gun to compare it.
+Aurelia
+I tried to talk to her, but she ran
+off.
+Aurelia
+Instead, Mr. Gardt showed up to
+keep tabs on our movements.
+Aurelia
+We used the chance to get some
+info out of him.
+Aurelia
+There were plans to call him to the
+stand, but they were saved for
+later.
+Aurelia
+Big mistake...
+Aurelia
+He had been kept quite busy by the
+plaintiff's team.
+Aurelia
+They had requested all his visitor
+logs, not just those from today.
+Aurelia
+They double checked there were
+no discrepancies in any of them, it
+seems.
+Aurelia
+Well, I've found the discrepancy
+already. Naota Feykneme.
+Aurelia
+After this, he was stationed at the
+scene with Dr. Hellinger.
+Aurelia
+He remained there until the trial
+began. Victoria ordered him to do a
+headcount.
+Aurelia
+He didn't know who the next
+witnesses were going to be.
+Well, I got hindsight for that.
+Aurelia
+The most interesting info was
+about the victim herself.
+Aurelia
+Mrs. Holden hadn't left the tower
+very often recently.
+Aurelia
+He speculated it was to dispel
+worries of the curse, but I doubt
+that.
+Aurelia
+If it was the goal, it clearly wasn't
+working out too well.
+Aurelia
+He underlined that with a story
+about how a man in a boat had
+tried to "fight" the tower.
+Aurelia
+Mrs. Holden's daughter helped her
+out in this tower. Probably kept it
+clean.
+Aurelia
+It's unclear if she basically lived
+here as well, though.
+Aurelia
+Apparently, her mother had been
+quite strict, pushing most of the
+menial work on her.
+Aurelia
+That's more or less all we learned
+from him, so we moved on.
+
+script sceneRecap label=endofcheck
+
+label check4left
+clear
+fg trial1
+fg white
+sfx flashback
+fade out name=white speed=3 nowait
+char aurelia hide
+set _cr_button true
+The judge introduced himself and
+started the trial.
+Aurelia
+Ms. Holden explained why this was
+being done, citing distrust for the
+police as her main reason.
+Aurelia
+Then Victoria Priston revealed her
+presence. She had also become a
+lawyer, somehow.
+Aurelia
+I was given the option to refuse
+the trial, but didn't take it.
+Aurelia
+Victoria had ensured that, by
+blackmailing me.
+Aurelia
+She was confident in her argument.
+Aurelia
+But I quickly dismantled it by
+pointing out the absence of the
+study key.
+Aurelia
+I might have been screwed
+instantly if she had figured it out...
+Aurelia
+Well, assuming it was already inside
+my body at that time.
+Aurelia
+I was able to construct a theory
+with a different suspect.
+Aurelia
+There was nothing she could argue
+with zero witnesses. A 20-minute
+recess was called.
+
+script sceneRecap label=endofcheck
+
+label check5right
+clear
+bg sideroombw
+fg white
+sfx flashback
+fade out name=white speed=3 nowait
+char aurelia hide
+set _cr_button true
+The judge introduced himself and
+started the trial.
+Aurelia
+Ms. Holden explained why this was
+being done, citing distrust for the
+police as her main reason.
+Aurelia
+Then Victoria Priston revealed her
+presence. She had also become a
+lawyer, somehow.
+Aurelia
+I was given the option to refuse
+the trial, but didn't take it.
+Aurelia
+Victoria had ensured that, by
+blackmailing me.
+Aurelia
+She was confident in her argument.
+Aurelia
+But I quickly dismantled it by
+pointing out the absence of the
+study key.
+Aurelia
+I might have been screwed
+instantly if she had figured it out...
+Aurelia
+Well, assuming it was already inside
+my body at that time.
+Aurelia
+I was able to construct a theory
+with a different suspect.
+Aurelia
+There was nothing she could argue
+with zero witnesses. A 20-minute
+recess was called.
+
+script sceneRecap label=endofcheck
+
+label check5middle
+clear
+bg crimescene-fb
+fg white
+sfx flashback
+fade out name=white speed=3 nowait
+char aurelia hide
+set _cr_button true
+
+script sceneRecap label=endofcheck
+The door to the study wasn't
+locked, so I slipped right in.
+Aurelia
+I searched the room for what I
+was looking for, but couldn't find it.
+Aurelia
+To think it was right there...
+Aurelia
+I noticed someone was behind me,
+and got into my confrontation with
+Mrs. Holden.
+Aurelia
+I pulled my gun, but she still tried
+to attack me with her knife.
+Aurelia
+There suddenly was a bright flash
+and a gunshot.
+Aurelia
+...but I don't remember feeling any
+recoil on my gun.
+Aurelia
+Right after that, Mrs. Holden
+collapsed forward on the floor.
+Aurelia
+I was in shock, so it's hard to
+remember the details here, but...
+Aurelia
+Guests came knocking at the door,
+and eventually busted it open.
+Aurelia
+The two at the forefront were Mr.
+Neland and Mr. Dowe.
+Aurelia
+Mr. Neland demanded my gun and
+confirmed one bullet was missing.
+Aurelia
+They were about to approach the
+body, but Ms. Holden interrupted
+them.
+Aurelia
+I was so out of it that I don't
+remember much of what happened
+next.
+Aurelia
+But going by later testimony,
+Susan approached the body
+herself.
+Aurelia
+While apparently mourning her
+mother, she stole the cleaning
+spray off her body.
+Aurelia
+I was brought to the side room by
+Mr. Neland and Lilian.
+Aurelia
+Dr. Hellinger was called to the
+scene and began setting up her
+devices.
+Aurelia
+Mr. Dowe remained with her initially,
+but was eventually replaced by Mr.
+Gardt.
+Aurelia
+And thus, the investigation began...
+
+label check5left
+clear
+bg overview
+fg white
+sfx flashback
+fade out name=white speed=3 nowait
+char aurelia hide
+set _cr_button true
+We got to the main hall.
+The auction was about to start.
+Aurelia
+Most of the guests were wearing
+suits, making me feel out of place.
+Aurelia
+I tried baiting Lilian into trying
+spicy curry from the buffet.
+She didn't bite.
+Aurelia
+The auction began. Mrs. Holden
+introduced herself and denounced
+Dr. Leid.
+Aurelia
+Most items were brought to her by
+her daughter, who had made sure
+to keep them clean.
+Aurelia
+She played up the macabre past
+each item may possess.
+Aurelia
+Her strategy worked, and
+outlandish bids were thrown
+around...
+Aurelia
+After about two hours, she
+announced a 30-minute break.
+Aurelia
+She previewed the next item for
+sale, that sheathed combat knife.
+Aurelia
+I managed to lose Lilian in the
+crowd and made my way to the
+study.
+
+script sceneRecap label=endofcheck
+
+label check6right
+clear
+bg entrancebw
+fg white
+sfx flashback
+fade out name=white speed=3 nowait
+char aurelia hide
+set _cr_button true
+To get to the auction floor, we had
+to go past the guard at the
+entrance.
+Aurelia
+He asked for our IDs and that we
+step through a metal detector.
+Aurelia
+Lilian remembered to take off her
+pendant, but I forgot about my gun
+and triggered the alarm.
+Aurelia
+Despite that, the guard was fine
+with letting me keep my weapon
+after I showed it to him.
+Aurelia
+He only made sure to add a note of
+it in his logs, as per his
+instructions.
+Aurelia
+He then let us proceed without
+further complications.
+
+script sceneRecap label=endofcheck
+
+label check6middle
+clear
+bg coast-bw
+fg white
+sfx flashback
+fade out name=white speed=3 nowait
+char aurelia hide
+set _cr_button true
+We arrived in Monica Town and
+went to the lighthouse.
+Aurelia
+Ander Cova approached us,
+pretending to be a sweets
+merchant.
+Aurelia
+I gave in and bought a cake from
+him. The Cova Strawberry Crisis.
+Aurelia
+He claimed it had a secret recipe,
+but Lilian later exposed that as
+false.
+Aurelia
+He had just bought it from some
+store somewhere. Still a good
+cake, though.
+Aurelia
+Cova mentioned there's high
+tourism in the area...
+Aurelia
+...thanks to nearby Luna Park and
+the beautiful coasts.
+Aurelia
+He then explained why he
+disapproved of the auction.
+Aurelia
+The previous owner died in the
+BU-2 incident five years ago.
+Aurelia
+This happened while he was
+attending a dinner party hosted by
+a certain Mr. Ost.
+Aurelia
+Everyone in that mansion was
+declared dead by the police.
+Aurelia
+Though they never showed any
+bodies to the public.
+Aurelia
+Their main suspect was another
+one of the guests, a female lawyer.
+Aurelia
+I'm unsure how they concluded
+that with no bodies. Clearly they're
+hiding something.
+Aurelia
+Anyway, in the following years,
+two more people had died after
+visiting the tower.
+Aurelia
+As a result, the building had been
+called cursed.
+Aurelia
+He also added tales about the eyes
+on the tower looking at you at
+night.
+Aurelia
+Really trying to sell it to us there.
+Well, I likely figured out the true
+nature of the curse already.
+Aurelia
+He only wanted to make sure
+nobody picked up another
+dangerous item.
+Aurelia
+We ignored his warning and
+entered the tower anyway.
+
+script sceneRecap label=endofcheck
+
+label check6left
+clear
+bg trainbw
+fg white
+sfx flashback
+fade out name=white speed=3 nowait
+char aurelia hide
+set _cr_button true
+label check6right
+clear
+bg entrancebw
+fg white
+sfx flashback
+fade out name=white speed=3 nowait
+char aurelia hide
+set _cr_button true
+Lilian and I were catching up during
+the train ride to the auction.
+Aurelia
+She had shown up out of nowhere
+earlier that day to accompany me.
+Aurelia
+Probably just another case of her
+intuition...
+Aurelia
+Anyway, we were mostly talking
+about how our weeks went.
+Aurelia
+I had had a really unpleasant
+encounter with my dentist the day
+before...
+Aurelia
+...so we had a silly debate about
+dentists and hairdressers.
+Aurelia
+She had also run into my sister the
+other day, from the sound of it.
+Aurelia
+Sarah is still working for... I don't
+want to call him a detective.
+Aurelia
+She's trying to work out a certain
+serial killer case involving a cursed
+computer file.
+Aurelia
+I didn't want her to keep doing
+that, but I'm unsure how I feel
+about it now.
+Aurelia
+Meanwhile, Lilian got involved in
+another incident in the last few
+weeks.
+Aurelia
+Someone got defenestrated in her
+apartment building.
+Aurelia
+How does she keep managing that?
+Aurelia
+We also talked about the other
+Queens of Crime.
+Aurelia
+There's Claire. She set up a VR
+server for us, all with complete 3D
+models.
+Aurelia
+Always so resourceful. She'd
+probably have solved this case by
+now.
+Aurelia
+Ex-Queen Victoria Priston... Well, I
+think nothing else needs to be said
+about her.
+Aurelia
+We replaced her with our newest
+member, 'Yevpraksiya', aka the
+russian spider.
+Aurelia
+We call her that because of the
+name and the avatar, but actually
+don't know where she's from.
+Aurelia
+She can be a bit much, but I trust
+Claire's recommendation.
+Aurelia
+I get along with her fine, but Lilian
+doesn't seem to trust her.
+Not too surprising.
+Aurelia
+Lastly, we talked about the
+auction, but I dodged most of her
+questions.
+
+script sceneRecap label=endofcheck
+
 script sceneRecap label=endofcheck
 
 endmacro

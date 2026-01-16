@@ -37,10 +37,7 @@ set char_than_name ???
 
 include evidence
 
-<<<<<<< HEAD:the-Lighthouse-of-Lunacy/Turnabout-in-the-Lighthouse-of-Lunacy/intro.txt
 script playtest
-=======
 is debug true?
 script playtest
 script opening
->>>>>>> 6e581ffd80ba980f65752f389e4c6f3b885b73a3:games/the-Lighthouse-of-Lunacy/Turnabout-in-the-Lighthouse-of-Lunacy/intro.txt
