@@ -19,5 +19,3 @@ setflag offtrain
 setflag coastdone
 
 script sceneRecap
-script scene13victest
-script scene17
