@@ -12,7 +12,7 @@ fade in name=sideroom
 char lilian fade
 textskipcheck
 nt
-"{center}{sound typewriter.ogg}{c g}{spd 0.3}April 4,{p15} 9:17 PM{n}The Lighthouse of Lunacy{n}Side Room"
+"{center}{sound typewriter.ogg}{c g}{spd 0.3}April 4, 9:17 PM{n}The Lighthouse of Lunacy{n}Side Room"
 pause 30
 
 char aurelia hide
@@ -39,5 +39,8 @@ char lilian e=wink
 "{sfx idea}I'm sure someone will keep an eye on you if you leave this room."
 char lilian e=pout
 "Still,{p15} here's your chance if you're not satisfied with my investigation."
+
+
+
 
 script scene17menu

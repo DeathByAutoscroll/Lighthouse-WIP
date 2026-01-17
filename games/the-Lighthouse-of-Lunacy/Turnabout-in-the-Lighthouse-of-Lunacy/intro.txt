@@ -37,7 +37,6 @@ set char_than_name ???
 
 include evidence
 
-script playtest
 is debug true?
 script playtest
 script opening

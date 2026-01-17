@@ -22,7 +22,6 @@ fg recap-cursor-mid nowait
 fg recapui y=192 stack
 fg black name=b1 
 fg black name=b2 y=192
-"{center}{sound}{n}View the Court Record with ENTER.{p120}{next}"
 fade out name=b1 speed=1 nowait 
 fade out name=b2 speed=1
 pause 30
@@ -55,10 +54,9 @@ fg recapui y=192 stack
 set _cr_button false
 
 label buttons
-gui Button {_crbut} name=p1 hotkey=enter_down x=170 y=469 test
 gui Button {endrecap} name=p2 graphic=general/back graphichigh=general/back_high x=0 y=351 end
-gui Button {left} name=p3 graphic=general/buttons/recapl graphichigh=general/buttons/recapl_high x=16 y=248 left
-gui Button {right} name=p4 graphic=general/buttons/recapr graphichigh=general/buttons/recapr_high x=133 y=248 right
+gui Button {left} name=p3 graphic=general/buttons/recapl graphichigh=general/buttons/recapl_high hotkey=k_left x=16 y=248 left
+gui Button {right} name=p4 graphic=general/buttons/recapr graphichigh=general/buttons/recapr_high hotkey=k_right x=133 y=248 right
 gui Button {check} name=p5 graphic=general/buttons/recapcheck graphichigh=general/buttons/recapcheck_high x=88 y=195 test
 gui Wait
 
@@ -802,7 +800,4 @@ label check6right
 "Lastly,{p15} we talked about the auction,{p15} but I dodged most of her questions."
 
 script sceneRecap label=endofcheck
-
-script sceneRecap label=endofcheck
-
 endmacro
