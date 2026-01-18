@@ -1,11 +1,87 @@
 bg timeline-bg stack
 bg timeline-bg-overlay stack
 fg timeline-overlay-2 nowait
+set char_aurelia_defsound silence
+noflag pressmusic?
 pressonourway
+setflag pressmusic
 set _textbox_bg general/textbox2
 set _bigbutton_bg bg/locationselectbg
 bg locationselectbg y=192 stack
 fg timeline-ui-map-overlay y=192
+fg timeline-base-buttons y=192
+obj fg/timelinebuttons/list y=192 x=134 name=list
 set _cr_button false
 gui Button {_crbut} name=p1 hotkey=enter_down x=170 y=469 test
-"test"
+gui Button {lilianrecap} name=p2 graphic=fg/timelinebuttons/tl_lilian graphichigh=fg/timelinebuttons/tl_lilian_high x=0 y=192 
+gui Button {covaingerrecap} name=p3 graphic=fg/timelinebuttons/tl_ch graphichigh=fg/timelinebuttons/tl_ch_high x=18 y=192 
+gui Button {marikorecap} name=p4 graphic=fg/timelinebuttons/tl_m graphichigh=fg/timelinebuttons/tl_m_high x=50 y=192 
+gui Button {left} name=p5 graphic=fg/timelinebuttons/leftarrow graphichigh=fg/timelinebuttons/leftarrow_high y=361 x=110
+gui Button {right} name=p6 graphic=fg/timelinebuttons/rightarrow graphichigh=fg/timelinebuttons/rightarrow_high y=361 x=130
+gui Button {axioms} name=p7 graphic=fg/timelinebuttons/axioms graphichigh=fg/timelinebuttons/axioms_high x=0 y=361
+gui Button {evaluate} name=p8 graphic=fg/timelinebuttons/evaluate graphichigh=fg/timelinebuttons/evaluate_high x=155 y=361
+gui Wait
+
+macro lilianrecap
+clear
+bg timeline-bg stack
+bg timeline-bg-overlay stack
+fg timeline-overlay-2 nowait
+char aurelia hide
+"Lilian and Mr. Gardt went to the Justice room upon arrival on the floor."
+"After searching the room, they split up. I will consider this moment her initial position."
+"While Mr. Gardt went to take a second look, Lilian went to the Autonomy room."
+"She says she moved there counter-clockwise."
+"Curiously, no traces of this were discovered on the dusty shelf she must have climbed over."
+"Just when she had entered the room, she heard the gunshots and turned around to rush back."
+"Back in Justice, she found {n}Mr. Gardt's dead body. {n}{p20}Nobody else in sight."
+"This put her in shock..."
+"...but she still noticed that Mr. Cova and Dr. Hellinger eventually entered the room behind her."
+"After that, she stuck together with the others for the investigation."
+script sceneminigame
+endmacro
+
+macro covaingerrecap
+clear
+bg timeline-bg stack
+bg timeline-bg-overlay stack
+fg timeline-overlay-2 nowait
+char aurelia hide
+"Mr. Cova and Dr. Hellinger entered the Beneficence room upon arrival."
+"They left the door open and ensured nobody could pass through the hallway unnoticed."
+"When the gunshots happened, {n}Mr. Cova rushed out first."
+"Dr. Hellinger says she didn't want to leave her HUNT devices behind, which delayed her."
+"Cova says he caught a glimpse of Lilian in the door to Justice."
+"When he arrived at the room himself, he saw her again, in front of Mr. Gardt's dead body."
+"Once Dr. Hellinger caught up, she took lead of the investigation."
+"From there, she investigated the floor in clockwise order."
+"She certainly made it sound like she was very thorough in each room."
+"Once satisfied that everything had been searched, the three of them returned upstairs via the elevator."
+"I can keep the investigation in mind, but..."
+"...for now, the end point of my timeline should be everyone being gathered at the scene."
+script sceneminigame
+endmacro
+
+macro marikorecap
+clear
+bg timeline-bg stack
+bg timeline-bg-overlay stack
+fg timeline-overlay-2 nowait
+char aurelia hide
+"Mariko says she dropped down a ventilation shaft and passed out for a while."
+"When she woke up, she found herself in "a room full of ears", which appears to match Autonomy."
+"I will treat the room she woke up in as her initial position."
+"She moved into the hallway and approached the shelf to her left."
+"On the other side, she saw "the Star" {p20}(Lilian){p20} enter the door with the mouth."
+"That would be the door to the Justice room."
+"Then, she heard the gunshots and panicked."
+"She hit her head against the shelf, briefly not watching the door."
+"About minute or so later, she saw Dr. Hellinger and Mr. Cova arrive."
+"Or in her words, "the doctor and the candyman"..."
+"They entered the same room as Lilian, in close succession."
+"Mariko then got scared and ran back into the room she came from, Autonomy."
+"She claims this room was to the East, but that would not align with our map."
+"Which does suggest the layout may not be quite what we assumed, but..."
+"I should ignore that and simply consider the position of these rooms in relation to the scene."
+script sceneminigame
+endmacro

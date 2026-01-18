@@ -17,5 +17,5 @@ addev than2$
 
 setflag offtrain
 setflag coastdone
-
-script sceneRecap
+textskipcheck
+script sceneminigame

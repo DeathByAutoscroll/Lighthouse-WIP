@@ -41,6 +41,4 @@ char lilian e=pout
 "Still,{p15} here's your chance if you're not satisfied with my investigation."
 
 
-
-
 script scene17menu
