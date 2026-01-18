@@ -3,6 +3,8 @@ label scene17menu
 set _textbox_bg general/textbox2
 textskipcheck
 bg sideroomnote
+isempty photofate?
+bg sideroom
 char lilian e=normal
 lmenu examine=true move=true talk=true present=true bg=mainlol
 
@@ -22,14 +24,93 @@ script scene18
 
 #EXAMINE MENU
 label examine
+isempty photofate examinealt
 examine fail=examine_fail
 goto scene17menu
 
-label examine_fail
-bg sideroomnote stack
+label examinealt
+examine fail=examine_fail
+region 0 163 15 12 photo
+goto scene17menu
+
+label photo
+bg sideroomnote stack 
 scroll y=-192 speed=12 name=2
 delete name=2
 bg sideroomnote
+char aurelia hide
+set _ev bookphoto
+showevr
+set _allow_saveload false
+"{c b}{sfx Shock}{s 15 15 nowait}(This is--!)"
+bg sideroom
+char aurelia hide
+hideevr
+pause 70
+"{c b}(Phew, {p10}looks like Lilian didn't see it yet.)"
+set _textbox_skipupdate true
+"{c b}(That was careless of me. {p15}I should...)"
+pause 90
+set _textbox_skipupdate false
+label tacom
+list tacom bg=mainlol noback
+li Take it
+li Tear it up
+showlist
+goto tacom
+
+label Take it
+"{c b}(It's safest on my person. {p20}{n}I should take it with me.)"
+bg sideroom
+set photofate 2
+shake 30 30 nowait 
+sfx Whoosh
+pause 120
+char lilian e=side
+pause 120
+char aurelia hide 
+"{c b}({sfx Ding}{f10}Good. {p15}She didn't see a thing.)"
+"{c b}(I can rest easier now... {p30}relatively speaking.)"
+goto examine 
+
+label Tear it up
+"{c b}(It's probably not going to be useful evidence anyway.)"
+"{c b}(Best to play it safe and just destroy it.)"
+showevr
+obj ev/bookphoto x=173 y=13 name=book
+pause 120
+delete name=book
+obj ev/tornphoto x=173 y=13 name=torn
+sfx Anger
+shake 30 30 nowait
+pause 180
+delete name=torn
+hideevr
+char aurelia hide
+"{sfx Ding}{c b}(Perfect.)"
+char lilian fade 
+"{sfx Key}{f10}What'd you just do?"
+char aurelia hide
+"{sfx Shock}I tore up some paper."
+char lilian e=side
+"Hmmm..."
+"{e peace}{sfx Ding}{f10}I totally get that!{p15}I like to destroy stuff when I'm stressed out,{p10} too!"
+"{e peacesmile}{sfx Smack}{s 20 20 nowait}Careful you don't mess up anything we could use as proof though."
+char aurelia hide
+"Yeah,{p10} no need to worry.{p20} I'm feeling somewhat more relaxed already."
+set photofate 1
+"{c b}(Technically the truth, {p10}let's hope that'll do it.)"
+goto examine
+
+label examine_fail
+bg sideroomnote stack 
+isempty photofate?
+bg sideroom stack
+scroll y=-192 speed=12 name=2
+delete name=2
+bg sideroomnote
+isempty photofate?
+bg sideroom
 char aurelia hide
 "{c b}(Looks like this room used to be used for some sort of lectures.)"
 "{c b}(Well,{p15} I've been trapped in this place for a while and found nothing useful.)"
@@ -85,7 +166,7 @@ fg JP
 fade in name=JP speed=3 
 mus
 music_fade_in
-mus 24. No Moon [Lost Judgement]
+nomoon
 pause 180
 
 char aurelia hide
@@ -142,11 +223,11 @@ set _ev news
 showevr
 char lilian e=side
 "The lead here is this newspaper on the victim's desk."
-char lilian 
-"The question is why Mrs. Holden had it."
+"{e normal}The question is why Mrs. Holden had it."
 
 #PRESENT MENU
 label present
+set _allow_saveload true
 char lilian e=normal
 present fail=scene17_menu_present_fail
 goto scene17menu
@@ -669,6 +750,9 @@ char aurelia hide
 removeskip
 nt
 "{sound}{spd 0.8}{c g}{center}The Lighthouse of Lunacy{n}Vibe Ending{p180}{next}"
+bg sideroomnote
+isempty photofate?
+isempty photofate?
 bg sideroom
 char lilian
 char aurelia hide
@@ -826,7 +910,7 @@ char aurelia hide
 char lilian
 "I mean,{p15} this is the kind of event she might visit?{p30} She's obnoxiously rich like the other guests."
 char aurelia hide
-"Would she really see an auction assomething worthy of her time?{p30} I find that hard to believe."
+"Would she really see an auction as something worthy of her time?{p30} I find that hard to believe."
 char lilian e=side
 "True,{p15} this isn't pretentious enough for someone like her."
 char lilian e=peace

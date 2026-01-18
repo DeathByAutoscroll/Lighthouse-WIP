@@ -1,4 +1,3 @@
-<<<<<<< HEAD:the-Lighthouse-of-Lunacy/Turnabout-in-the-Lighthouse-of-Lunacy/scene10.txt
 set _textbox_bg general/textbox2
 set _cr_button true
 textskipcheck
