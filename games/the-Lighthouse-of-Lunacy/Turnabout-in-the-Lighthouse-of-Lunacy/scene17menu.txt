@@ -32,7 +32,7 @@ delete name=2
 bg sideroomnote
 char aurelia hide
 "{c b}(Looks like this room used to be used for some sort of lectures.)"
-"{c b}(Well,{p10} I've been trapped in this place for a while and found nothing useful.)"
+"{c b}(Well,{p15} I've been trapped in this place for a while and found nothing useful.)"
 goto examine
 
 #TALK MENU
@@ -40,7 +40,7 @@ label talk
 set script._override_bg bg/mainlol
 list talk bg=talk_bg fail=talk_fail
 delete name=wa
-li The JP Corporation?
+li The JP Corporation
 flag jpcorpo?
 li Involvement Possible?
 flag invposs?
@@ -65,12 +65,12 @@ char aurelia hide
 "{sfx huh}They're not really offering the normal kind of hit job."
 
 char lilian e=normal
-"The normal,{p10} perfectly acceptable kind?"
+"The normal,{p15} perfectly acceptable kind?"
 
 char aurelia hide
 "What I mean is...{p30} car bombs.{p15} Snipers.{p15} Drive-by shootings."
-"That's the stuff you'd think of when you hear about hitmen,{p10} no?"
-"{sfx idea}Well,{p10} the JP Corporation takes it to a much more sophisticated level."
+"That's the stuff you'd think of when you hear about hitmen,{p15} no?"
+"{sfx idea}Well,{p15} the JP Corporation takes it to a much more sophisticated level."
 
 char lilian e=side
 "So they're like...{p30} premium assassins?{p15} The true pros that don't leave a trace?"
@@ -83,6 +83,7 @@ fade in name=black speed=3
 pause 180
 fg JP 
 fade in name=JP speed=3 
+mus
 music_fade_in
 mus 24. No Moon [Lost Judgement]
 pause 180
@@ -90,269 +91,59 @@ pause 180
 char aurelia hide
 "{sfx key2}{c r}Judgement and Purity{c w}."
 "That's what the JP in their name stands for."
-"I don't exactly know how they interpret it,{p10} but 'Judgement' is pretty straightforward."
-
+"I don't exactly know how they interpret it,{p15} but 'Judgement' is pretty straightforward."
 char lilian hide
 "Always make sure judgement is carried out...{p30} {sfx huh}so basically a guaranteed kill?"
-
 char aurelia hide
 "The 'Purity' part is where it gets a little tricky."
 "But it seems to be some kind of commitment to keep their crimes 'pure'."
-"As for what that means,{p10} it's possible to guess based on some of their hits."
+"As for what that means,{p15} it's possible to guess based on some of their hits."
 "They always commit their murders so that they're {f10}{sfx idea}impossible."
-
 char lilian hide
 "They have some kind of perfect crime fetish?"
-
 char aurelia hide
 "{sfx waaah}That's one way to put it."
 "Whether you can't determine the murder method or there are just no viable suspects..."
-"In some form,{p10} they always go out of their way to make it seem like no human could have done it."
-
+"In some form,{p15} they always go out of their way to make it seem like no human could have done it."
 char lilian e=side
 fade out name=JP speed=3
 fade out name=black speed=3
 pause 180
 char lilian e=side
 "I get it.{p15} So it's like you're ordering an act of god from them."
-"A code like that just makes it more likely they'd come after you,{p10} though."
+"A code like that just makes it more likely they'd come after you,{p15} though."
 char lilian e=wink
 "{sfx idea}They seem to be more about ideology than pragmatism."
-
 char aurelia hide
 "Their activities ceased after the incident five years ago."
-
 set _ev cova$
 showevr
 char lilian e=side
-"The one Mr. Cova told us about,{p10} huh..."
-
-setflag sideroomnote1
-flag sideroomnote1 AND sideroomnote2 AND sideroomnote3 AND sideroomnote4 sideroomnotepost
-goto talk
-
-label Lilian Maristella
-set script._override_bg bg/mainlol
-pause 10
-set _bigbutton_bg empty_buttonpress
-delete name=wa
+"The one Mr. Cova told us about,{p15} huh..."
+hideevr
 char aurelia hide
-"Alright,{p15} Lilian.{p30} Let's hear a little about how you've been doing."
-
-char lilian e=side
-"Eh,{p15} the last few weeks haven't been all that interesting."
-
-char aurelia hide
-"No visits to the terrible hairdresser,{p15} then."
-"{sfx huh}And hold up,{p15} didn't you run into yet another murder?"
-
-char lilian e=normal
-"I guess someone did end up dying in the same apartment building I was staying in."
-"{e nuhuh}Thrown straight out the window onto the pavement below.{p30} Can you believe it?"
-
-char aurelia hide
-"{sfx whoops}...So much for a boring week."
-"{c b}(This girl is nothing but a trouble magnet.)"
-"{c b}(She has an uncanny talent for always being around ongoing crimes.)"
-"{c b}(That's how we first met,{p15} come to think of it.)"
-"{c b}(I cleared up some theft she got accused of.)"
-"And,{p15} did they catch whoever did it?"
-
-char lilian e=normal
-"Who knows?{p30} I didn't stick around for that."
-
-char aurelia hide
-"{sfx huh}Clean getaway,{p15} huh?{p30} I thought it happened in the building you lived in."
-
-char lilian e=nuhuh
-"I moved.{p30} The place was giving me too many bad vibes after that."
-
-char aurelia hide
-"{sfx waaah}Your business must be going well if you can just find a new place like that."
-"What was it again,{p15} some online fashion shop?"
-
-char lilian e=pout
-"{sfx anger}Bookmark it next time!"
-"{e nuhuh}{sfx anger}Yeah,{p15} it's a webshop!{p30} Make sure to actually look!{p30} There might be something for you."
-
-char aurelia hide
-"Knowing you,{p15} it's not really my style of fashion.{p30} Try with our cosplaying friend."
-
-char lilian e=nuhuh
-"You dare call my hats cosplay?{p30} It's classic fashion!"
-
-char aurelia hide
-"{sfx huh}You could try selling some to our friend Victoria then."
-
-char lilian e=pout
-"{sfx waaah}Ghk...{p50} I wouldn't let her hands touch them,{p15} even if she paid me tenfold."
-
-char aurelia hide
-"{c b}(I must be getting old.{p30} I kind of miss those peak Queens of Crime days.)"
-setflag sideroomnote2
-flag sideroomnote1 AND sideroomnote2 AND sideroomnote3 AND sideroomnote4 sideroomnotepost
-goto talk
-
-label The Queens of Crime
-set script._override_bg bg/mainlol
-pause 10
-set _bigbutton_bg empty_buttonpress
-delete name=wa
-
+"Yeah,{p15} Ost Manor."
+"Which makes it a solid assumption that their leader died and they just scattered."
+"Of course,{p15} you can never know for sure with elusive underground organizations."
+music_fade_out nowait
+char lilian
+"Okay,{p15} let's think about what it could mean if they're involved in this crime."
 mus
-char aurelia hide
-"{sfx huh}It's been a while since the Queens were in action,{p15} huh?"
-
-char lilian e=nuhuh
-"{sfx idea}Our legacy shall be eternal."
-
-char aurelia hide
-"Ever thought about how that name might give people the wrong idea?"
-
-char lilian e=normal
-"That's the point.{p30} The risk is part of the charm."
-
-char aurelia hide
-"The bad girl logic?{p30} There's something to that,{p15} I guess."
-
-bg black stack
-fade in name=black speed=3
-delete name=lilian
-char aurelia hide
-"{c b}(The Queens of Crime...{p50} the name is a reference to four famous mystery authors.)"
-
-letssolvethemystery
-
-char aurelia hide
-"{c b}(Me and Lilian started it back in college.{p30} It was meant to be the name of our 'investigation club'.)"
-"{c b}(In practice,{p15} it just became the name of the group we hung out in online.)"
-"{c b}({sfx idea}Of course,{p15} there weren't many real crimes to look into,{p15} so we usually just played games.)"
-
-char lilian e=nuhuh
-"{sfx anger}Detectives must hone their wits and keep their style sharp!"
-
-char aurelia hide
-"{c b}(...Excuse the excuses.{p30} At the end of the day,{p15} it just ended up being the 'brand' of our circle.)"
-"{c b}(Some others joined,{p15} but there were never more than four members.)"
-"{c b}(This wasn't really because we set a hard limit...)"
-"{c b}(We just happened to play a lot of board games that needed that number.)"
-
-char lilian e=wink
-"{sfx idea}Actually,{p15} it's because there just aren't many worthy applicants."
-
-char aurelia hide
-"{sfx waaah}Who gave you permission to use your mind reading trick?"
-"But sure.{p30} Technically,{p15} we're all unworthy compared to Claire."
-"{c b}(We've never met Claire in person,{p15} but she set up a VR server as a hangout place for us.)"
-"{c b}(She even somehow had 3D models prepared for us.)"
-"{c b}(We have come to terms with the fact that she's a legend out of our reach.)"
-
-char lilian e=pout
-"It's rigged.{p30} I can only ever beat her when I cheat."
-
-char aurelia hide
-"{sfx whoops}Let's not say that part out loud."
-"{sfx huh}And then there's our fourth member,{p15} Victoria Priston."
-"...You sure your 'only worthy people' take holds up?"
-
-char lilian e=nuhuh
-"{sfx idea}Well,{p15} I don't want to say I told you from the start she's no good..."
-"{e normal}But I do recall it."
-
-char aurelia hide
-"You know the feeling when you think someone is just being obnoxious for the satire?"
-"{sfx huh}You think they're exaggerating but are being ironic..."
-"{sfx idea}...then you eventually realize they actually are like that,{p15} when you meet them in person?"
-"{sfx anger}Don't tell me you didn't think she was just messing around in the beginning!"
-
-char lilian e=wink
-"Nah."
-
-char aurelia hide
-"{c b}(After-the-fact denials.{p30} So easy,{p15} so convenient.)"
-"{c b}(But yeah,{p15} our former fourth member turned out to have...{p50} a few issues.)"
-"Well,{p15} good riddance in the end.{p30} What do you think of her replacement,{p15} though?"
-
-char lilian e=pout
-"The Russian spider...{p50} she's fishy."
-
-char aurelia hide
-"Seems cool to me.{p30} I've been getting along with her."
-"{c b}(After the Victoria fiasco,{p15} Claire eventually introduced a new member to us.)"
-"{c b}(It's another person we only met online.)"
-"{c b}(Her name's Yevpraksiya and she uses a spider-themed avatar,{p15} hence 'Russian spider'.)"
-"{c b}(Not that we know if she is really Russian.)"
-"{c b}(She's got no accent and seems to have some peculiar connections.)"
-
-mus
-
-char lilian e=normal
-"Well,{p15} I trust Claire's judgment.{p30} And compared to Victoria?{p30} Heaven."
-
-char aurelia hide
-"{c b}(And that's enough dwelling in those memories for now.)"
-
-bg sideroomnote fade 
-matteroffactly
-setflag sideroomnote3
-flag sideroomnote1 AND sideroomnote2 AND sideroomnote3 AND sideroomnote4 sideroomnotepost
+consideration
+setflag jpcorpo
 goto talk
 
-label This trip
+label Involvement Possible?
 set script._override_bg bg/mainlol
 pause 10
 set _bigbutton_bg empty_buttonpress
 delete name=wa
-char lilian e=normal
-"{sfx idea}Alright,{p15} Aurelia.{p30} What's this really about?"
-
-char aurelia hide
-"Why not try and deduce it?"
-
+set _ev news
+showevr
 char lilian e=side
-"{sfx huh}You only mentioned that you were going to some tower in our server."
-"{sfx key2}{e normal}You also said there was some kind of auction happening there,{p15} but that's about it."
-"{sfx key3}{e nuhuh}I looked the place up."
-"Seems like the owner died some years ago and his possessions are getting pawned off."
-"{e peace}There's also some local rumor that the place is cursed.{p30} But I couldn't find out much more than that."
-
-char aurelia hide
-"Therefore...?"
-
-char lilian e=wink
-"{sfx idea}It has to be some kind of new scoop you're looking into!{p30} Am I wrong?"
-
-char aurelia hide
-"..."
-"{c b}(I have to choose my words carefully around her.)"
-"{c b}(Lilian has that really uncanny {c r}{sfx huh}intuition {c b}of hers.)"
-"{c b}(She can almost always tell if someone is lying.)"
-"{c b}(And since she knows me well,{p15} she's got a perfect read on me.)"
-"{c b}(Which leaves me with really only one counter-strategy.)"
-"{sfx idea}I plead the fifth."
-
-char lilian e=pout
-"{sfx anger}Really?{p30} You gotta be kidding!"
-"{e side}Just what kind of crime are you up to here?"
-
-char aurelia hide
-"{c b}(I knew it was a mistake to get baited into revealing my plans for today.)"
-"{c b}({sfx waaah}It just seemed impossible she'd be able to actually show up uninvited,{p15} but here we are...)"
-
-char lilian e=normal
-"...I better watch you closely today."
-
-char aurelia hide
-"Sure,{p15} that's a given.{p30} Nothing I can say now to get rid of you."
-setflag sideroomnote4
-flag sideroomnote1 AND sideroomnote2 AND sideroomnote3 AND sideroomnote4 sideroomnotepost
-goto talk
-
-label sideroomnotepost
-"{c b}({sfx idea}Looks like the sideroomnote is about to arrive.)"
-"{c b}(Time to cut the chit-chat and get ready to move.)"
-setflag offsideroomnote
-goto talk
+"The lead here is this newspaper on the victim's desk."
+char lilian 
+"The question is why Mrs. Holden had it."
 
 #PRESENT MENU
 label present
@@ -365,22 +156,22 @@ set _ev presspass
 char lilian e=side
 "Yeah, I don't get that either."
 showevr
-"{e peace}{sfx Ding}You're allowed to be at crime scenes. {p20}What are they even accusing you for?"
+"{e peace}{sfx Ding}You're allowed to be at crime scenes. {p30}What are they even accusing you for?"
 char aurelia hide
-"It's a press pass. {p20}Not a license to kill."
+"It's a press pass. {p30}Not a license to kill."
 char lilian e=peace
 "Maybe you can still use this to point out some kind of technicality about trespassing?"
 char aurelia hide
 "There is absolutely no way that's how it works."
 hideevr
 char lilian e=normal
-"Just present it in court and see what happens. {p20}What could go wrong?"
+"Just present it in court and see what happens. {p30}What could go wrong?"
 char aurelia hide
 "I'd get penalized faster than Victoria could say 'Seriously?'."
 set _ev badge
 showevr
 char lilian e=pout
-"If only we had a badge like hers. {p20}That'd totally improve the quality of our arguments."
+"If only we had a badge like hers. {p30}That'd totally improve the quality of our arguments."
 hideevr
 char aurelia hide
 "Pretty sure attorneys aren't allowed to trespass either, crime scene or not."
@@ -392,37 +183,37 @@ goto present
 
 label gunB
 set _ev gunA
-showevl
+showevr
 char lilian e=side
 "Never get caught holding the weapon at the scene."
 char aurelia hide
-hideevl
-"{sfx Shock}Dropping it wouldn't have helped. {p20}My prints are all over it."
+hideevr
+"{sfx Shock}Dropping it wouldn't have helped. {p30}My prints are all over it."
 char lilian e=normal
 "I guess that really only leaves you with terrible excuses."
 char lilian e=side
-"The gun was taken from you after they got to the study,{p10} right?"
+"The gun was taken from you after they got to the study,{p15} right?"
 "{e normal}I wonder if we could claim they messed with the evidence somehow."
 char aurelia hide
 "{sfx Key}Messed with it how?"
-char lilian e=peace
+char lilian e=wink
 "Like swapping it with another gun or something?"
 char aurelia hide
 "That's a long shot. {p30}{n}...No pun intended."
 char lilian e=nuhuh
-"Ah, {p10}{sfx Key}but they can't do that while we're trapped in here."
+"Ah, {p15}{sfx Key}but they can't do that while we're trapped in here."
 char aurelia hide
-"{sfx Ding}Okay,{p10} good point.{p15} There's no way to access external information."
-char lilian e=peace
+"{sfx Ding}Okay,{p15} good point.{p15} There's no way to access external information."
+char lilian e=wink
 "You're in luck.{p15} A closed circle in a mystery always works in the culprit's favor."
 char aurelia hide
 "{sfx Shock}{s 10 10 nowait}That advantage is more than nullified by how much it narrows down the suspects."
 char lilian e=smile
 "Them's the breaks."
-showevl
+showevr
 "{e peace}But I heard even something like this has sometimes been explained away in court."
 "Just gotta give it your best shot."
-hideevl
+hideevr
 char aurelia hide
 "{c b}(Pun {p30}{s 20 20 nowait}absolutely{p30} intended.)"
 goto present
@@ -437,22 +228,248 @@ char lilian
 char aurelia hide
 "I get hungrier when I'm stressed."
 char lilian e=side
-"Can't say I get it,{p10} but alright..."
+"Can't say I get it,{p15} but alright..."
 "{e normal}It could make sense to keep your brain fueled for your trial."
 "We can check if there's some sweets left from the buffet."
 char aurelia hide 
 "{sfx Ding}Some wine would be nice."
 char lilian e=side
-"{sfx Smack}{s 15 15 nowait}Girl,{p10} I'm not letting you walk into the trial wasted!"
-"{e peace}{sfx Ding}If we're going to need arguments that sound like a drunk came up with them,{p10} I'll keep you covered."
+"{sfx Smack}{s 15 15 nowait}Girl,{p15} I'm not letting you walk into the trial wasted!"
+"{e peace}{sfx Ding}If we're going to need arguments that sound like a drunk came up with them,{p15} I'll keep you covered."
 char aurelia hide 
-"{sfx Shock}{s 15 15 nowait}Listening to your theories makes me need a drink even more,{p10} though."
+"{sfx Shock}{s 15 15 nowait}Listening to your theories makes me need a drink even more,{p15} though."
 char lilian e=peace
 "I get that.{p15} Hard to cope with the fact you'll never come up with something as good."
-"{e nuhuh}Well,{p10} save it for the celebration once we're out of this place."
+"{e nuhuh}Well,{p15} save it for the celebration once we're out of this place."
 char aurelia hide
 "That definitely can't come soon enough."
 goto present
+
+label autopsy
+set _ev autopsy
+showevr
+char lilian e=peace
+"Well done!{p30} That report came in clutch."
+char aurelia hide
+"Better enjoy it while it lasts.{p30} I have this uncanny feeling that it's going to get updated."
+char lilian e=side
+"True.{p30} It's probably outdated already."
+char lilian
+"That investigator admitted it was totally rushed.{p30} She won't want to let you get away with this."
+char aurelia hide
+"I don't want to know what the new one might say."
+char lilian e=wink
+"I mean,{p15} you could try ignoring it and keep using this one."
+char lilian e=peace
+"{sfx idea}That cardhouse would crumble hard when Victoria decides to shove it in your face."
+char aurelia hide
+"{sfx waaah}That's likely inevitable..."
+"{c b}(I shouldn't hesitate to ask someone for the latest version.)"
+"{c b}(Best to bite the bullet early and be prepared.)"
+hideevr
+goto present
+
+label tv
+set _ev tv
+showevr
+char aurelia hide
+"So the only notable fact you found about this TV is that it's old?"
+char lilian
+"Yeah.{p30} I mean,{p15} I've never seen one of these blocky screens in real life.{p30} Clearly predates me."
+"You as well.{p30}{e wink} Probably."
+char aurelia hide
+"{sfx anger}{s10}Don't you "probably" that!{p30} I'm not from the last century either."
+"Anyway,{p15} what am I supposed to do with this?"
+char lilian
+"Dunno.{p30} Watch some dramas?"
+char aurelia hide
+"{sfx whoops}{c b}(Is this her idea of helping?{p30} Or is this her trying to break me?)"
+"I'll give you the benefit of the doubt and assume you felt this might be helpful to my case."
+char lilian
+"Well,{p15} you totally need all the evidence you can get."
+char aurelia hide
+"Hard to argue with."
+char lilian e=side
+"Anything at the scene might come in handy if we play it right."
+char lilian e=wink
+"{sfx idea}And I didn't like the vibes of this TV."
+char aurelia hide
+"{sfx huh}Here come the vibes again.{p30} Want to be more specific this time?"
+char lilian e=normal
+"Nope.{p30} I just think something's up with it."
+char lilian e=wink
+"Maybe you'll get it if you take a look at it yourself?"
+char aurelia hide
+"{c b}(I was planning to check the study again anyway.{p30} Might as well.)"
+hideevr
+goto present 
+
+label door
+set _ev door
+showevr
+char aurelia hide
+"Sorry for being blunt,{p15} but this is clear evidence of what locked room brainrot does to you."
+"You actually wrote that down and just called it a day..."
+char lilian
+"{sfx anger}{s10}Hey!{p30} It turned out accurate,{p15} didn't it?"
+char aurelia hide
+"{sfx huh}Did you even check the lock?"
+"{sfx key2}The type of lock and if there are other ways to lock it?"
+"{sfx key3}The damage caused to the door by the witnesses?"
+char lilian e=pout
+"{sfx anger}{s10}I actually checked that,{p15} though!"
+char aurelia hide
+"...Then why didn't you write that down?"
+char lilian e=wink
+"{sfx idea}Small stuff,{p15} the gist is that it was locked."
+char aurelia hide
+"{sfx whoops}True,{p15} that could only completely change how meaningful that door is."
+"It's important how locked we're talking.{p30} I'm in more or less trouble depending on that."
+char lilian e=wink
+"They didn't even find the right key.{p30} This is amateur hour.{p30} Anyone could have done it."
+char aurelia hide
+"Not sure I want to rely on things always going my way like that."
+"It did get locked one way or {n}another..."
+"...so there's still a good chance they'll turn up the real key eventually."
+char lilian e=pout
+"{sfx idea}I bet that all you'll find is what I summed up anyways!"
+char aurelia hide
+"{c b}(Still better than blindly taking my chances.)"
+hideevr
+goto present 
+
+label knife
+addinlev knife tl
+addinlev holden$ tr
+char lilian e=side
+"Well,{p15} she literally brought a knife to a gunfight."
+delete name=tl
+delete name=tr
+addinlev gun tl
+addinlev aurelia$ tr
+char lilian
+"Or is it you that brought a gun to a knife fight?"
+delete name=tl
+delete name=tr
+char aurelia hide
+"Meaningless distinction.{p30} I'm in the wrong either way."
+char lilian
+"Yeah,{p15} because it happened in the study."
+char lilian e=side
+"I feel you could have tried to startle her and ran for the door."
+"Or at least not aimed straight at her chest if you had to shoot her."
+char aurelia hide
+"{sfx waaah}{s10}Things happened a little too fast to think."
+"I don't think going over all the ways I could have been less stupid will make this any better."
+char lilian e=nuhuh
+"{sfx idea}There are some good lessons to be learned from this."
+char lilian
+"So you're prepared next time this happens."
+char aurelia hide
+"{sfx whoops}Straight up assuming this is going to happen again,{p15} huh?"
+char lilian e=side
+"True.{p30} Got to make sure you don't get put away for life first."
+"Otherwise there can't be a next time."
+char aurelia hide
+"{sfx anger}{s10}No!{p30} No "next time"!{p30} I'm good."
+"{c b}(I'm going to hole up at home for life at this rate.)"
+goto present 
+
+label blood
+set _ev blood
+showevr
+char aurelia hide
+"{sfx huh}This is by far the most interesting thing you've noticed."
+char lilian e=peace
+"Right?{p30} I wonder if the others even know about this with how focused they are on the crime scene itself."
+char aurelia hide
+"Seeing how it's on the way there,{p15} I don't see how they could have missed it."
+char lilian
+"Victoria didn't bring it up yet.{p30} But then again,{p15} it's Victoria."
+char aurelia hide
+"{sfx huh}There's a good chance this trail was left by an unknown party."
+char lilian
+"You mean this might prove there was actually someone who locked the door?"
+char aurelia hide
+"The only wounded person we know about is the victim,{p15} but she obviously never left the scene."
+char lilian e=side
+"If that's true,{p15} we're on the track to finding a solid alternate suspect."
+char aurelia hide
+"{sfx huh}Issue being that there's no good explanation why this door-locker would be wounded."
+char lilian e=wink
+"{sfx idea}I got it.{p30} Our perp must have been female."
+char aurelia hide
+"How would that explain the bl{spd 0.3}...{p30}{next}"
+"{sfx penalty}{s10}Lilian.{p30} You're permanently banned from making theories."
+hideevr
+goto present 
+
+label key
+set _ev key
+showevr
+char lilian
+"As expected,{p15} she didn't even check the basics."
+char aurelia hide
+"Should you be talking?{p30} I bet you simply assumed this as well."
+char lilian e=pout
+"{sfx waaah}{s10}Well,{p15} they didn't even let me see the key when I was there!"
+char aurelia hide
+"And you simply assumed they'd given you everything relevant."
+char lilian e=peace
+"{sfx idea}Well,{p15} that turned out technically{n}right!"
+char aurelia hide
+"I kneel before your blind guessing."
+"{sfx huh}This does raise two new concerning questions,{p15} though."
+"If this isn't the key to the room,{p15} then what's it for?"
+char lilian
+"Could just be the victim's car key,{p15} for all we know."
+char aurelia hide
+"Fair point,{p15} it could be for anything.{p30} No way to tell if this is useful to figure out."
+"Unfortunately,{p15} we can't dismiss the second question the same way."
+"{sfx key2}If this isn't the key to the room,{p15} then where is the real key?"
+char lilian e=pout
+"If it's outside the study,{p15} there's not really much of a problem."
+char lilian
+"For your case,{p15} at least.{p30} It's still spooky that somebody locked you in."
+char aurelia hide
+"Yeah,{p15} but at least I might have a potential suspect to cast doubt on my case with."
+"My real worry is that it's still going to be found inside the room."
+"I mean,{p15} the most logical explanation is that the manager locked it."
+char lilian e=side
+"The investigation was rushed,{p15} but I don't feel like they'd have missed a second key on her body."
+char aurelia hide
+"Could she have...{p50} hidden it somewhere,{p15} then?"
+char lilian
+"{sfx anger}{s10}Now why the heck would she do that?"
+char aurelia hide
+"You're right.{p30} The more I think about it,{p15} the less sense it makes."
+char lilian
+"{sfx huh}I wouldn't worry that much about this possibility."
+char lilian e=wink
+"At this point the crime scene is already tainted.{p30} Lots of people went in and out."
+char lilian e=peace
+"{sfx idea}Even if they find the key now,{p15} it'll be easy to argue somebody planted it during the commotion."
+char aurelia hide
+"Ah,{p15} another classic."
+char lilian e=smile
+"Turns out it's not that easy to pin someone with only a key and a door."
+char lilian e=nuhuh
+"Especially if they know all the tricks."
+char aurelia hide
+"{sfx waaah}{s10}That's some knowledge that should never have to come in handy."
+"{c b}(Depending on the evidence,{p15} it might be necessary to become slippery like that.)"
+hideevr
+goto present 
+
+label news
+set _ev news
+showevr
+char lilian e=smile
+"I can feel it.{p30} You'll soon be making headlines again."
+char aurelia hide
+"{sfx waaah}{s10}Hopefully not for this.{p30} Not exactly the silver lining I'm looking for."
+hideevr
+goto present 
 
 label lilian$
 is ltrust trust trustscene
@@ -465,7 +482,7 @@ char aurelia hide
 "Anything to distract myself."
 set _allow_saveload false
 char lilian e=side
-"Okay, {p10}I guess I get that. {p15}Well... {p30}I've wondered..."
+"Okay, {p15}I guess I get that. {p15}Well... {p30}I've wondered..."
 "{e normal}{sfx Key}Do you trust me?"
 char aurelia hide
 "{s 15 15 nowait}...Huh?"
@@ -488,19 +505,19 @@ goto trustme
 
 label I shouldn't
 "{c b}(Am I overthinking everything or has she been acting a little strange today?)"
-"{c b}(Even if it's to her, {p10}I can't afford to be careless.)"
-"{c b}(What happened last time you put your faith in somebody? {p20}You mustn't ever let that happen again.)"
+"{c b}(Even if it's to her, {p15}I can't afford to be careless.)"
+"{c b}(What happened last time you put your faith in somebody? {p30}You mustn't ever let that happen again.)"
 "Of course I... {p30}trust you."
 char lilian e=side
 "{sfx Key}Hm. {p15}It's okay."
 char aurelia hide
-"{c b}(Damn, {p10}there's no hiding how I feel.)"
+"{c b}(Damn, {p15}there's no hiding how I feel.)"
 char lilian e=peace
 set ltrust doubt
 subvar lilian 1
 "I get that it's hard when there seems to be a conspiracy afoot.{p15} Got to stay on your toes."
 "Watch me work harder and really earn it then!"
-"{e side}Wait,{p10} trying too hard might backfire.{p15} Nobody trusts the most innocent suspect."
+"{e side}Wait,{p15} trying too hard might backfire.{p15} Nobody trusts the most innocent suspect."
 char aurelia hide
 "{s 15 15 nowait}{sfx Smack}Pft!{p15} Just keep up whatever you're doing right now.{p15} Pretty sure it's working."
 is llpresent worstenemy weend
@@ -513,7 +530,7 @@ char lilian e=peace
 "Good. {p15}My villainous scheme is progressing."
 goto end
 label crpend
-"It wouldn't do if you can't even count on your accomplice. {p15}I'm here to bail you out, {p10}after all."
+"It wouldn't do if you can't even count on your accomplice. {p15}I'm here to bail you out, {p15}after all."
 label end
 char aurelia hide
 "{s 10 10 nowait}{sfx Shock}I guess I really shouldn't have joked about that on our way here.{p15} Uncanny how hard I jinxed myself."
@@ -522,12 +539,12 @@ goto present
 label In Lilian we trust
 "Don't be silly. {p15}{sfx Ding}Of course I trust you."
 char lilian e=shock
-"{sfx Shock}{s 15 15 nowait}What?! {p20}For real?!"
+"{sfx Shock}{s 15 15 nowait}What?! {p30}For real?!"
 char aurelia hide 
 "{sfx Smack}{s 15 15 nowait}Why are you surprised? {p15}There'd be nobody left if I couldn't even rely on you."
 char lilian e=side
-"Cause... {p30}{e normal}Eh, {p10}nevermind."
-"{e peace}{sfx Shing}{s 15 15 nowait}That's awesome! {p15}Yay, {p10}trust!{p15} Go, {p10}friendship!"
+"Cause... {p30}{e normal}Eh, {p15}nevermind."
+"{e peace}{sfx Shing}{s 15 15 nowait}That's awesome! {p15}Yay, {p15}trust!{p15} Go, {p15}friendship!"
 char aurelia hide
 "{sfx Ding}{f10}Woo! {p15}Love and peace!"
 char lilian e=normal
@@ -539,12 +556,12 @@ char lilian hide
 char aurelia hide
 "{sfx Smack}{s 15 15 nowait}Alrighty! {p15}That's more like it!"
 char lilian e=peace
-"{sfx Shing}{s 15 15 nowait}Let's go, {p10}Team Aurelian!"
+"{sfx Shing}{s 15 15 nowait}Let's go, {p15}Team Aurelian!"
 char aurelia hide
-"{sfx Ding}Wow,{p10} that's like totally the best team name you came up with since Queens of Crime."
+"{sfx Ding}Wow,{p15} that's like totally the best team name you came up with since Queens of Crime."
 char lilian e=shock
 char aurelia hide
-"{sfx Shing}{s 15 15 nowait}I don't feel I should get to eat your amazing name,{p10} though.{p15} How does 'Aurelilian' sound?{p45}{sfx Ding}{s 15 15 wait} *wink*"
+"{sfx Shing}{s 15 15 nowait}I don't feel I should get to eat your amazing name,{p15} though.{p15} How does 'Aurelilian' sound?{p45}{sfx Ding}{s 15 15 wait} *wink*"
 char lilian e=shock
 "{sfx Owned}{s 15 15 nowait}Nooo!{p15} Stop becoming me!{p15}{n}This is getting too spooky..."
 char aurelia hide
@@ -566,14 +583,14 @@ char aurelia hide
 char lilian
 "It's cause you kept overthinking it!"
 char lilian e=nuhuh
-"{f10}Tsk tsk,{p10} what a poor judge of character.{p15} Always voted me out,{p10} too."
+"{f10}Tsk tsk,{p15} what a poor judge of character.{p15} Always voted me out,{p15} too."
 char aurelia hide
-"{s 15 15 nowait}{c b}(Well,{p10} you're kind of a menace in those games.)"
+"{s 15 15 nowait}{c b}(Well,{p15} you're kind of a menace in those games.)"
 "{c b}{sfx Ding}(Lynching you and then the players you suspected was a pretty solid policy to follow.)"
 goto present
 label trustscene
 char aurelia hide
-"Hey, {p10}Lilian. {p15}Let's vibe some more."
+"Hey, {p15}Lilian. {p15}Let's vibe some more."
 is vibelevels 1 vibes1
 is vibelevels 2 vibes2
 char lilian
@@ -593,17 +610,17 @@ char lilian e=shock
 char aurelia hide
 "{sfx Awe}{f10}YYYYYeaaaaaaaaah."
 char lilian e=side
-"Yeah, {p10}yeah."
+"Yeah, {p15}yeah."
 char aurelia hide
 "{c b}(Yeah.)"
 pause 120
-"{c b}{sfx Damage}{s 15 15 nowait}(Wait,{p10} stop!{p15} I mustn't give in any more!)"
+"{c b}{sfx Damage}{s 15 15 nowait}(Wait,{p15} stop!{p15} I mustn't give in any more!)"
 "{c b}(I can feel the vibes taking over my thoughts.{p15} Any more and I might be consumed for good.)"
 "This ends here."
 char lilian
 "{sfx Key}Yeah?"
 char aurelia hide
-"Ye--{p45} {sfx Anger}{s 20 20 nowait}Yes, {p10}it does!"
+"Ye--{p45} {sfx Anger}{s 20 20 nowait}Yes, {p15}it does!"
 set vibelevels 1 
 goto present
 label vibes1
@@ -640,8 +657,8 @@ fg black
 fade in name=black speed=1
 pause 30
 char aurelia hide
-"And so,{p10} Lilian and I ditched the investigation and just kept vibing."
-"Needless to say,{p10} I got obliterated in the trial."
+"And so,{p15} Lilian and I ditched the investigation and just kept vibing."
+"Needless to say,{p15} I got obliterated in the trial."
 "That's perfectly fine.{p15} It didn't matter to us anymore."
 "Victoria wishes she was this enlightened."
 "Worries.{p15} Anxiety.{p15} Fear.{p15} All of that vanished when we entered this state."
@@ -661,7 +678,7 @@ pause 60
 textskipcheck
 "{sfx Damage}{s 15 15 nowait}That was too close!"
 char lilian e=side
-"I dunno, {p10}felt like a good ending to me."
+"I dunno, {p15}felt like a good ending to me."
 set vibelevels 2
 char aurelia hide
 "{sfx Shock}I'm not ready to leave everything behind just yet."
@@ -676,8 +693,203 @@ char aurelia hide
 "{sfx Smack}{s 15 15 nowait}{c b}(I can't afford to keep procrastinating like this!)"
 goto present
 
+label cova$
+set _ev cova$
+showevr
+char lilian
+"{sfx dun}He tried to warn us,{p15} but we didn't listen.{p30} Now the curse has claimed its next victim."
+addvar cova 1
+char aurelia hide
+"Except we fully know who's responsible and there are no reapers involved."
+char lilian
+"There's death involved,{p15} though."
+char lilian e=wink
+"Let's get real,{p15} you don't buy he was simply some ranting rando,{p15} either."
+char aurelia hide
+"Right.{p30} It's a staple in movies to create a certain mood..."
+"...but real people rarely go this far for some rumor."
+"{sfx idea}Could just be his way to get more customers,{p15} of course."
+char lilian
+"Nah,{p15} my hunch tells me there's more to this curse he didn't tell us."
+char lilian e=wink
+"{sfx anger}{s10}We should talk to him again if we get the chance.{p30} Squeeze him for all he's got."
+char aurelia hide
+"Sure.{p30} Couldn't hurt to see if he's got more cak--{p30}{next}"
+"{sfx waaah}{s10}More information!"
+hideevr
+goto present
+
+label gardt$
+set _ev gardt$
+showevr
+char lilian e=pout
+"{sfx anger}{s10}If only he'd done his job and taken your gun!"
+char aurelia hide
+"I hate to think about it,{p15} but I might have actually gotten stabbed then."
+char lilian e=shock
+"{sfx waaah}{s10}Oops,{p15} you're right."
+char aurelia hide
+"And from what he said,{p15} he was actually following the instruction he got."
+char lilian e=pout
+"{sfx huh}Hmm,{p15} but that doesn't really feel right."
+hideevr
+char aurelia hide
+"I see no issue with the logic.{p30} Seemed reasonable enough for an auction."
+set _ev holden$
+showevr
+char lilian
+"Maybe not,{p15} but the manager was the one who'd have ordered that,{p15} right?"
+char lilian e=side
+"And then she attacked you with a knife."
+hideevr
+"If she's willing to go that far,{p15} why'd she allow people to keep any weapons at all?"
+"Kind of ended up shooting herself in the foot with that.{p30} Or in the heart,{p15} rather..."
+char aurelia hide
+"{sfx huh}That's a fair point,{p15} but it might be difficult to use in my favor."
+"{sfx waaah}If anything,{p15} it'll hurt any argument I could make for self-defense."
+set _ev gardt$
+showevr
+char lilian e=pout
+"Tch,{p15} there's gotta be some way to blame it all on him."
+char lilian
+"Eh,{p15} I'll keep thinking about this and tell you if I can think of something good."
+char aurelia hide
+"{sfx whoops}{c b}(Well,{p15} don't you seem to really like the guy.)"
+hideevr
+goto present
+
+label holden2$
+set _ev holden2$
+showevr
+char lilian
+"Won't get any sympathy from me."
+char aurelia hide
+"...Not sure I'll ever be able to forget her face."
+addvar holden 1
+char lilian e=wink
+"Don't beat yourself up over her.{p30} She's the one that escalated the situation."
+char aurelia hide
+"She might have escalated,{p15} but I started this."
+char lilian e=pout
+"You know that doesn't make it okay for her to try and stab you."
+hideevr
+char aurelia hide
+"{sfx anger}{s10}I know!{p30} I know..."
+set _ev susan2$
+showevr
+char lilian
+"I get that won't stop you from feeling bad about it.{p30} Especially with her daughter blaming you."
+"{sfx idea}That doesn't justify letting them treat you like this!{p30} You gotta watch out for your own justice."
+hideevr
+char aurelia hide
+"Thanks for saying that."
+char aurelia hide
+"{c b}(I don't know what's for the best,{p15} but I have no choice but to keep going.)"
+goto present
+
+label susan2$
+set _ev susan2$
+showevr
+char lilian e=side
+"Hard to believe a young girl like that is managing to hold us captive."
+addvar susan 1
+char aurelia hide
+"She's sort of the janitor of the building.{p30} It does make sense she holds all the keys."
+char lilian
+"She's a maid,{p15} not a janitor."
+char aurelia hide
+"{sfx huh}Is that even a meaningful distinction?"
+char lilian e=nuhuh
+"{sfx idea}Maids wear cuter outfits!"
+char aurelia hide
+"That's...{p50} you know what,{p15} fine.{p30} I have no rebuttal."
+char lilian
+"And the story will sound more interesting if we say we got captured by a maid."
+char aurelia hide
+"{sfx anger}{s10}It'll sound absolutely ridiculous either way!"
+hideevr
+goto present
+
+label victoria$
+set _ev victoria$
+showevr
+char aurelia hide
+"{sfx huh}Alright,{p15} did you tell her about this auction?"
+char lilian e=shock
+"{sfx waaah}Why the heck would I do that?"
+char aurelia hide
+"Well SOMEBODY must have.{p30} We banned her.{p30} She can't see our messages anymore."
+char lilian e=side
+"Maybe we're just fated to keep clashing with her."
+char aurelia hide
+"There's no way she simply happened to get trapped here with us."
+char lilian
+"I mean,{p15} this is the kind of event she might visit?{p30} She's obnoxiously rich like the other guests."
+char aurelia hide
+"Would she really see an auction assomething worthy of her time?{p30} I find that hard to believe."
+char lilian e=side
+"True,{p15} this isn't pretentious enough for someone like her."
+char lilian e=peace
+"Perhaps your stalker was Victoria all along."
+char aurelia hide
+"{sfx waaah}{s10}Dear god,{p15} please don't let that be true."
+char lilian e=side
+"For what it's worth,{p15} I doubt she'd do it personally."
+char lilian
+"That'd be beneath her no matter how obsessed she is."
+char lilian e=side
+"But sending a servant or two to report back to her?{p30} I feel she might do that."
+char aurelia hide
+"Wouldn't make it much better."
+"We can worry about that later,{p15} though."
+"At least I have some hope to win this trial if she keeps going like this."
+char lilian e=side
+"Like I said,{p15} wouldn't bet on it.{p30} You know how petty she can get when she feels disrespected."
+char aurelia hide
+"{sfx anger}{s10}Disrespect apparently includes disagreeing with her on just about anything."
+"But well,{p15} it was usually pretty obvious whenever she started doing something underhanded."
+char lilian
+"Can we really say for sure we'd be able to manage her without Claire watching?"
+char aurelia hide
+"Now you overestimate her.{p30} Don't get taken in by her hubris."
+char lilian e=side
+"...Yeah,{p15} maybe I am overthinking it."
+char lilian e=peace
+"It's sometimes hard to get a read on her because she actually buys into her own nonsense."
+char aurelia hide
+"{sfx idea}That takes a unique kind of brain,{p15} if nothing else."
+hideevr
+goto present
+
+label than2$
+set _ev than2$
+showevr
+char lilian e=pout
+"A hitman with the codename "Reaper",{p15} huh?{p30} Up front,{p15} if nothing else."
+char lilian
+"I wonder if he did something to earn himself that."
+char aurelia hide
+"{sfx idea}From what I remember,{p15} the high-ranking JP members all used ill-fated names like that."
+char lilian e=wink
+"{sfx huh}Got examples?"
+char aurelia hide
+"Hm,{p15} I recall names like "Raven" and "Vampire"."
+char lilian
+"I get the pattern,{p15} I guess.{p30} Though it's not really a proper theme."
+char aurelia hide
+"Well,{p15} I imagine it's not too wise to make your codenames that consistent."
+"Imagine if everyone was named after an alcoholic beverage."
+"It would be much easier for people to catch on who you work for."
+char lilian e=peace
+"{sfx idea}{f10}But you'd be cooler!"
+char aurelia hide
+"Those are not equally valuable attributes..."
+"{c b}(Let's leave it at that.{p30} I'd rather not discuss this man more than necessary.)"
+hideevr
+goto present
+
 label scene17_menu_present_fail
 char lilian e=nuhuh
-"Better add those convos later, {p10}Craz and Savo."
+"Better add those convos later, {p15}Craz and Savo."
 
 goto present

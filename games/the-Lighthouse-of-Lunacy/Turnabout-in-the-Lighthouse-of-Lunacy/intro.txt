@@ -27,6 +27,8 @@ set _nt_text_y 1
 set lilian 1
 set love 0
 set cova 1
+set holden 0
+set susan 0
 # SET DEBUG TO TRUE TO GO TO PLAYTEST
 # SET DEBUG TO FALSE TO GO TO OPENING
 set debug true
@@ -37,6 +39,7 @@ set char_than_name ???
 
 include evidence
 
+script playtest
 is debug true?
 script playtest
 script opening
