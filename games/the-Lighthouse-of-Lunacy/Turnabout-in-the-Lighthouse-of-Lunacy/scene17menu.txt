@@ -224,6 +224,145 @@ showevr
 char lilian e=side
 "The lead here is this newspaper on the victim's desk."
 "{e normal}The question is why Mrs. Holden had it."
+hideevr
+char aurelia hide
+"It could very well be a coincidence."
+"Of course,{p15} after my article got published,{p15} many others covered the story."
+"Were any of those present as well?"
+char lilian
+"I don't think so.{p30} All the other newspapers were way more recent."
+set _ev than$
+showevr
+char aurelia hide
+"...And was there anything else about the previous owner?"
+hideevr
+char lilian
+"Didn't see anything."
+set _ev holden$
+showevr
+char aurelia hide
+"The innocent explanation would have been that she was looking into things for the auction,{p15} but..."
+"It seems a bit shaky if my article was the only thing she took an interest in."
+hideevr
+char lilian
+"{sfx huh}...now let's assume she was a member of this hitman group."
+char lilian e=side
+"It would make sense for her to have this article around.{p30} It exposed her boss."
+set _ev than$
+showevr
+char aurelia hide
+"...Our IDs got checked at the entrance,{p15} meaning {sfx idea}there's a list of names."
+"It's possible this list was handed to her and she saw my name on it."
+hideevr
+char lilian e=shock
+"{sfx idea}{f10}Good catch."
+char lilian e=side
+"She could have recognized your name and gone to her office to double check."
+set _ev news
+showevr
+char lilian
+"That would explain why this old newspaper was at the very top."
+hideevr
+char aurelia hide
+"...I'm not sure how she could have known my face,{p15} it's not included in the article."
+char lilian e=wink
+"There might be cameras at the entrance."
+char lilian e=nuhuh
+"Or perhaps it had something to do with you going places you're not meant to be."
+char aurelia hide
+"So you think that when she spotted that,{p15} she figured it was a chance to take revenge?"
+"That would make this a failed assassination."
+"{c b}(It would line up with how aggressive she was with that knife...)"
+char lilian
+"It would definitely be helpful in the trial if we had proof for that."
+char aurelia hide
+"{sfx waaah}Sadly I doubt she'd just have proof of being a hitman lying around."
+"I'm also not totally convinced...{p50} that would have been a very spontaneous plan."
+"{sfx huh}Given their code,{p15} just going after someone with a knife shouldn't be acceptable."
+"It wouldn't leave anything resembling an impossible crime."
+char lilian e=side
+"Maybe there was some idea to set up the scene afterwards."
+set _ev holden$
+showevr
+char lilian
+"If the former owner of the room was with those JP people,{p15} there might be some secret exit method."
+hideevr
+char aurelia hide
+"The door being locked sort of lines up with that,{p15} I guess."
+char lilian e=wink
+"Too bad she messed it up,{p15} now we'll never know the locked room trick."
+char aurelia hide
+"{sfx waaah}No,{p15} I'm quite glad it failed."
+"Anyway,{p15} this is all a little hard to buy."
+"What good would it do to punish me now?"
+"The information I revealed back then was all about a dead man."
+"{sfx waaah}If they wanted revenge,{p15} they should go after whoever killed him one year earlier."
+"{sfx anger}Not some random journalist doing her job."
+char lilian e=side
+"Hm..."
+"{sfx huh}Just what did you do to write that article?"
+char lilian
+"{sfx key2}It couldn't have been that straightforward to get that kind of info."
+char aurelia hide
+"...Well..."
+"{c b}(I should tell her.)"
+"{sfx key3}About that...{p50} I didn't exactly look into anything."
+music_fade_out nowait
+"It's more like I just ended up with the info I needed."
+char lilian e=shock
+"What do you mean?"
+char aurelia hide
+"Let me explain..."
+mus
+consideration
+setflag invposs
+goto talk
+
+label The Article
+set script._override_bg bg/mainlol
+pause 10
+set _bigbutton_bg empty_buttonpress
+delete name=wa
+music_fade_out
+mus 
+char aurelia hide
+"It happened five years ago,{p15} only a couple weeks after that incident."
+"I found a {sfx huh}{c r}strange package{c w} in my mailbox."
+"{sfx dun}It contained documents.{p30} Data.{p30} Lists.{p30} All sorts of information."
+"The main focus of it were the illegal activities of that man."
+char lilian e=side
+"{sfx waaah}Someone just sent you all of that in the mail!?"
+char aurelia hide
+"That's right.{p30} All the material I needed for that article came from that."
+"There were no instructions or demands packaged with it."
+"I was suspicious at first,{p15} but the documents turned out to be bulletproof."
+char lilian e=side
+"An anonymous package..."
+"I guess that means there really was no reason for them to hold a grudge against you."
+char aurelia hide
+"{sfx huh}{c b}(That's it?{p30} That's your whole reaction to what I just revealed?)"
+"{c b}(I don't know why you're not even the slightest bit disappointed.)"
+char lilian
+"They should have been much more interested into whoever sent that to you."
+"It must have been someone with significant knowledge of their inner workings."
+char lilian e=side
+"{sfx idea}So,{p15} someone on the inside.{p30} A real traitor."
+char aurelia hide
+"{sfx waaah}Right,{p15} it's not like that was my fault."
+char lilian
+"...Well,{p15} they're killers."
+"We can't rule out they'd just go after you to send a message."
+char lilian e=side
+"Still,{p15} I guess that would be a weak motive after so many years..."
+char lilian
+"I guess that's all we can speculate from that article."
+char lilian e=wink
+"Let's head out and investigate more."
+char aurelia hide
+"{sfx huh}{c b}(You realized,{p15} didn't you?)"
+mus
+consideration
+goto talk
 
 #PRESENT MENU
 label present
@@ -549,6 +688,24 @@ char lilian e=smile
 "I can feel it.{p30} You'll soon be making headlines again."
 char aurelia hide
 "{sfx waaah}{s10}Hopefully not for this.{p30} Not exactly the silver lining I'm looking for."
+hideevr
+goto present 
+
+label spray
+set _ev spray
+showevr
+char lilian
+"Now's your chance to wash off any blood on your hands."
+char aurelia hide
+"You know that's the least of my problems.{p30} And I don't think I got any on me."
+char lilian e=side
+"{sfx huh}Weren't you standing right in front of her?"
+char aurelia hide
+"I guess her clothes must have soaked up most of the initial blood."
+char lilian
+"Almost feels too lucky."
+char aurelia hide
+"{c b}(Well,{p15} I'm not complaining.{p30} There are enough other things going horribly wrong here.)"
 hideevr
 goto present 
 

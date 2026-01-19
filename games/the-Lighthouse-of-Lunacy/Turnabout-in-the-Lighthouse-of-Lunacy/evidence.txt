@@ -62,6 +62,10 @@ set news_pic clipping
 set news_desc A four-year-old newspaper. Features an article by me that exposes Than Leid as a hitman.
 set news_check check_news.txt
 
+set spray_name Cleaning Spray
+set spray_pic luminol
+set spray_desc Susan Holden used this to keep the auction items clean.
+
 //PROFILES
 
 set aurelia$_name Aurelia Chase
