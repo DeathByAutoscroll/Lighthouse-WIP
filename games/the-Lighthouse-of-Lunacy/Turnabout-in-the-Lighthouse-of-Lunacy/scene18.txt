@@ -43,7 +43,7 @@ sfx whoosh
 char susan e=mad name=susan x=-64
 scroll name=susan x=0 speed=10 nowait
 char cova e=tray name=cova x=64
-scroll name=cova x=-256 speed=10
+scroll name=cova x=-256 speed=10 stack
 pause 120
 char aurelia hide
 "{sfx huh}{c b}(So that guy made it inside before things got shut down.)"
@@ -104,8 +104,8 @@ char aurelia hide
 music_fade_out nowait
 mus
 sfx flashback
-char susan e=mad name=susan x=-256
-scroll name=susan x=256 speed=10 nowait
+char susan e=mad
+scroll name=susan x=-256 speed=10 nowait
 pause 180
 char aurelia hide
 "...She left."
