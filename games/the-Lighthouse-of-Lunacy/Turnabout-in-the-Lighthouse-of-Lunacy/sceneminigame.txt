@@ -5,7 +5,7 @@ set char_aurelia_defsound silence
 flag endinglocation?
 sfx setmove
 noflag pressmusic?
-# pressonourway
+pressonourway
 setflag pressmusic
 set _textbox_bg general/textbox2
 set _bigbutton_bg bg/locationselectbg
