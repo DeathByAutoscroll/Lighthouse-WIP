@@ -1,4 +1,5 @@
 set _textbox_bg general/textbox2
+flag scene18_seenintro scene18intro_end
 set _cr_button true
 bg overview stack
 fade in name=overview
@@ -224,4 +225,8 @@ char aurelia hide
 "{c b}(The guy in charge of security...{p50} he's bound to be called as a witness sooner or later.)"
 "{c b}(Might be a good chance to find out what they know.)"
 "{c b}(Of course,{p15} there's also the crime scene to visit if this seems unproductive.)"
+
+label scene18intro_end
+setflag scene18_seenintro
+
 script scene18menu

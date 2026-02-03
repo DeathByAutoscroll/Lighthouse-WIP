@@ -16,6 +16,11 @@ set gunB_name Pistol
 set gunB_pic gun
 set gunB_desc My personal handgun. One bullet is missing. Presumed to be what killed Mrs. Holden.
 
+set gunC_name Pistol
+set gunC_pic gun
+set gunC_desc Presumed to be what killed Mrs. Holden. One bullet is missing. (A second one was discharged for forensic purposes.)
+set gunC_check check_gunC.txt
+
 set cake_name Strawberry Cake
 set cake_pic cake
 set cake_desc A cake I bought from Ander Cova.{n}It's called the "Cova Strawberry Crisis".{n}Very tasty. 
@@ -36,6 +41,11 @@ set door_name Door
 set door_pic door
 set door_desc "A locked room mystery. That can't be good."
 
+set door2_name Door
+set door2_pic door
+set door2_desc Check for details.
+set door2_check check_door2.txt
+
 set blood_name Blood Trail
 set blood_pic blood
 set blood_desc "A faint blood trail between the study and the main hall."
@@ -44,10 +54,25 @@ set knife_name Knife
 set knife_pic knife
 set knife_desc "It was lying near the victim. As was its sheath."
 
+set knife2_name Knife
+set knife2_pic knife
+set knife2_desc Check for details.
+set knife2_check check_knife2.txt
+
+set knife3_name Knife
+set knife3_pic knife
+set knife3_desc Check for details.
+set knife3_check check_knife3.txt
+
 set autopsy_name Autopsy Report
 set autopsy_pic dossier
-set autopsy_desc "The autopsy report received from an unknown woman. Click for details."
+set autopsy_desc "The autopsy report received from an unknown woman. Check for details."
 set autopsy_check check_autopsy1.txt
+
+set autopsy2_name Autopsy Report
+set autopsy2_pic dossier
+set autopsy2_desc The autopsy report for Mrs. Holden. Click for details.
+set autopsy2_check check_autopsy2.txt
 
 set empty_name Nothing Else
 set empty_pic empty
@@ -65,6 +90,19 @@ set news_check check_news.txt
 set spray_name Cleaning Spray
 set spray_pic luminol
 set spray_desc Susan Holden used this to keep the auction items clean.
+
+set hunt1_name HUNT
+set hunt1_pic HUNT
+set hunt1_desc The detective uses numerous machines to conduct her investigations. Check for details.
+set hunt1_check check_hunt.txt
+
+set suitcase_name Suitcase
+set suitcase_pic suitcase
+set suitcase_desc Found standing near the windows in the display room. The letters "dW" are visible on the front. It's empty.
+
+set fork_name Turning Fork
+set fork_pic fork
+set fork_desc Found on the floor near a display stand.
 
 //PROFILES
 

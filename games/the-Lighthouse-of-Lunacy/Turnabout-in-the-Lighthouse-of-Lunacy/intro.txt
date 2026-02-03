@@ -29,6 +29,8 @@ set love 0
 set cova 1
 set holden 0
 set susan 0
+set celise 0
+set knifecode 0
 # SET DEBUG TO TRUE TO GO TO PLAYTEST
 # SET DEBUG TO FALSE TO GO TO OPENING
 set debug true

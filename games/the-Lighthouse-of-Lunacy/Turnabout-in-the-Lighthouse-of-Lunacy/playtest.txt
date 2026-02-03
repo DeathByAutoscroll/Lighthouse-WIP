@@ -14,8 +14,10 @@ addev knife
 addev blood
 addev key
 addev than2$
+addev news
+addev spray
 
 setflag offtrain
 setflag coastdone
 textskipcheck
-script sceneminigame
+script scene19menu
