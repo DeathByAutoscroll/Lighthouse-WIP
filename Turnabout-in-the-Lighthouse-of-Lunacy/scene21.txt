@@ -1,0 +1,102 @@
+set _textbox_bg general/textbox2
+set _cr_button true
+bg courtroom2
+fg judgeOV stack
+fg victoriaOV stack
+pause 120
+
+textskipcheck
+nt
+"{center}{sound typewriter.ogg}{c g}{spd 0.3}April 4,{p15} 9:35 PM{n}The Lighthouse of Lunacy{n}Main Hall"
+pause 30
+
+char gardt
+"{sfx idea}Hate to say this,[#125] but it looks like time is almost up.[#250] They're getting ready to resume."
+char gardt e=think
+"Sorry,[#125] that's where the journey will have to end.[#250] Gotta head back to the bench."
+set _textbox_bg general/textbox2
+set _cr_button true
+textskipcheck
+bg timestop/timestopTEST name=timestopTEST
+"{f10}{next}"
+pause 120
+invert value=1 name=timestopTEST
+fg gearfg z=1 nowait
+sfx dun
+pause 120
+sfx limbo
+fg gimmicktop z=2 nowait 
+fg gimmickbottom stack z=2 nowait
+pause 120
+sfx chain
+"{f10}{next}"
+fg chaintop z=4 nowait
+pause 30
+"{f10}{next}"
+fg chainbottom z=4 nowait
+pause 200
+char aurelia e=normal name=aurelia x=-256 z=3 stack
+scroll name=aurelia x=210 z=3 speed=10 stack
+char lilian e=normal name=lilian x=256 z=3 stack
+scroll name=lilian x=-210 z=3 speed=10 stack
+pause 120
+
+doorjudgement
+setvar _speaking aurelia
+emo normal
+"{sfx waaah}I guess that's one way to stall for time."
+
+setvar _speaking lilian
+emo wink
+"Figured you might want to take a moment and review things."
+
+setvar _speaking aurelia
+emo smug
+"{sfx idea}Appreciated.[#250] There's actually something I wanted to sort out before moving on."
+set _ev photo
+showevr
+emo side
+"Namely,[#125] this."
+hideevr
+
+setvar _speaking lilian
+emo shock
+"So that's what you were sketching out in your notebook."
+
+setvar _speaking aurelia
+emo normal
+"More or less.[#250] Can you look if I got everything right?"
+
+setvar _speaking lilian
+emo shock
+"{sfx idea}{f10}Wow,[#125] pretty detailed."
+
+setvar _speaking aurelia
+emo normal
+"It can't hurt to keep the unusual features of our situation in mind."
+"Especially since they'll probably be used against me depending on what I argue."
+
+setvar _speaking lilian
+emo normal
+"Yeah,[#125] I get the feeling the check they made the guard do at the entrance will be trouble."
+emo side
+"{sfx huh}Wait a moment,[#125] though...[#500] This tower has another floor?"
+
+setvar _speaking aurelia
+emo normal
+"Well,[#125] it's obvious from looking at it there's at least two."
+
+fg black stack fade
+pause 120
+fg towerzoom fade
+char aurelia hide
+"Maybe the eyes distracted you,[#125] but I remember {sfx idea}{c r}two rows {c w}of windows."
+char lilian hide
+"{sfx waaah}I love your memory.[#250] You didn't even know this was gonna happen at that point."
+"{sfx huh}But you also wrote that we're on the top floor.[#250] How did you figure that?"
+"{sfx whoops}I mean,[#125] you also could have looked at the panel in the elevator."
+"It wasn't lit up,[#125] but there was another button for the floor below this one."
+fade out name=towerzoom
+fade out name=black
+pause 120
+

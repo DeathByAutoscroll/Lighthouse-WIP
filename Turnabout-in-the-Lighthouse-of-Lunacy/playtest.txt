@@ -1,0 +1,23 @@
+addev presspass
+addev gunB
+addev cake
+addev lilian$
+addev cova$
+addev gardt$
+addev holden2$
+addev susan2$
+addev victoria$
+addev autopsy2
+addev tv
+addev door
+addev knife
+addev blood
+addev key
+addev than2$
+addev news
+addev spray
+
+setflag offtrain
+setflag coastdone
+textskipcheck
+script scene19menu

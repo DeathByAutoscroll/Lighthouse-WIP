@@ -1,8 +1,5 @@
-version 0.990.2
-version_date 2023-7-21
-version_notes new experimental variables
-author saluk
-website http://pywright.dawnsoft.org/
-title PyWright Game Engine
-icon art/general/pwicon.png
-category engine
+Version 1.00
+icon art/ev/aurelia.png
+Pywright port by: Savo
+Case by: Blackrune
+Adapted from aaonline.fr

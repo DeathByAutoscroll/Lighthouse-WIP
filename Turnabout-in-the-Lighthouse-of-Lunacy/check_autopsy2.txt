@@ -1,0 +1,6 @@
+bg Autopsy2 fade
+bg mainlol y=192 stack
+ev dossier x=93 y=256
+gui Button {aut2test} name=n1 x=220 y=369 name=aut2B
+gui Button {aut2testn} name=p1 x=170 y=369 name=aut2Bp
+gui Back y=350
