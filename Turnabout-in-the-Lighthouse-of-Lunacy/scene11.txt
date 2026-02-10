@@ -82,10 +82,8 @@ char susan e=smug
 bg defensebg
 fg dbench
 char aurelia e=d-normal
-emptytext
 "{s10}{sfx huh}{next}"
 pause 180
-textreturn
 char aurelia e=d-normal
 "{c b}(An actual courtroom...)"
 "{c b}(This is the closest I've been to one.)"

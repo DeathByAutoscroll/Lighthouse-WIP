@@ -104,6 +104,11 @@ set fork_name Turning Fork
 set fork_pic fork
 set fork_desc Found on the floor near a display stand.
 
+set diagram_name Tower Diagram
+set diagram_pic photo
+set diagram_desc General information about the building as well as a diagram of the crime scene. Check for details.
+set diagram_check check_diagram.txt
+
 //PROFILES
 
 set aurelia$_name Aurelia Chase
