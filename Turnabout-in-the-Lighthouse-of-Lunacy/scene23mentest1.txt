@@ -25,6 +25,22 @@ set _testimony_blinker false
 moderato2016
 set testimonytimestop a
 
+# Scroll macro for 3 people at the bench
+# Syntax: widescroll left|middle|right
+set _widescroll_pos middle
+macro widescroll
+
+set _new_widescroll_pos $1
+
+# If position is same, don't bother with the math
+is_ex _new_widescroll_pos == _widescroll_pos skip
+
+is _widescroll_pos left?
+#set _scroll_start_x 
+
+label skip
+endmacro
+
 label start
 set dots 7
 #Adds the penalty bar
