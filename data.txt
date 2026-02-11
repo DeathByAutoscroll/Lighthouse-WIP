@@ -1,4 +1,4 @@
-Version 1.00
+version 1.00
 icon art/ev/aurelia.png
 Pywright port by: Savo
 Case by: Blackrune
