@@ -228,62 +228,32 @@ fg witstand stack x=80
 setvar _speaking neland
 emo normal
 "We were discussing the auction.{p30} Nothing special."
-
-scroll name=widewitnessbg 
-
-scroll char mono e=normal x=-80 speed=10
-scroll char neland e=normal stack
-scroll char dowe stack
+widescroll middle
 
 setvar _speaking dowe
 emo normal
 "Discussing?{p30} You were running your mouth because you couldn't handle losing!"
-
-scroll name=widewitnessbg 
-
-scroll char mono e=normal x=80 speed=10
-scroll char neland e=normal stack
-scroll char dowe stack
+widescroll left
 
 setvar _speaking neland
 emo smug
 "Don't know what banter is,{p15} oldtimer?{p30} You should try it at one of your boring parties. "
-
-scroll name=widewitnessbg 
-
-scroll char mono e=normal x=-80 speed=10
-scroll char neland e=smug stack
-scroll char dowe stack
+widescroll middle
 
 setvar _speaking dowe
 emo mad
 "{sfx anger}Balderdash!{p30} You were absolutely mad.{p30} Right,{p15} Mono?"
-
-scroll name=widewitnessbg 
-
-scroll char mono e=closed x=-80 speed=10
-scroll char neland e=normal stack
-scroll char dowe e=mad stack
+widescroll right
 
 setvar _speaking mono
 emo side
 "Well,{p15} Mr. Neland may have been a tiny bit..."
-
-scroll name=widewitnessbg 
-
-scroll char mono e=normal x=160 speed=10
-scroll char neland e=normal stack
-scroll char dowe stack
+widescroll left
 
 setvar _speaking neland
 emo crazy
 "{sfx huh}{c gr}Careful what you say,{p15} Mono."
-
-scroll name=widewitnessbg 
-
-scroll char mono e=sweat x=-160 speed=10
-scroll char neland e=crazy stack
-scroll char dowe stack
+widescroll right
 
 setvar _speaking mono
 emo sweat
@@ -305,44 +275,24 @@ fg witstand stack x=80
 setvar _speaking neland
 emo normal
 "That plainly ain't how you play auctions.{p30} I was giving the oldtimer some friendly advice."
-
-scroll name=widewitnessbg 
-
-scroll char mono e=normal x=-80 speed=10
-scroll char neland e=normal stack
-scroll char dowe stack
+widescroll right
 
 setvar _speaking dowe
 emo normal
 "You don't know the first thing.{p30} You've got to shock everyone with high numbers."
-
-scroll name=widewitnessbg 
-
-scroll char mono e=normal x=80 speed=10
-scroll char neland e=normal stack
-scroll char dowe stack
+widescroll middle
 
 setvar _speaking neland
 emo normal
 "How many times do I have to teach you this?{p15} That'll just make them save their gunpowder."
 emo happy
 "{sfx anger}{s10}You've got to wait for the valuable stuff before you strike,{p15} or you'll be out of money by then."
-
-scroll name=widewitnessbg 
-
-scroll char mono e=normal x=-80 speed=10
-scroll char neland e=happy stack
-scroll char dowe stack
+widescroll right
 
 setvar _speaking dowe
 emo normal
 "You still think that thing would have actually turned up?"
-
-scroll name=widewitnessbg 
-
-scroll char mono e=normal x=80 speed=10
-scroll char neland e=happy stack
-scroll char dowe stack
+widescroll middle
 
 setvar _speaking neland
 emo happy
@@ -363,20 +313,12 @@ fg witstand stack x=-80
 setvar _speaking mono
 emo closed
 "{sfx idea}{f10}The statuette of Thanatos..."
-scroll name=widewitnessbg 
-
-scroll char mono e=closed x=80 speed=10
-scroll char neland e=normal stack
-scroll char dowe e=normal stack 
+widescroll left
 
 setvar _speaking dowe
 emo normal
 "Dr. Leid was said to possess a real Ancient Greek figure."
-scroll name=widewitnessbg 
-
-scroll char mono e=closed x=-80 speed=10
-scroll char neland e=normal stack
-scroll char dowe e=mad stack 
+widescroll middle
 
 setvar _speaking mono
 emo side
@@ -386,66 +328,40 @@ pause 120
 "{next}"
 music_fade_out nowait
 mus
-scroll name=widewitnessbg 
-
-scroll char mono e=sweat x=80 speed=10
-scroll char neland e=normal stack
-scroll char dowe e=mad stack 
+widescroll left
 
 setvar _speaking dowe
 emo mad
 "{sfx shouting}{s10}One million!{p30}{next}"
-scroll name=widewitnessbg 
-
-scroll char mono e=sweat x=80 speed=10
-scroll char neland e=angry stack
-scroll char dowe e=mad stack
+widescroll left
+widescroll left
 
 setvar _speaking neland
 emo angry
 "{sfx shocked}{s10}Two million!{p30}{next}"
-scroll name=widewitnessbg 
-
-scroll char mono e=sweat x=-80 speed=10
-scroll char neland e=angry stack
-scroll char dowe e=mad stack
+widescroll left
 
 setvar _speaking dowe
 emo mad
 "{sfx shouting}{s10}Seven million!{p30}{next}"
-scroll name=widewitnessbg 
-
-scroll char mono e=sweat x=80 speed=10
-scroll char neland e=angry stack
-scroll char dowe e=mad stack
+widescroll left
+widescroll left
 
 setvar _speaking neland
 emo angry
 "{sfx ohno}{f10}Ten million!{p30}{next}"
-
-scroll name=widewitnessbg 
-
-scroll char mono e=sweat x=-80 speed=10
-scroll char neland e=smug stack
-scroll char dowe e=normal stack
+widescroll middle
 
 setvar _speaking dowe
 emo normal
 "You serious?{p15} You don't even have that much on hand."
-scroll name=widewitnessbg 
-
-scroll char mono e=sweat x=80 speed=10
-scroll char neland e=smug stack
-scroll char dowe e=normal stack
+widescroll left
+widescroll left
 
 setvar _speaking neland
 emo smug
 "Who cares.{p30} I can take out a loan."
-scroll name=widewitnessbg 
-
-scroll char mono e=closed x=-160 speed=10
-scroll char neland e=smug stack
-scroll char dowe e=normal stack
+widescroll middle
 
 setvar _speaking mono
 emo normal

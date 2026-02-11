@@ -1,48 +1,119 @@
-set_textbox_wrap false
-set_textbox_lines 3
-set _textbox_bg general/textboxnont
+set _cr_button false
+set _textbox_bg general/textbox
+set _bigbutton_img general/bigbutton/empty
+set _music_fade 100
+mus 0. Main Menu
+importvars textskip
+bg mainlol fade 1000 y=192
+fg logo-trans fade 1000
+pause 60
+label intromenu
+bg mainlol y=192 stack
+gui Button start x=34 y=200 name=sg graphic=general/titmenu/play graphichigh=general/titmenu/play_high play z=5
+gui Button warning x=34 y=237 name=cw graphic=general/titmenu/cwarning graphichigh=general/titmenu/cwarning_high warning z=5
+gui Button fanart x=34 y=274 name=fanart graphic=general/titmenu/fanart graphichigh=general/titmenu/fanart_high fanart z=5
+gui Button options x=34 y=310 name=opt graphic=general/titmenu/options graphichigh=general/titmenu/options_high options z=5
+flag casebeaten?
+gui Button credits x=34 y=346 name=credits graphic=general/titmenu/credits graphichigh=general/titmenu/credits_high options z=5
+flag casebeaten?
+goto uhhh
+gui Button credits1 x=34 y=346 name=credits1 graphic=general/titmenu/credits_grey graphichigh=general/titmenu/credits_grey options z=5
+label uhhh
+gui Wait
 
-set color_b 00f6ff # Thoughts and court record text
-set color_g 00F61C # Typewriter text, for stuff like date and time and also asking questions of the player
-set color_r ff5a00 # important details text
-set color_w FFFFFF # normal speaking text
-set color_p 4040b4 # cards of fate text
-set color_gr 3d3d3d # waldis neland text
+label start
+mus
+game games/the-Lighthouse-of-Lunacy/Turnabout-in-the-Lighthouse-of-Lunacy intro
 
-set _bigbutton_img general/empty_buttonpress
-set _bigbutton_cross general/cross_exam_buttons
-set _bigbutton_bg bg/mainlol
+label warning
+goto warningpage
 
-set _nt_y 116
-set _nt_x 6
+label fanart
+goto fanartpage
 
-set _punctuation_delay_comma 6
-set _punctuation_delay_dash 2
-set _punctuation_delay_period 2
-set _punctuation_delay_exclamation 2
-set _punctuation_delay_question 2
+label options
+goto optionstart
 
-set _nt_x 1
-set _nt_text_y 1
+label credits
+goto creditstart
 
-set lilian 1
-set love 0
-set cova 1
-set holden 0
-set susan 0
-set celise 0
-set knifecode 0
-# SET DEBUG TO TRUE TO GO TO PLAYTEST
-# SET DEBUG TO FALSE TO GO TO OPENING
-set debug true
-customblipcheck
+label credits1
+bg mainlol y=192
+fg logo-trans
+delete name=sg
+delete name=credits
+delete name=credits1
+delete name=fanart
+delete name=cw
+delete name=opt
+sfx lock
+goto intromenu
 
-set char_mono_name Poly
-set char_than_name ???
+label warningpage
+bg mainlol y=192
+delete name=sg
+delete name=credits
+delete name=credits1
+delete name=fanart
+delete name=cw
+delete name=opt
+bg CWPage fade 1000 stack
+goto intromenu
 
-include evidence
+label optionstart
+importvars textskip
+importvars customblips
+sfx confirm
+clear
+bg mainlol y=192 
+fg logo-trans
+pause 30
+delete name=sg
+delete name=credits
+delete name=credits1
+delete name=fanart
+delete name=cw
+delete name=opt
+pause 90
+forgetlist options
+list options bg=mainlol
+isempty textskip?
+li Enable Text Skip
+is textskip 1?
+li Disable Text Skip
+isempty customblips?
+li Enable Custom Voice Blips
+is customblips 1?
+li Disable Custom Voice Blips
+showlist
+label ifback
+pause 60
+goto intromenu
 
-script playtest
-is debug true?
-script playtest
-script opening
+label Enable Text Skip
+set textskip 1
+exportvars textskip textskip
+exportvars Turnabout-in-the-Lighthouse-of-Lunacy/textskip textskip
+"{sfx/Added.ogg}{spd 1.5}{sfx}Text skip has been enabled.{p90}{next}"
+goto optionstart
+
+label Disable Text Skip
+delflag textskip
+exportvars textskip textskip
+exportvars Turnabout-in-the-Lighthouse-of-Lunacy/textskip textskip
+"{sfx/Added.ogg}{spd 1.5}{sfx}Text skip has been disabled.{p90}{next}"
+goto optionstart
+
+label Enable Custom Voice Blips
+set customblips 1
+exportvars customblips customblips
+exportvars Turnabout-in-the-Lighthouse-of-Lunacy/customblips customblips
+"{sfx/Added.ogg}{spd 1.5}{sfx}Custom Voice Blips has been enabled.{p90}{next}"
+goto optionstart
+
+label Disable Custom Voice Blips
+delflag customblips
+exportvars customblips customblips
+exportvars Turnabout-in-the-Lighthouse-of-Lunacy/customblips customblips
+"{sfx/Added.ogg}{spd 1.5}{sfx}Custom Voice Blips has been disabled.{p90}{next}"
+goto optionstart

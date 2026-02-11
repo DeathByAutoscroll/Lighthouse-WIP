@@ -306,7 +306,8 @@ char aurelia hide
 "{c b}(There's a note sticking out of it now.)"
 set _ev note
 showevr
-"{sfx key3}⚝4🗝 🠒 🗡"
+"It's a series of drawings."
+"{sfx key3}A star, the number four, a golden key, an arrow, and a sword."
 hideevr
 char lilian e=side
 "Star Four Key Arrow Sword."
@@ -344,7 +345,7 @@ goto examine
 label note1
 set _ev note
 showevr
-"{sfx key3}⚝4🗝 🠒 🗡"
+"{sfx key3}"Star Four Key Arrow Sword."
 hideevr
 char lilian e=side
 "{sfx huh}In the beginning,{p15} a star fell on Earth and split into four parts."
@@ -362,7 +363,7 @@ goto examine
 label note2
 set _ev note
 showevr
-"{sfx key3}⚝4🗝 🠒 🗡"
+"{sfx key3}Star Four Key Arrow Sword."
 hideevr
 char lilian e=peace
 "Well,{p15} we found the knife and it contained words."
@@ -393,7 +394,7 @@ char lilian e=side
 "Anyway,{p15} this fork is giving me bad vibes.{p30} Who dropped it here?"
 char lilian
 "You better note this down just in case."
-set _fork
+set _ev fork
 set _description Found on the floor near a display stand.
 set _name Tuning Fork
 addevanim 

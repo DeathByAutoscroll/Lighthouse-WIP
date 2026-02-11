@@ -52,3 +52,35 @@ delete name=main
 delete name=white
 delete name=tests
 endmacro
+
+macro courtzoom2dtp
+bg courtzoom2
+fg dbench
+char aurelia e=$1
+char victoria e=$2 x=1040 stack
+fg pbench2 x=1040 stack
+scroll name=courtzoom2 x=-1040 speed=30 nowait
+scroll name=aurelia x=-1040 speed=30 nowait
+scroll name=dbench x=-1040 speed=30 nowait
+scroll name=victoria x=-1040 speed=30 nowait
+scroll name=pbench2 x=-1040 speed=30
+pause 30
+endmacro
+
+#courtzoom2dtp d-normal smug (reference for use)
+
+macro courtzoom2ptd
+bg courtzoom2 x=-1040
+fg dbench x=-1040
+char victoria e=$2 
+char aurelia e=$1 x=-1040 stack
+fg pbench2 stack
+scroll name=courtzoom2 x=1040 speed=30 nowait
+scroll name=aurelia x=1040 speed=30 nowait
+scroll name=dbench x=1040 speed=30 nowait
+scroll name=victoria x=1040 speed=30 nowait
+scroll name=pbench2 x=1040 speed=30
+pause 30
+endmacro
+
+
